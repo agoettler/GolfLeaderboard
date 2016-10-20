@@ -1,0 +1,389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D6A2B93958596DFAE8C4AB0 /* Pods_Golf_Leaderboard_v1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7439C3635AEDB28DCBBADBF6 /* Pods_Golf_Leaderboard_v1.framework */; };
+		8221EDE11DB6CCBF00239662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221EDE01DB6CCBF00239662 /* AppDelegate.swift */; };
+		8221EDE31DB6CCBF00239662 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221EDE21DB6CCBF00239662 /* ViewController.swift */; };
+		8221EDE61DB6CCBF00239662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8221EDE41DB6CCBF00239662 /* Main.storyboard */; };
+		8221EDE81DB6CCBF00239662 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8221EDE71DB6CCBF00239662 /* Assets.xcassets */; };
+		8221EDEB1DB6CCBF00239662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8221EDE91DB6CCBF00239662 /* LaunchScreen.storyboard */; };
+		8221EDF31DB6CFB700239662 /* GoogleService-Info-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8221EDF21DB6CFB700239662 /* GoogleService-Info-2.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0D367B910C9FF4D44BD5A769 /* Pods-Golf_Leaderboard_v1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Golf_Leaderboard_v1.release.xcconfig"; path = "Pods/Target Support Files/Pods-Golf_Leaderboard_v1/Pods-Golf_Leaderboard_v1.release.xcconfig"; sourceTree = "<group>"; };
+		7439C3635AEDB28DCBBADBF6 /* Pods_Golf_Leaderboard_v1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Golf_Leaderboard_v1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8221EDDD1DB6CCBF00239662 /* Golf_Leaderboard_v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Golf_Leaderboard_v1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8221EDE01DB6CCBF00239662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8221EDE21DB6CCBF00239662 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8221EDE51DB6CCBF00239662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8221EDE71DB6CCBF00239662 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8221EDEA1DB6CCBF00239662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8221EDEC1DB6CCBF00239662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8221EDF21DB6CFB700239662 /* GoogleService-Info-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-2.plist"; sourceTree = "<group>"; };
+		DDF1800807DCCD9CD5771F92 /* Pods-Golf_Leaderboard_v1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Golf_Leaderboard_v1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Golf_Leaderboard_v1/Pods-Golf_Leaderboard_v1.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8221EDDA1DB6CCBF00239662 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D6A2B93958596DFAE8C4AB0 /* Pods_Golf_Leaderboard_v1.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00A507C8B1882905F489E235 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7439C3635AEDB28DCBBADBF6 /* Pods_Golf_Leaderboard_v1.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8221EDD41DB6CCBF00239662 = {
+			isa = PBXGroup;
+			children = (
+				8221EDDF1DB6CCBF00239662 /* Golf_Leaderboard_v1 */,
+				8221EDDE1DB6CCBF00239662 /* Products */,
+				AB6C1AFC45C8C1D456207351 /* Pods */,
+				00A507C8B1882905F489E235 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8221EDDE1DB6CCBF00239662 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8221EDDD1DB6CCBF00239662 /* Golf_Leaderboard_v1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8221EDDF1DB6CCBF00239662 /* Golf_Leaderboard_v1 */ = {
+			isa = PBXGroup;
+			children = (
+				8221EDE01DB6CCBF00239662 /* AppDelegate.swift */,
+				8221EDE21DB6CCBF00239662 /* ViewController.swift */,
+				8221EDE41DB6CCBF00239662 /* Main.storyboard */,
+				8221EDE71DB6CCBF00239662 /* Assets.xcassets */,
+				8221EDE91DB6CCBF00239662 /* LaunchScreen.storyboard */,
+				8221EDEC1DB6CCBF00239662 /* Info.plist */,
+				8221EDF21DB6CFB700239662 /* GoogleService-Info-2.plist */,
+			);
+			path = Golf_Leaderboard_v1;
+			sourceTree = "<group>";
+		};
+		AB6C1AFC45C8C1D456207351 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DDF1800807DCCD9CD5771F92 /* Pods-Golf_Leaderboard_v1.debug.xcconfig */,
+				0D367B910C9FF4D44BD5A769 /* Pods-Golf_Leaderboard_v1.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8221EDDC1DB6CCBF00239662 /* Golf_Leaderboard_v1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8221EDEF1DB6CCBF00239662 /* Build configuration list for PBXNativeTarget "Golf_Leaderboard_v1" */;
+			buildPhases = (
+				2B913C967803CA6CF923322A /* [CP] Check Pods Manifest.lock */,
+				8221EDD91DB6CCBF00239662 /* Sources */,
+				8221EDDA1DB6CCBF00239662 /* Frameworks */,
+				8221EDDB1DB6CCBF00239662 /* Resources */,
+				DF21CE21E71D540C2EE64EAC /* [CP] Embed Pods Frameworks */,
+				417E0B22952BDE84A90CABFE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Golf_Leaderboard_v1;
+			productName = Golf_Leaderboard_v1;
+			productReference = 8221EDDD1DB6CCBF00239662 /* Golf_Leaderboard_v1.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8221EDD51DB6CCBF00239662 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Group 3";
+				TargetAttributes = {
+					8221EDDC1DB6CCBF00239662 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 625732G463;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 8221EDD81DB6CCBF00239662 /* Build configuration list for PBXProject "Golf_Leaderboard_v1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8221EDD41DB6CCBF00239662;
+			productRefGroup = 8221EDDE1DB6CCBF00239662 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8221EDDC1DB6CCBF00239662 /* Golf_Leaderboard_v1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8221EDDB1DB6CCBF00239662 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8221EDEB1DB6CCBF00239662 /* LaunchScreen.storyboard in Resources */,
+				8221EDE81DB6CCBF00239662 /* Assets.xcassets in Resources */,
+				8221EDF31DB6CFB700239662 /* GoogleService-Info-2.plist in Resources */,
+				8221EDE61DB6CCBF00239662 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B913C967803CA6CF923322A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		417E0B22952BDE84A90CABFE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Golf_Leaderboard_v1/Pods-Golf_Leaderboard_v1-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF21CE21E71D540C2EE64EAC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Golf_Leaderboard_v1/Pods-Golf_Leaderboard_v1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8221EDD91DB6CCBF00239662 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8221EDE31DB6CCBF00239662 /* ViewController.swift in Sources */,
+				8221EDE11DB6CCBF00239662 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8221EDE41DB6CCBF00239662 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8221EDE51DB6CCBF00239662 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8221EDE91DB6CCBF00239662 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8221EDEA1DB6CCBF00239662 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8221EDED1DB6CCBF00239662 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8221EDEE1DB6CCBF00239662 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8221EDF01DB6CCBF00239662 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDF1800807DCCD9CD5771F92 /* Pods-Golf_Leaderboard_v1.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 625732G463;
+				INFOPLIST_FILE = Golf_Leaderboard_v1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Golf-Leaderboard-v1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8221EDF11DB6CCBF00239662 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D367B910C9FF4D44BD5A769 /* Pods-Golf_Leaderboard_v1.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 625732G463;
+				INFOPLIST_FILE = Golf_Leaderboard_v1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Golf-Leaderboard-v1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8221EDD81DB6CCBF00239662 /* Build configuration list for PBXProject "Golf_Leaderboard_v1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8221EDED1DB6CCBF00239662 /* Debug */,
+				8221EDEE1DB6CCBF00239662 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8221EDEF1DB6CCBF00239662 /* Build configuration list for PBXNativeTarget "Golf_Leaderboard_v1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8221EDF01DB6CCBF00239662 /* Debug */,
+				8221EDF11DB6CCBF00239662 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8221EDD51DB6CCBF00239662 /* Project object */;
+}
