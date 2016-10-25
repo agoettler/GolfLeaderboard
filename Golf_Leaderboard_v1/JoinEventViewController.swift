@@ -8,23 +8,57 @@
 
 import UIKit
 
-class JoinEventViewController: UIViewController
+class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 {
+
+    
 
     @IBOutlet weak var handicapPicker: UIPickerView!
     
-    var pickerData: [Int] = [Int]()
+    
+    var handicapData = ["1","2","3","4","5","6","7","8","9","10"]
     
     @IBOutlet weak var startHolePicker: UIPickerView!
     
-    var holeData: [Int] = [Int]()
+    var holeData = ["1","2","3","4","5","6","7","8","9"]
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        return 1
+
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        if(pickerView===startHolePicker){
+            return holeData.count
+        }
+        else{
+            return handicapData.count
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if(pickerView===startHolePicker){
+            return holeData[row]
+        }
+        else{
+            return handicapData[row]
+        }
+    }
+    
+    
+    
+    
+    
     
     override func viewDidLoad()
     {
-        print("JoinEventViewController: viewDidLoad")
         
         super.viewDidLoad()
-        
+        print("JoinEventViewController: viewDidLoad")
+
+        /*
         // Do any additional setup after loading the view.
         var index = 0
         
@@ -32,7 +66,7 @@ class JoinEventViewController: UIViewController
         {
             if (index>0 && index<19)
             {
-                holeData.append(index)
+              //  holeData.append(index)
             }
             
             pickerData.append(index)
@@ -40,7 +74,7 @@ class JoinEventViewController: UIViewController
             index = index + 1
         }
         
-        
+        */
     }
     override func didReceiveMemoryWarning()
     {

@@ -16,8 +16,9 @@ class SearchEventViewController: UIViewController {
     @IBAction func FindButtonPressed(_ sender: UIButton) {
         
         if(roleSegmentedControl.selectedSegmentIndex == 0){
-            let destVC: UIViewController = storyboard!.instantiateViewController(withIdentifier: "JoinEventVC")
-            present(destVC, animated: true, completion: nil)
+            //let destVC: UIViewController = storyboard!.instantiateViewController(withIdentifier: "JoinEventVC")
+           // present(destVC, animated: true, completion: nil)
+            performSegue(withIdentifier: "goToJoinEvent", sender: self)
         }
         
     }
