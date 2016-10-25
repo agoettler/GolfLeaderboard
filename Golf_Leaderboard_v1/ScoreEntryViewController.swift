@@ -10,7 +10,9 @@ import UIKit
 
 class ScoreEntryViewController: UIViewController {
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
+        print("ScoreEntryViewController: viewDidLoad")
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

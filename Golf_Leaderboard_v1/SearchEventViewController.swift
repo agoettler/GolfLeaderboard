@@ -25,7 +25,9 @@ class SearchEventViewController: UIViewController {
     
     
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
+        print("SearchEventViewController: viewDidLoad")
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

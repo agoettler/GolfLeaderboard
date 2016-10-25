@@ -10,7 +10,9 @@ import UIKit
 
 class TitleViewController: UIViewController {
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
+        print("TitleViewController: viewDidLoad")
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

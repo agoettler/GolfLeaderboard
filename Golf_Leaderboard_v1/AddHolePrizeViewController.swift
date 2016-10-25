@@ -23,7 +23,9 @@ class AddHolePrizeViewController: UIViewController {
     }
     
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
+        print("AddHolePrizeViewController: viewDidLoad")
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
