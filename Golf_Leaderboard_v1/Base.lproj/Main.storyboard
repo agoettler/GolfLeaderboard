@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Title View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TitleViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="140" y="137.18140929535232"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Event View Controller-->
         <scene sceneID="swe-Ky-dd1">
             <objects>
-                <viewController storyboardIdentifier="JoinEventView" id="Vzb-PQ-SKM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JoinEventView" id="Vzb-PQ-SKM" customClass="SearchEventViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ujj-K6-wY6"/>
                         <viewControllerLayoutGuide type="bottom" id="k1X-pl-LED"/>
@@ -106,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="1294" y="-323"/>
         </scene>
-        <!--View Controller-->
+        <!--Join Event View Controller-->
         <scene sceneID="fkg-dc-ASj">
             <objects>
-                <viewController id="BOs-vy-7l4" sceneMemberID="viewController">
+                <viewController id="BOs-vy-7l4" customClass="JoinEventViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mcB-9u-Lfa"/>
                         <viewControllerLayoutGuide type="bottom" id="dXu-dX-gvY"/>
@@ -173,7 +173,7 @@
         <!--Score Entry-->
         <scene sceneID="b2s-ad-1XV">
             <objects>
-                <viewController id="kWC-mz-8oB" sceneMemberID="viewController">
+                <viewController id="kWC-mz-8oB" customClass="ScoreEntryViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TCH-Po-Yhi"/>
                         <viewControllerLayoutGuide type="bottom" id="ZgT-NU-Rd6"/>
@@ -429,10 +429,10 @@
             </objects>
             <point key="canvasLocation" x="3508" y="305.39730134932535"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Event View Controller-->
         <scene sceneID="qr4-pH-Mcd">
             <objects>
-                <viewController storyboardIdentifier="CreateEventView" id="4pV-TY-UcC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateEventView" id="4pV-TY-UcC" customClass="CreateEventViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LDr-bv-M3H"/>
                         <viewControllerLayoutGuide type="bottom" id="6tS-bj-1GV"/>
