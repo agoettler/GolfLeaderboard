@@ -9,12 +9,12 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="TitleView" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -52,12 +52,12 @@
         <!--View Controller-->
         <scene sceneID="swe-Ky-dd1">
             <objects>
-                <viewController id="Vzb-PQ-SKM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JoinEventView" id="Vzb-PQ-SKM" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ujj-K6-wY6"/>
                         <viewControllerLayoutGuide type="bottom" id="k1X-pl-LED"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nv2-Fb-x9v">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="JoinEventView" id="nv2-Fb-x9v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -432,7 +432,7 @@
         <!--View Controller-->
         <scene sceneID="qr4-pH-Mcd">
             <objects>
-                <viewController id="4pV-TY-UcC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateEventView" id="4pV-TY-UcC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LDr-bv-M3H"/>
                         <viewControllerLayoutGuide type="bottom" id="6tS-bj-1GV"/>
