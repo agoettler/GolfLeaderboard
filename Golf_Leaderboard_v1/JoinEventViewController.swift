@@ -10,12 +10,26 @@ import UIKit
 
 class JoinEventViewController: UIViewController {
 
+    @IBOutlet weak var handicapPicker: UIPickerView!
+    var pickerData: [Int] = [Int]()
+    //hello
+    @IBOutlet weak var startHolePicker: UIPickerView!
+    var holeData: [Int] = [Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        var index = 0
+        while (index < 41){
+            if (index>0 && index<19){
+                holeData.append(index)
+            }
+            pickerData.append(index)
+            index = index + 1
+        }
+        
+        
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
