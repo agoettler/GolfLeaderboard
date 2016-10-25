@@ -1,0 +1,37 @@
+iOS App Development Fall 2016
+Team Project Plans
+Adam Gary, Andrew Goettler, Zach Meyer
+
+Notes:
+*	All interactions between the database and the app will be performed through dedicated objects. This design pattern isolates the database code from the model code, allowing for easier modification if the database structure is changed or, hypothetically, if the database were moved to a full-fledged web service such as Amazon.
+??*	Many data structures used in the app will exist as objects on the phone and as dictionaries in the database; the dedicated objects handling the database-app interactions will retrieve the "dehydrated" data from the database and return objects to the local app, and vice versa.
+??*	For some entities such as Players, it may be worthwhile to create a class which can reference players without retrieving all of the Player data from the database, but can return an actual Player object when needed - effectively a pointer to a Player in the database.
+
+Proposed design changes, following discussion with Nick Wade:
+*	We should switch to using Firebase Cloud Messaging with a Pub/Sub (publication/subscription) model for updating scores and player data. The Firebase realtime database may still work well for the list of golf courses.
+*	It should be simple to implement authentication using a service like Google or Facebook; with Facebook, publshing the leaderboard to a user's Facebook wall could be a fairly simple feature to add.
+
+Game Creation Process
+1.	When a user selects the option to create a new event on their phone, a CourseListImporter object and a Game object are instantiated. At this point, the user becomes the "Event Owner".
+2.	The CourseListImporter object retrieves a list of available courses from the database and returns a CourseList object to the app on the user's phone. The CourseListImporter object can then disposed.
+3.	The CourseList object is used to populate the CreateEventViewController with the available courses.
+4.	As the user makes selections on the event creation screen, the properties of the Game object are modified accordingly.
+5.	When the user completes the event creation process, a GameExporter object is instantiated.
+6.	The GameExporter object uploads the data from the Game object to the database. When this is complete, the GameExporter object can then be disposed.
+7.	The Event Owner then begins the Player Setup Process.
+
+Game Joining Process
+1.	When a user selects the option to find an existing game, a GameImporter object is instantiated on their phone. At this point, the user becomes a "Player".
+2.	The Player enters the name of a game they wish to join in the text box on the SearchEventViewController.
+3.	The GameImporter object searches the list of available games on the database to find a match for the name entered by the Player.
+4.	The user is informed if a match is found or not. If no match is found, or if the user chooses to search for a different game name, return to step 2.
+4.	If a match is found and the user chooses to join the game, the GameImporter object retrieves the data for the appropriate game and returns a Game object to the Player's phone. The GameImporter object can then be disposed.
+5.	The Player then begins the Player Setup Process
+
+Player Setup Process - Incomplete
+1.	When a Player or Game Owner proceeds to the Player Setup Process, a PlayerProfile object is instantiated on their phone.
+2.	The PlayerName, Handicap, and StartHole properties of the PlayerProfile object are modified according to the Player's selections in the PlayerCreationViewController.
+3.	The PlayerScoreCard property of the PlayerProfile object is instantiated and initialized using values from the PlayerProfile object and the Course property of the Player's Game object. The score values of the PlayerScoreCard are initialized to 0 or nil.
+4.	A PlayerExporter object is created and used to add the Player data to a list of Players in the database. (Should updating the player's scorecard on the database be performed by a separate object?)
+5.	????
+6.	Profit
