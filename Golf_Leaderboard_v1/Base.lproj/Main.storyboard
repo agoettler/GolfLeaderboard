@@ -559,12 +559,44 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Hole Prizes" id="TGF-kG-HfZ">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="IrP-EI-4Vn"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gC7-l5-28Y"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gC7-l5-28Y">
+                            <connections>
+                                <segue destination="vcu-jl-6Rn" kind="show" id="izk-mg-Zuf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="txh-7D-0a5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3156" y="1010"/>
+        </scene>
+        <!--Select Hole Prize-->
+        <scene sceneID="3Um-ux-Jzv">
+            <objects>
+                <viewController id="vcu-jl-6Rn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RNo-m7-MWw"/>
+                        <viewControllerLayoutGuide type="bottom" id="xCL-fx-2cN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MdH-eK-2rh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uJD-hg-jNw">
+                                <frame key="frameInset" minX="40" minY="131" height="155" maxX="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select Hole Prize" id="OP3-nD-BtL">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ob3-RA-QVd"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="08J-ND-Mih"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fwc-Go-trL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3928.8000000000002" y="1009.7451274362819"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iAG-e3-tuK">
