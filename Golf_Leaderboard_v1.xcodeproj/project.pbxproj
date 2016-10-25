@@ -13,7 +13,7 @@
 		8221EDE61DB6CCBF00239662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8221EDE41DB6CCBF00239662 /* Main.storyboard */; };
 		8221EDE81DB6CCBF00239662 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8221EDE71DB6CCBF00239662 /* Assets.xcassets */; };
 		8221EDEB1DB6CCBF00239662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8221EDE91DB6CCBF00239662 /* LaunchScreen.storyboard */; };
-		8221EDF31DB6CFB700239662 /* GoogleService-Info-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8221EDF21DB6CFB700239662 /* GoogleService-Info-2.plist */; };
+		8221EDF31DB6CFB700239662 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8221EDF21DB6CFB700239662 /* GoogleService-Info.plist */; };
 		8221EE541DBFEBA300239662 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221EE531DBFEBA300239662 /* TitleViewController.swift */; };
 		8221EE561DBFEBD900239662 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221EE551DBFEBD900239662 /* CreateEventViewController.swift */; };
 		8221EE581DBFEC1100239662 /* SearchEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221EE571DBFEC1100239662 /* SearchEventViewController.swift */; };
@@ -31,7 +31,7 @@
 		8221EDE71DB6CCBF00239662 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8221EDEA1DB6CCBF00239662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8221EDEC1DB6CCBF00239662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8221EDF21DB6CFB700239662 /* GoogleService-Info-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-2.plist"; sourceTree = "<group>"; };
+		8221EDF21DB6CFB700239662 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8221EE531DBFEBA300239662 /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		8221EE551DBFEBD900239662 /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		8221EE571DBFEC1100239662 /* SearchEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchEventViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 				8221EDE71DB6CCBF00239662 /* Assets.xcassets */,
 				8221EDE91DB6CCBF00239662 /* LaunchScreen.storyboard */,
 				8221EDEC1DB6CCBF00239662 /* Info.plist */,
-				8221EDF21DB6CFB700239662 /* GoogleService-Info-2.plist */,
+				8221EDF21DB6CFB700239662 /* GoogleService-Info.plist */,
 				8221EE531DBFEBA300239662 /* TitleViewController.swift */,
 				8221EE551DBFEBD900239662 /* CreateEventViewController.swift */,
 				8221EE571DBFEC1100239662 /* SearchEventViewController.swift */,
@@ -171,7 +171,7 @@
 			files = (
 				8221EDEB1DB6CCBF00239662 /* LaunchScreen.storyboard in Resources */,
 				8221EDE81DB6CCBF00239662 /* Assets.xcassets in Resources */,
-				8221EDF31DB6CFB700239662 /* GoogleService-Info-2.plist in Resources */,
+				8221EDF31DB6CFB700239662 /* GoogleService-Info.plist in Resources */,
 				8221EDE61DB6CCBF00239662 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
