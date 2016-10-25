@@ -14,7 +14,9 @@ class HolePrizesTableTableViewController: UITableViewController {
 
 
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
+        print("HolePrizesTableViewController: viewDidLoad")
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
