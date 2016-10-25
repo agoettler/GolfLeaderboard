@@ -1,5 +1,5 @@
 //
-//  SearchEventViewController.swift
+//  AddHolePrizeViewController.swift
 //  Golf_Leaderboard_v1
 //
 //  Created by Adam Fairchild Gary on 10/25/16.
@@ -8,20 +8,19 @@
 
 import UIKit
 
-class SearchEventViewController: UIViewController {
+class AddHolePrizeViewController: UIViewController {
 
-    @IBOutlet weak var roleSegmentedControl: UISegmentedControl!
-    
-    
-    @IBAction func FindButtonPressed(_ sender: UIButton) {
-        
-        if(roleSegmentedControl.selectedSegmentIndex == 0){
-            let destVC: UIViewController = storyboard!.instantiateViewController(withIdentifier: "JoinEventVC")
-            present(destVC, animated: true, completion: nil)
-        }
-        
+    @IBAction func SavePressed(_ sender: UIBarButtonItem) {
+        print("HERE")
+        dismiss(animated: true, completion: nil)
+
     }
     
+
+    @IBAction func CancelPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+
+    }
     
     
     override func viewDidLoad() {
