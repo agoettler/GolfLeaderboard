@@ -12,11 +12,36 @@ import Firebase
 
 class ScoreEntryViewController: UIViewController {
 
+    
+    @IBOutlet weak var holeLabel: UILabel!
+    @IBOutlet weak var yardageLabel: UILabel!
+    @IBOutlet weak var parLabel: UILabel!
+    @IBOutlet weak var handicapLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var scoreStepper: UIStepper!
+    
+    
+    
+    @IBAction func scoreStepperPressed(_ sender: UIStepper) {
+        let currentVal:Int = Int(scoreStepper.value)
+        scoreLabel.text = "\(currentVal)"
+        
+    }
+    
+    
+    
+    
+    
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         print("ScoreEntryViewController: viewDidLoad")
-
+        scoreStepper.stepValue = 1
+        scoreStepper.minimumValue = 1
+        scoreStepper.maximumValue = 15
+        scoreStepper.value = 4
+        scoreLabel.text = "\(scoreStepper.value)"
         // Do any additional setup after loading the view.
     }
 

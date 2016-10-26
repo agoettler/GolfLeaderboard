@@ -12,6 +12,8 @@ import Firebase
 
 class SearchEventViewController: UIViewController {
 
+    @IBOutlet weak var eventNameTextField: UITextField!
+    
     @IBOutlet weak var roleSegmentedControl: UISegmentedControl!
     
     

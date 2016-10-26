@@ -10,10 +10,14 @@ import UIKit
 import Firebase
 
 
-class AddHolePrizeViewController: UIViewController {
+class AddHolePrizeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBOutlet weak var holePrizePicker: UIPickerView!
+    
+    
     @IBAction func SavePressed(_ sender: UIBarButtonItem) {
         print("HERE")
+        
         dismiss(animated: true, completion: nil)
 
     }
@@ -24,6 +28,43 @@ class AddHolePrizeViewController: UIViewController {
 
     }
     
+    var holeData = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"]
+    
+    var prizeOptions = ["Longest Drive","Longest Putt","Closest to the Pin","Alternate Shot"]
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        return 2
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        if(component == 0){
+            return holeData.count
+        }
+        else{
+            return prizeOptions.count
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if(component == 0){
+            return holeData[row]
+        }
+        else{
+            return prizeOptions[row]
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        if(component == 0){
+            return CGFloat(80)
+        }
+        else{
+            return CGFloat(300)
+        }
+    }
     
     override func viewDidLoad()
     {
