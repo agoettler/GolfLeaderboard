@@ -24,6 +24,9 @@ class SearchEventViewController: UIViewController {
            // present(destVC, animated: true, completion: nil)
             performSegue(withIdentifier: "goToJoinEvent", sender: self)
         }
+        else{
+            performSegue(withIdentifier: "ShowSpectatorTabBar", sender: self)
+        }
         
     }
     

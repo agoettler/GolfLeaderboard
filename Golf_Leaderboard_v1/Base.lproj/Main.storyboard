@@ -118,11 +118,12 @@
                         <outlet property="eventNameTextField" destination="5Al-io-U07" id="ZGA-HA-Q54"/>
                         <outlet property="roleSegmentedControl" destination="wW4-n6-619" id="BbT-fc-2NS"/>
                         <segue destination="BOs-vy-7l4" kind="show" identifier="goToJoinEvent" id="l2N-tt-cgb"/>
+                        <segue destination="fkq-zi-iNi" kind="show" identifier="ShowSpectatorTabBar" id="AaB-Tr-l86"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1q-xH-ICD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3033" y="-442"/>
+            <point key="canvasLocation" x="3156" y="-968"/>
         </scene>
         <!--Join Event View Controller-->
         <scene sceneID="fkg-dc-ASj">
@@ -203,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdm-af-LTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3768.8000000000002" y="-442.12893553223392"/>
+            <point key="canvasLocation" x="4470" y="-489"/>
         </scene>
         <!--Score Entry-->
         <scene sceneID="b2s-ad-1XV">
@@ -376,7 +377,7 @@
         <!--Leaderboard-->
         <scene sceneID="Nf6-Md-zL8">
             <objects>
-                <tableViewController id="Vv5-9E-ATg" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LeaderboardVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vv5-9E-ATg" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="j7r-ki-nCY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -400,7 +401,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLA-0b-fjV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7148" y="305.39730134932535"/>
+            <point key="canvasLocation" x="8087.1999999999998" y="305.39730134932535"/>
         </scene>
         <!--Hole Prizes-->
         <scene sceneID="rED-uX-gcl">
@@ -452,7 +453,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Riz-fu-eAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7938.3999999999996" y="306.29685157421289"/>
+            <point key="canvasLocation" x="8877.6000000000004" y="306.29685157421289"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bTj-jG-F4X">
@@ -473,7 +474,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqc-rD-DXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4447.1999999999998" y="305.39730134932535"/>
+            <point key="canvasLocation" x="4470" y="305"/>
         </scene>
         <!--Create Event-->
         <scene sceneID="qr4-pH-Mcd">
@@ -568,7 +569,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LHY-6z-DZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2272.8000000000002" y="1009.7451274362819"/>
+            <point key="canvasLocation" x="2353" y="1010"/>
         </scene>
         <!--Hole Prizes-->
         <scene sceneID="euZ-Su-Gdb">
@@ -702,8 +703,28 @@
             </objects>
             <point key="canvasLocation" x="140" y="137.18140929535232"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="rp2-KT-TUn">
+            <objects>
+                <tabBarController storyboardIdentifier="SpectatorTabBarVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fkq-zi-iNi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="v5h-Qa-9Pw">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Vv5-9E-ATg" kind="relationship" relationship="viewControllers" id="GV0-Cv-MaZ"/>
+                        <segue destination="qlB-ql-9bV" kind="relationship" relationship="viewControllers" id="Zio-ch-z5g"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5D8-n5-bDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8455" y="-968"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="N9h-CN-NJT"/>
+        <segue reference="GV0-Cv-MaZ"/>
+        <segue reference="Zio-ch-z5g"/>
     </inferredMetricsTieBreakers>
 </document>
