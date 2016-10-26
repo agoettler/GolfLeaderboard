@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D6A2B93958596DFAE8C4AB0 /* Pods_Golf_Leaderboard_v1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7439C3635AEDB28DCBBADBF6 /* Pods_Golf_Leaderboard_v1.framework */; };
 		75A751021DBFF2AC0036DE26 /* Plans.txt in Resources */ = {isa = PBXBuildFile; fileRef = 75A751011DBFF2AC0036DE26 /* Plans.txt */; };
+		75A751041DC073870036DE26 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A751031DC073870036DE26 /* Course.swift */; };
 		8221EDE11DB6CCBF00239662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221EDE01DB6CCBF00239662 /* AppDelegate.swift */; };
 		8221EDE31DB6CCBF00239662 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221EDE21DB6CCBF00239662 /* ViewController.swift */; };
 		8221EDE61DB6CCBF00239662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8221EDE41DB6CCBF00239662 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		0D367B910C9FF4D44BD5A769 /* Pods-Golf_Leaderboard_v1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Golf_Leaderboard_v1.release.xcconfig"; path = "Pods/Target Support Files/Pods-Golf_Leaderboard_v1/Pods-Golf_Leaderboard_v1.release.xcconfig"; sourceTree = "<group>"; };
 		7439C3635AEDB28DCBBADBF6 /* Pods_Golf_Leaderboard_v1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Golf_Leaderboard_v1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A751011DBFF2AC0036DE26 /* Plans.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Plans.txt; sourceTree = "<group>"; };
+		75A751031DC073870036DE26 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		8221EDDD1DB6CCBF00239662 /* Golf_Leaderboard_v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Golf_Leaderboard_v1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8221EDE01DB6CCBF00239662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8221EDE21DB6CCBF00239662 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				8221EDE21DB6CCBF00239662 /* ViewController.swift */,
 				8221EDE41DB6CCBF00239662 /* Main.storyboard */,
 				75A751011DBFF2AC0036DE26 /* Plans.txt */,
+				75A751031DC073870036DE26 /* Course.swift */,
 				8221EDE71DB6CCBF00239662 /* Assets.xcassets */,
 				8221EDE91DB6CCBF00239662 /* LaunchScreen.storyboard */,
 				8221EDEC1DB6CCBF00239662 /* Info.plist */,
@@ -249,6 +252,7 @@
 			files = (
 				8221EDE31DB6CCBF00239662 /* ViewController.swift in Sources */,
 				8221EE5C1DBFEC4200239662 /* ScoreEntryViewController.swift in Sources */,
+				75A751041DC073870036DE26 /* Course.swift in Sources */,
 				8221EE5E1DBFF87200239662 /* AddHolePrizeViewController.swift in Sources */,
 				823534381DC01314007AFE70 /* CourseList.swift in Sources */,
 				8221EDE11DB6CCBF00239662 /* AppDelegate.swift in Sources */,
