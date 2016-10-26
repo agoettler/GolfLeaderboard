@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class AddHolePrizeViewController: UIViewController {
 
@@ -25,8 +27,8 @@ class AddHolePrizeViewController: UIViewController {
     
     override func viewDidLoad()
     {
-        print("AddHolePrizeViewController: viewDidLoad")
         super.viewDidLoad()
+        print("AddHolePrizeViewController: viewDidLoad")
 
         // Do any additional setup after loading the view.
     }

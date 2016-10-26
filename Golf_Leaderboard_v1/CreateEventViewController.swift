@@ -7,15 +7,28 @@
 //
 
 import UIKit
+import Firebase
+
 
 class CreateEventViewController: UIViewController {
 
+    var availableCourses:CourseList?
+    
     override func viewDidLoad()
     {
-        print("CreateEventViewController: viewDidLoad")
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        print("CreateEventViewController: viewDidLoad")
+
+        /*
+        if let courses = CourseImporter.getCourses(){
+            availableCourses = courses
+            
+        }
+        else{
+            print("No available courses")
+        }
+ */
     }
 
     override func didReceiveMemoryWarning() {

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class SearchEventViewController: UIViewController {
 
@@ -27,8 +29,8 @@ class SearchEventViewController: UIViewController {
     
     override func viewDidLoad()
     {
-        print("SearchEventViewController: viewDidLoad")
         super.viewDidLoad()
+        print("SearchEventViewController: viewDidLoad")
 
         // Do any additional setup after loading the view.
     }

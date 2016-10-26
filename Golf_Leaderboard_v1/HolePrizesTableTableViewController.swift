@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class HolePrizesTableTableViewController: UITableViewController {
 
@@ -16,8 +18,8 @@ class HolePrizesTableTableViewController: UITableViewController {
     
     override func viewDidLoad()
     {
-        print("HolePrizesTableViewController: viewDidLoad")
         super.viewDidLoad()
+        print("HolePrizesTableViewController: viewDidLoad")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

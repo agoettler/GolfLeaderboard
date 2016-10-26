@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import Firebase
+
 
 class TitleViewController: UIViewController {
 
     override func viewDidLoad()
     {
-        print("TitleViewController: viewDidLoad")
         super.viewDidLoad()
+        print("TitleViewController: viewDidLoad")
 
         // Do any additional setup after loading the view.
     }

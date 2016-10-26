@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 {

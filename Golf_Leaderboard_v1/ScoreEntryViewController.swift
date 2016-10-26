@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import Firebase
+
 
 class ScoreEntryViewController: UIViewController {
 
     override func viewDidLoad()
     {
-        print("ScoreEntryViewController: viewDidLoad")
         super.viewDidLoad()
+        print("ScoreEntryViewController: viewDidLoad")
 
         // Do any additional setup after loading the view.
     }
