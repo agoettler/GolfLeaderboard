@@ -9,17 +9,7 @@
 import Foundation
 import Firebase
 
-class Event{
-    
-    var ref: FIRDatabaseReference = FIRDatabase.database().reference()
-    
-    
-    
-    
-    
-    
-    
-    
-    
+class Event
+{
     
 }

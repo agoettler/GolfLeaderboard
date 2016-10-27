@@ -74,7 +74,7 @@ public class Course
     ///     - numbers: The array of hole numbers of the course.
     ///     - yardages: The array of yardages of the course.
     ///     - pars: The array of par values of the course.
-    public convenience init(name: String, numbers: [Int], yardages: [Int], pars: [Int])
+    public convenience init(name: String, numbers: [Int], yardages: [Int], pars: [Int], handicaps: [Int])
     {
         if numbers.count == yardages.count && yardages.count == pars.count
         {
@@ -82,7 +82,7 @@ public class Course
             
             for index in 0..<numbers.count
             {
-                tempHoles.append(Hole(numbers[index], yardages[index], pars[index]))
+                tempHoles.append(Hole(numbers[index], yardages[index], pars[index], handicap: handicaps[index]))
             }
             
             self.init(name, tempHoles)
@@ -103,7 +103,7 @@ public class Course
     ///     - name: The name of the course.
     ///     - yardages: The array of yardages of the course.
     ///     - pars: The array of par values of the course.
-    public convenience init(name: String, yardages: [Int], pars: [Int])
+    public convenience init(name: String, yardages: [Int], pars: [Int], handicaps: [Int])
     {
         if yardages.count == pars.count
         {
@@ -111,7 +111,7 @@ public class Course
             
             for index in 0..<yardages.count
             {
-                tempHoles.append(Hole(index + 1, yardages[index], pars[index]))
+                tempHoles.append(Hole(index + 1, yardages[index], pars[index], handicap: handicaps[index]))
             }
             
             self.init(name, tempHoles)
@@ -144,16 +144,19 @@ public struct Hole
     
     public let par: Int
     
+    public let handicap: Int
+    
     /// Creates a `Hole` structure directly from the given parameters.
     /// - parameters:
     ///     - number: The number of the hole in the course.
     ///     - yardage: The distance from the tee to the hole.
     ///     - par: The ideal number of strokes needed to reach the hole.
-    public init(_ number: Int, _ yardage: Int, _ par: Int)
+    public init(_ number: Int, _ yardage: Int, _ par: Int, handicap: Int)
     {
         self.number = number
         self.yardage = yardage
         self.par = par
+        self.handicap = handicap
     }
     
     /*
