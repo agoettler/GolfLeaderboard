@@ -9,6 +9,7 @@
 import Foundation
 //import Firebase
 
+/// Represents a golf event that players can join
 public class Event
 {
     public let name: String
@@ -38,5 +39,17 @@ public class Event
         self.init(name: name, owner: owner, type: type, course: course)
         self.players = players
         self.holePrizes = holePrizes
+    }
+    
+    public func addPlayer(newPlayer: Player)
+    {
+        // TODO: Code can be added to this method to force an update to the database when a new player is added
+        players.append(newPlayer)
+    }
+    
+    public func addHolePrize(newHolePrize: HolePrize)
+    {
+        // TODO: Code can be added to this method to force an update to the database when a new hole prize is added
+        holePrizes.append(newHolePrize)
     }
 }
