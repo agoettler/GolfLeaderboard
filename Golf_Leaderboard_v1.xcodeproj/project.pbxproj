@@ -15,7 +15,6 @@
 		8221EDE61DB6CCBF00239662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8221EDE41DB6CCBF00239662 /* Main.storyboard */; };
 		8221EDE81DB6CCBF00239662 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8221EDE71DB6CCBF00239662 /* Assets.xcassets */; };
 		8221EDEB1DB6CCBF00239662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8221EDE91DB6CCBF00239662 /* LaunchScreen.storyboard */; };
-		8221EDF31DB6CFB700239662 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8221EDF21DB6CFB700239662 /* GoogleService-Info.plist */; };
 		8221EE541DBFEBA300239662 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221EE531DBFEBA300239662 /* TitleViewController.swift */; };
 		8221EE561DBFEBD900239662 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221EE551DBFEBD900239662 /* CreateEventViewController.swift */; };
 		8221EE581DBFEC1100239662 /* SearchEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221EE571DBFEC1100239662 /* SearchEventViewController.swift */; };
@@ -23,6 +22,10 @@
 		8221EE5C1DBFEC4200239662 /* ScoreEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221EE5B1DBFEC4200239662 /* ScoreEntryViewController.swift */; };
 		8221EE5E1DBFF87200239662 /* AddHolePrizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221EE5D1DBFF87200239662 /* AddHolePrizeViewController.swift */; };
 		8221EE601DBFF89600239662 /* HolePrizesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221EE5F1DBFF89600239662 /* HolePrizesTableTableViewController.swift */; };
+		823534361DC01304007AFE70 /* CourseListImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823534351DC01304007AFE70 /* CourseListImporter.swift */; };
+		823534381DC01314007AFE70 /* CourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823534371DC01314007AFE70 /* CourseList.swift */; };
+		8235343A1DC1569C007AFE70 /* UpdateHolePrizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823534391DC1569C007AFE70 /* UpdateHolePrizeViewController.swift */; };
+		8235343C1DC16C11007AFE70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8235343B1DC16C11007AFE70 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +40,6 @@
 		8221EDE71DB6CCBF00239662 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8221EDEA1DB6CCBF00239662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8221EDEC1DB6CCBF00239662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8221EDF21DB6CFB700239662 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8221EE531DBFEBA300239662 /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		8221EE551DBFEBD900239662 /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		8221EE571DBFEC1100239662 /* SearchEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchEventViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +47,10 @@
 		8221EE5B1DBFEC4200239662 /* ScoreEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreEntryViewController.swift; sourceTree = "<group>"; };
 		8221EE5D1DBFF87200239662 /* AddHolePrizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddHolePrizeViewController.swift; sourceTree = "<group>"; };
 		8221EE5F1DBFF89600239662 /* HolePrizesTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolePrizesTableTableViewController.swift; sourceTree = "<group>"; };
+		823534351DC01304007AFE70 /* CourseListImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListImporter.swift; sourceTree = "<group>"; };
+		823534371DC01314007AFE70 /* CourseList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseList.swift; sourceTree = "<group>"; };
+		823534391DC1569C007AFE70 /* UpdateHolePrizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateHolePrizeViewController.swift; sourceTree = "<group>"; };
+		8235343B1DC16C11007AFE70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DDF1800807DCCD9CD5771F92 /* Pods-Golf_Leaderboard_v1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Golf_Leaderboard_v1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Golf_Leaderboard_v1/Pods-Golf_Leaderboard_v1.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +103,7 @@
 				8221EDE71DB6CCBF00239662 /* Assets.xcassets */,
 				8221EDE91DB6CCBF00239662 /* LaunchScreen.storyboard */,
 				8221EDEC1DB6CCBF00239662 /* Info.plist */,
-				8221EDF21DB6CFB700239662 /* GoogleService-Info.plist */,
+				8235343B1DC16C11007AFE70 /* GoogleService-Info.plist */,
 				8221EE531DBFEBA300239662 /* TitleViewController.swift */,
 				8221EE551DBFEBD900239662 /* CreateEventViewController.swift */,
 				8221EE571DBFEC1100239662 /* SearchEventViewController.swift */,
@@ -105,6 +111,9 @@
 				8221EE5B1DBFEC4200239662 /* ScoreEntryViewController.swift */,
 				8221EE5D1DBFF87200239662 /* AddHolePrizeViewController.swift */,
 				8221EE5F1DBFF89600239662 /* HolePrizesTableTableViewController.swift */,
+				823534351DC01304007AFE70 /* CourseListImporter.swift */,
+				823534371DC01314007AFE70 /* CourseList.swift */,
+				823534391DC1569C007AFE70 /* UpdateHolePrizeViewController.swift */,
 			);
 			path = Golf_Leaderboard_v1;
 			sourceTree = "<group>";
@@ -155,6 +164,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 625732G463;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -183,7 +197,7 @@
 			files = (
 				8221EDEB1DB6CCBF00239662 /* LaunchScreen.storyboard in Resources */,
 				8221EDE81DB6CCBF00239662 /* Assets.xcassets in Resources */,
-				8221EDF31DB6CFB700239662 /* GoogleService-Info.plist in Resources */,
+				8235343C1DC16C11007AFE70 /* GoogleService-Info.plist in Resources */,
 				75A751021DBFF2AC0036DE26 /* Plans.txt in Resources */,
 				8221EDE61DB6CCBF00239662 /* Main.storyboard in Resources */,
 			);
@@ -247,8 +261,11 @@
 				8221EDE31DB6CCBF00239662 /* ViewController.swift in Sources */,
 				8221EE5C1DBFEC4200239662 /* ScoreEntryViewController.swift in Sources */,
 				75A751041DC073870036DE26 /* Course.swift in Sources */,
+				8235343A1DC1569C007AFE70 /* UpdateHolePrizeViewController.swift in Sources */,
 				8221EE5E1DBFF87200239662 /* AddHolePrizeViewController.swift in Sources */,
+				823534381DC01314007AFE70 /* CourseList.swift in Sources */,
 				8221EDE11DB6CCBF00239662 /* AppDelegate.swift in Sources */,
+				823534361DC01304007AFE70 /* CourseListImporter.swift in Sources */,
 				8221EE581DBFEC1100239662 /* SearchEventViewController.swift in Sources */,
 				8221EE5A1DBFEC2800239662 /* JoinEventViewController.swift in Sources */,
 				8221EE601DBFF89600239662 /* HolePrizesTableTableViewController.swift in Sources */,

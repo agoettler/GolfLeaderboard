@@ -7,25 +7,24 @@
 //
 
 import UIKit
+import Firebase
+
 
 class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 {
+    var ref: FIRDatabaseReference!
 
     
+    @IBOutlet weak var playerNameTextField: UITextField!
 
     @IBOutlet weak var handicapPicker: UIPickerView!
-    
-    
-    var handicapData = ["1","2","3","4","5","6","7","8","9","10"]
-    
     @IBOutlet weak var startHolePicker: UIPickerView!
     
-    var holeData = ["1","2","3","4","5","6","7","8","9"]
+    var handicapData = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"]
+    var holeData = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        
         return 1
-
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -49,14 +48,12 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     
     
-    
-    
-    
     override func viewDidLoad()
     {
         
         super.viewDidLoad()
         print("JoinEventViewController: viewDidLoad")
+        ref = FIRDatabase.database().reference()
 
         /*
         // Do any additional setup after loading the view.

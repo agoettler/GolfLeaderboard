@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Firebase
+
 
 class SearchEventViewController: UIViewController {
+    var ref: FIRDatabaseReference!
 
+    @IBOutlet weak var eventNameTextField: UITextField!
+    
     @IBOutlet weak var roleSegmentedControl: UISegmentedControl!
     
     
@@ -20,6 +25,9 @@ class SearchEventViewController: UIViewController {
            // present(destVC, animated: true, completion: nil)
             performSegue(withIdentifier: "goToJoinEvent", sender: self)
         }
+        else{
+            performSegue(withIdentifier: "ShowSpectatorTabBar", sender: self)
+        }
         
     }
     
@@ -27,8 +35,9 @@ class SearchEventViewController: UIViewController {
     
     override func viewDidLoad()
     {
-        print("SearchEventViewController: viewDidLoad")
         super.viewDidLoad()
+        print("SearchEventViewController: viewDidLoad")
+        ref = FIRDatabase.database().reference()
 
         // Do any additional setup after loading the view.
     }
