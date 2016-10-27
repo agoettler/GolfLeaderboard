@@ -10,7 +10,8 @@ import Foundation
 
 public class Course
 {
-    
+    let name: String
+    let holes: [Hole]
 }
 
 
