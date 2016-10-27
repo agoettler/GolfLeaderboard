@@ -1,5 +1,5 @@
 //
-//  Event.swift
+//  Player.swift
 //  Golf_Leaderboard_v1
 //
 //  Created by Adam Fairchild Gary on 10/27/16.
@@ -9,11 +9,16 @@
 import Foundation
 import Firebase
 
-class Event
-{
-    let name: String
+
+class Player{
     
-    let owner: String
     
-    let course: Course
+    
+    
+    
+    
+    
+    
+    
+    
 }
