@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Stores and organizes data for a single golf course.
+/// Includes the name of the course and data for all holes.
 public class Course
 {
     let name: String
@@ -27,6 +29,16 @@ public class Course
             }
             
             return sum
+        }
+    }
+    
+    subscript(index: Int) -> Hole
+    {
+        get
+        {
+            assert((index >= 0 && index <= holes.count), "Index out of range")
+            
+            return holes[index]
         }
     }
     
