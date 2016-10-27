@@ -16,6 +16,7 @@ class CourseListImporter {
     var coursesArray: [Course] = [Course]()
     var aCourse: Course!
     var courseNames: [String]! = [String]()
+    var currentCourse: Course!
     // get the array of courses from database
     // for each course, create a course object and append it to courseListObject
     
@@ -65,6 +66,20 @@ class CourseListImporter {
         }
         print("\(coursesArray)")
     }
+    
+    
+    func getCurrentCourse(name: String) -> Course{
+        var i: Int = 0
+        while(i < coursesArray.count){
+            if(coursesArray[i].name == name){
+                return coursesArray[i]
+            }
+            i = i + 1;
+        }
+        
+    }
+    
+    
     
     func getCourses() -> [Course]{
         return self.coursesArray
