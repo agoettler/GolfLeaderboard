@@ -13,10 +13,11 @@ import Firebase
 class TitleViewController: UIViewController {
 
     var ref: FIRDatabaseReference!
-    static var courseListObject:CourseList!
+    static var courseListObject:[Course]!
     
     @IBAction func createEventPressed(_ sender: UIButton) {
         getCourses()
+        courseListObject = CourseListImporter.getCourses()
     
 
     }

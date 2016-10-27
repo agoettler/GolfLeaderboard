@@ -13,19 +13,20 @@ class CourseListImporter {
     
     var ref: FIRDatabaseReference = FIRDatabase.database().reference()
 
-    static var courseListObject:CourseList!
+    static var courseListObject:[Course]!
     
     // get the array of courses from database
     // for each course, create a course object and append it to courseListObject
-    func getCourses(){
+    func getCourses()->[Course]{
         self.ref.child("Courses").observe(FIRDataEventType.value, with: {(snapshot) in
-            let importedCourses = snapshot.value as? [String]
+            let importedCourses = snapshot.value as? NSDictionary
             
             print(importedCourses?[0])
             
         }){ (error) in
             print(error.localizedDescription)
         }
+        return importedCourses
         
     }
     
