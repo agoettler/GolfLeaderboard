@@ -9,13 +9,34 @@
 import Foundation
 //import Firebase
 
-class Event
+public class Event
 {
-    let name: String
+    public let name: String
     
-    let owner: String
+    public let owner: String
     
-    let course: Course
+    public let type: String
     
+    public let course: Course
     
+    public var players: [Player] = []
+    
+    public var holePrizes: [HolePrize] = []
+    
+    // TODO: Add leaderboard later
+    
+    public init(name: String, owner: String, type: String, course: Course)
+    {
+        self.name = name
+        self.owner = owner
+        self.type = type
+        self.course = course
+    }
+    
+    public convenience init(name: String, owner: String, type: String, course: Course, players: [Player], holePrizes: [HolePrize])
+    {
+        self.players = players
+        self.holePrizes = holePrizes
+        self.init(name: name, owner: owner, type: type, course: course)
+    }
 }
