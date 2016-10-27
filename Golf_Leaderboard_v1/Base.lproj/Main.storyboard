@@ -414,7 +414,7 @@
         <!--Hole Prizes-->
         <scene sceneID="rED-uX-gcl">
             <objects>
-                <viewController id="qlB-ql-9bV" customClass="HolePrizesTableTableViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HolePrizeView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qlB-ql-9bV" customClass="HolePrizesTableTableViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5dJ-xt-If1"/>
                         <viewControllerLayoutGuide type="bottom" id="phT-zZ-RWm"/>
@@ -452,10 +452,14 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="SQS-Ec-sfR" kind="show" id="wfw-5H-qAS"/>
+                                            <segue destination="SQS-Ec-sfR" kind="show" id="tZp-D0-Iin"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="qlB-ql-9bV" id="i2Q-Kd-1Za"/>
+                                    <outlet property="delegate" destination="qlB-ql-9bV" id="SXG-Md-TJc"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

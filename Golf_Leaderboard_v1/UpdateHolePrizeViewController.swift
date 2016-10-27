@@ -16,6 +16,7 @@ class UpdateHolePrizeViewController: UIViewController {
     @IBAction func claimHolePrizePressed(_ sender: UIButton) {
         
         // will update the current leader with the name of the player who pressed it
+        dismiss(animated: true, completion: nil)
     }
     
     
