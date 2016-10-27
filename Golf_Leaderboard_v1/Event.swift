@@ -9,17 +9,11 @@
 import Foundation
 import Firebase
 
-class Event{
+class Event
+{
+    let name: String
     
-    var ref: FIRDatabaseReference = FIRDatabase.database().reference()
+    let owner: String
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    let course: Course
 }
