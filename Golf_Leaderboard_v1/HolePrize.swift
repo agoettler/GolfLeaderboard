@@ -16,7 +16,7 @@ class HolePrize{
     let prize: String!
     let currentWinner: Player!
     
-    public init(String: incomingPrize, Player:incomingWinner ){
+    public init(incomingPrize:String, incomingWinner:Player ){
         prize = incomingPrize
         currentWinner = incomingWinner
         
