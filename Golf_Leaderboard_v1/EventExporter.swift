@@ -14,10 +14,19 @@ class EventExporter{
     var ref: FIRDatabaseReference = FIRDatabase.database().reference()
     
     
-    public init(name: String, course: String, gameType: String, /*prizes: HolePrize*/){
+    public init(currentEvent: Event){
         
-            
+       // let name: String =
         
+        
+       // let key = self.ref.child("Events/\(name)").key
+        //let updates = ["Course": course, "GameType": gameType]
+        
+       // ref.updateChildValues([key : updates])
+
+        // let key2 = self.ref.child("Events/\(name)/HolePrizes").key
+        
+        //ref.updateChildValues(key : )
         
         
         
