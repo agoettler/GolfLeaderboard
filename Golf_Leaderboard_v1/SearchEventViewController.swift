@@ -11,6 +11,7 @@ import Firebase
 
 
 class SearchEventViewController: UIViewController {
+    var ref: FIRDatabaseReference!
 
     @IBOutlet weak var eventNameTextField: UITextField!
     
@@ -36,6 +37,7 @@ class SearchEventViewController: UIViewController {
     {
         super.viewDidLoad()
         print("SearchEventViewController: viewDidLoad")
+        ref = FIRDatabase.database().reference()
 
         // Do any additional setup after loading the view.
     }

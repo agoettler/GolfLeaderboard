@@ -11,6 +11,7 @@ import Firebase
 
 
 class AddHolePrizeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    var ref: FIRDatabaseReference!
 
     @IBOutlet weak var holePrizePicker: UIPickerView!
     
@@ -70,6 +71,7 @@ class AddHolePrizeViewController: UIViewController, UIPickerViewDelegate, UIPick
     {
         super.viewDidLoad()
         print("AddHolePrizeViewController: viewDidLoad")
+        ref = FIRDatabase.database().reference()
 
         // Do any additional setup after loading the view.
     }

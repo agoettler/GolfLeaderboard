@@ -14,12 +14,14 @@ class HolePrizesTableTableViewController: UITableViewController {
 
     
 
+    var ref: FIRDatabaseReference!
 
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         print("HolePrizesTableViewController: viewDidLoad")
+        ref = FIRDatabase.database().reference()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

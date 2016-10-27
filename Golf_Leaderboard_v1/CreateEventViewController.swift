@@ -11,6 +11,7 @@ import Firebase
 
 
 class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    var ref: FIRDatabaseReference!
 
     var availableCourses:CourseList?
     
@@ -65,6 +66,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         print("CreateEventViewController: viewDidLoad")
+        ref = FIRDatabase.database().reference()
 
         /*
         if let courses = CourseImporter.getCourses(){

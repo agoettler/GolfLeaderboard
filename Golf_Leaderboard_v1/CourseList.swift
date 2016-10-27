@@ -11,8 +11,8 @@ import Firebase
 
 
 class CourseList {
-    
-    var names:[Int]!//Course]
+    var ref: FIRDatabaseReference = FIRDatabase.database().reference()
+    var names:[Course]!
     
     
     func append(){

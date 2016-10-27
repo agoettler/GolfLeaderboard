@@ -11,16 +11,17 @@ import Firebase
 
 class CourseListImporter {
     
-    var ref: FIRDatabaseReference!
+    var ref: FIRDatabaseReference = FIRDatabase.database().reference()
+
     static var courseListObject:CourseList!
     
     // get the array of courses from database
     // for each course, create a course object and append it to courseListObject
     func getCourses(){
         self.ref.child("Courses").observe(FIRDataEventType.value, with: {(snapshot) in
-            let newVal = snapshot.value as? [String]
+            let importedCourses = snapshot.value as? [String]
             
-            print(newVal?[0])
+            print(importedCourses?[0])
             
         }){ (error) in
             print(error.localizedDescription)

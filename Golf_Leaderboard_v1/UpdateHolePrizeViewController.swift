@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class UpdateHolePrizeViewController: UIViewController {
-
+    
+    //var ref: FIRDatabaseReference!
     
     @IBAction func claimHolePrizePressed(_ sender: UIButton) {
         
@@ -21,7 +23,7 @@ class UpdateHolePrizeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //ref = FIRDatabase.database().reference()
         // Do any additional setup after loading the view.
     }
 

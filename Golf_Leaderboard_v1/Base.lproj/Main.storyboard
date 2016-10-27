@@ -39,6 +39,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="createEventPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C9E-bL-jbB"/>
                                     <segue destination="4pV-TY-UcC" kind="show" id="oRg-X6-ip9"/>
                                 </connections>
                             </button>
@@ -772,6 +773,7 @@
                 <tabBarController storyboardIdentifier="SpectatorTabBarVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fkq-zi-iNi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="v5h-Qa-9Pw">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -786,8 +788,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="N9h-CN-NJT"/>
-        <segue reference="GV0-Cv-MaZ"/>
         <segue reference="Zio-ch-z5g"/>
+        <segue reference="Jkp-Wt-CD6"/>
+        <segue reference="GV0-Cv-MaZ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,6 +12,7 @@ import Firebase
 
 class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 {
+    var ref: FIRDatabaseReference!
 
     
     @IBOutlet weak var playerNameTextField: UITextField!
@@ -52,6 +53,7 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         
         super.viewDidLoad()
         print("JoinEventViewController: viewDidLoad")
+        ref = FIRDatabase.database().reference()
 
         /*
         // Do any additional setup after loading the view.

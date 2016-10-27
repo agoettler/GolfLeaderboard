@@ -11,7 +11,7 @@ import Firebase
 
 
 class ScoreEntryViewController: UIViewController {
-
+    var ref: FIRDatabaseReference!
     
     @IBOutlet weak var holeLabel: UILabel!
     @IBOutlet weak var yardageLabel: UILabel!
@@ -37,6 +37,8 @@ class ScoreEntryViewController: UIViewController {
     {
         super.viewDidLoad()
         print("ScoreEntryViewController: viewDidLoad")
+        ref = FIRDatabase.database().reference()
+
         scoreStepper.stepValue = 1
         scoreStepper.minimumValue = 1
         scoreStepper.maximumValue = 15
