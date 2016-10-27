@@ -16,11 +16,7 @@ class TitleViewController: UIViewController {
     var courseListImporterObject: CourseListImporter!
     var ourCourses: [Course]!
     
-    @IBAction func createEventPressed(_ sender: UIButton) {
-        //getCourses()
-    
 
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

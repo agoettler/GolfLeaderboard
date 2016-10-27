@@ -17,6 +17,7 @@ class SearchEventViewController: UIViewController {
     
     @IBOutlet weak var roleSegmentedControl: UISegmentedControl!
     
+    var eventName:String = ""
     
     @IBAction func FindButtonPressed(_ sender: UIButton) {
         
@@ -38,7 +39,7 @@ class SearchEventViewController: UIViewController {
         super.viewDidLoad()
         print("SearchEventViewController: viewDidLoad")
         ref = FIRDatabase.database().reference()
-
+        eventNameTextField.text = eventName
         // Do any additional setup after loading the view.
     }
 

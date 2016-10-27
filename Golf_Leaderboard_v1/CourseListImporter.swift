@@ -53,9 +53,9 @@ class CourseListImporter {
                 self.aCourse = Course.init(name: self.courseNames[i], yardages: yardageArray, pars: parArray)
                 self.coursesArray.append(self.aCourse)
                 
-                print()
-                print("A Course: \(self.aCourse.name)")
-                print()
+                //print()
+                //print("A Course: \(self.aCourse.name)")
+                //print()
                 
                 i=i+1
             }
@@ -67,21 +67,11 @@ class CourseListImporter {
     }
     
     func getCourses() -> [Course]{
-        print()
-        print()
-        print("\(courseNames)")
-        print()
-        print()
         return self.coursesArray
     }
     
 
     func getCourseNames() -> [String]{
-        print()
-        print()
-        print("\(courseNames)")
-        print()
-        print()
         return self.courseNames
     }
     

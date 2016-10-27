@@ -12,20 +12,22 @@ Proposed design changes, following discussion with Nick Wade:
 *	It should be simple to implement authentication using a service like Google or Facebook; with Facebook, publshing the leaderboard to a user's Facebook wall could be a fairly simple feature to add.
 
 Game Creation Process
-1.	When a user selects the option to create a new event on their phone, a CourseListImporter object and a Game object are instantiated. At this point, the user becomes the "Event Owner".
+1.	When a user selects the option to create a new event on their phone, a CourseListImporter object and a Event object are instantiated. At this point, the user becomes the "Event Owner".
 2.	The CourseListImporter object retrieves a list of available courses from the database and returns a CourseList object to the app on the user's phone. The CourseListImporter object can then disposed.
+    - Done
 3.	The CourseList object is used to populate the CreateEventViewController with the available courses.
-4.	As the user makes selections on the event creation screen, the properties of the Game object are modified accordingly.
-5.	When the user completes the event creation process, a GameExporter object is instantiated.
-6.	The GameExporter object uploads the data from the Game object to the database. When this is complete, the GameExporter object can then be disposed.
+    - Done
+4.	As the user makes selections on the event creation screen, the properties of the Event object are modified accordingly.
+5.	When the user completes the event creation process, a EventExporter object is instantiated.
+6.	The EventExporter object uploads the data from the Event object to the database. When this is complete, the GameExporter object can then be disposed.
 7.	The Event Owner then begins the Player Setup Process.
 
 Game Joining Process
-1.	When a user selects the option to find an existing game, a GameImporter object is instantiated on their phone. At this point, the user becomes a "Player".
-2.	The Player enters the name of a game they wish to join in the text box on the SearchEventViewController.
-3.	The GameImporter object searches the list of available games on the database to find a match for the name entered by the Player.
-4.	The user is informed if a match is found or not. If no match is found, or if the user chooses to search for a different game name, return to step 2.
-4.	If a match is found and the user chooses to join the game, the GameImporter object retrieves the data for the appropriate game and returns a Game object to the Player's phone. The GameImporter object can then be disposed.
+1.	When a user selects the option to find an existing event, a EventImporter object is instantiated on their phone. At this point, the user becomes a "Player".
+2.	The Player enters the name of a event they wish to join in the text box on the SearchEventViewController.
+3.	The EventImporter object searches the list of available events on the database to find a match for the name entered by the Player.
+4.	The user is informed if a match is found or not. If no match is found, or if the user chooses to search for a different event name, return to step 2.
+4.	If a match is found and the user chooses to join the event, the GameImporter object retrieves the data for the appropriate event and returns a Event object to the Player's phone. The EventImporter object can then be disposed.
 5.	The Player then begins the Player Setup Process
 
 Player Setup Process - Incomplete

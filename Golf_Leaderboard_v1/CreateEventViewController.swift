@@ -13,20 +13,44 @@ import Firebase
 class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     var ref: FIRDatabaseReference!
     var availableCourses:[Course]?
+    var eventName:String!
+    var exisitingNames:[String] = [String]()
+    
     
     @IBOutlet weak var eventNameTextField: UITextField!
-    
+
     @IBOutlet weak var selectCoursePicker: UIPickerView!
     @IBOutlet weak var gameTypePicker: UIPickerView!
     
     var courseOptions: [String]!
-    
     var gameTypes = ["Stroke Play","Best Ball","Scramble","Alternate Shot"]
     
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    @IBAction func createEventButtonPressed(_ sender: UIButton) {
+        
+        eventName = eventNameTextField.text
+        
+        
+        if(exisitingNames.contains(eventName)){
+            eventNameTextField.text = ""
+            errorLabel.text = "Error, Name Taken"
+        }
+        else{
+            errorLabel.text = ""
+            performSegue(withIdentifier: "goToEventSearch", sender: self)
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        
         return 1
-        
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -55,7 +79,14 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
         // Do any additional setup after loading the view.
         print("CreateEventViewController: viewDidLoad")
         ref = FIRDatabase.database().reference()
-
+        self.ref.child("Events").observe(FIRDataEventType.value, with: {(snapshot) in
+            let existingEventsDictionary = snapshot.value as? NSDictionary
+            self.exisitingNames = existingEventsDictionary?.allKeys as! [String]
+            
+            
+        }){ (error) in
+            print(error.localizedDescription)
+        }
         /*
         if let courses = CourseImporter.getCourses(){
             availableCourses = courses
@@ -80,6 +111,10 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         print("CreateEventViewController: prepare")
+        if(segue.identifier == "goToEventSearch"){
+            let destVC:SearchEventViewController = segue.destination as! SearchEventViewController
+            destVC.eventName = eventName
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
