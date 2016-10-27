@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1933E8901DC28FCA00F03C2C /* HolePrize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933E88F1DC28FCA00F03C2C /* HolePrize.swift */; };
 		1D6A2B93958596DFAE8C4AB0 /* Pods_Golf_Leaderboard_v1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7439C3635AEDB28DCBBADBF6 /* Pods_Golf_Leaderboard_v1.framework */; };
 		75A751021DBFF2AC0036DE26 /* Plans.txt in Resources */ = {isa = PBXBuildFile; fileRef = 75A751011DBFF2AC0036DE26 /* Plans.txt */; };
 		75A751041DC073870036DE26 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A751031DC073870036DE26 /* Course.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		0D367B910C9FF4D44BD5A769 /* Pods-Golf_Leaderboard_v1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Golf_Leaderboard_v1.release.xcconfig"; path = "Pods/Target Support Files/Pods-Golf_Leaderboard_v1/Pods-Golf_Leaderboard_v1.release.xcconfig"; sourceTree = "<group>"; };
+		1933E88F1DC28FCA00F03C2C /* HolePrize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolePrize.swift; sourceTree = "<group>"; };
 		7439C3635AEDB28DCBBADBF6 /* Pods_Golf_Leaderboard_v1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Golf_Leaderboard_v1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A751011DBFF2AC0036DE26 /* Plans.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Plans.txt; sourceTree = "<group>"; };
 		75A751031DC073870036DE26 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				8221EDE41DB6CCBF00239662 /* Main.storyboard */,
 				75A751011DBFF2AC0036DE26 /* Plans.txt */,
 				75A751031DC073870036DE26 /* Course.swift */,
+				1933E88F1DC28FCA00F03C2C /* HolePrize.swift */,
 				823534351DC01304007AFE70 /* CourseListImporter.swift */,
 				822B7DD71DC270B50075E3A8 /* Event.swift */,
 				822B7DD51DC26FA30075E3A8 /* EventImporter.swift */,
@@ -276,6 +279,7 @@
 				8221EE601DBFF89600239662 /* HolePrizesTableTableViewController.swift in Sources */,
 				822B7DDA1DC270E50075E3A8 /* EventExporter.swift in Sources */,
 				8221EE541DBFEBA300239662 /* TitleViewController.swift in Sources */,
+				1933E8901DC28FCA00F03C2C /* HolePrize.swift in Sources */,
 				8221EE561DBFEBD900239662 /* CreateEventViewController.swift in Sources */,
 				822B7DD81DC270B50075E3A8 /* Event.swift in Sources */,
 				822B7DD61DC26FA30075E3A8 /* EventImporter.swift in Sources */,
