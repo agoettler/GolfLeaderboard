@@ -12,12 +12,17 @@ import Firebase
 
 class AddHolePrizeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     var ref: FIRDatabaseReference!
-
+    var holePrizeObject:HolePrize!
     @IBOutlet weak var holePrizePicker: UIPickerView!
     
     
     @IBAction func SavePressed(_ sender: UIBarButtonItem) {
         print("HERE")
+        var prizeHoleNumber = holePrizePicker.selectedRow(inComponent: 0)
+        var prizeType = holePrizePicker.selectedRow(inComponent: 1)
+        var completePrize = "Hole " + prizeHoleNumber + " " + prizeType
+        holePrizeObject = HolePrize(completePrize, "Nil")
+
         
         dismiss(animated: true, completion: nil)
 
@@ -72,7 +77,6 @@ class AddHolePrizeViewController: UIViewController, UIPickerViewDelegate, UIPick
         super.viewDidLoad()
         print("AddHolePrizeViewController: viewDidLoad")
         ref = FIRDatabase.database().reference()
-
         // Do any additional setup after loading the view.
     }
 
