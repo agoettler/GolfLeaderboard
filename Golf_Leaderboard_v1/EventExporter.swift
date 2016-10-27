@@ -16,11 +16,13 @@ class EventExporter{
     
     public init(currentEvent: Event){
         
-       // let name: String =
+        let name: String = currentEvent.name
+        let owner: String = currentEvent.owner
+        let course: String = currentEvent.course.name
+        let gameType: String = currentEvent.type
         
-        
-       // let key = self.ref.child("Events/\(name)").key
-        //let updates = ["Course": course, "GameType": gameType]
+        let key = self.ref.child("Events/\(name)").key
+        let updates = ["Course": course, "GameType": gameType, "Owner" : owner ]
         
        // ref.updateChildValues([key : updates])
 

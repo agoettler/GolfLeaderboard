@@ -9,12 +9,12 @@
 import Foundation
 import Firebase
 
-class HolePrize{
+public class HolePrize{
     
     var ref: FIRDatabaseReference = FIRDatabase.database().reference()
     
     let prize: String!
-    let currentWinner: Player!
+    var currentWinner: Player!
     
     public init(incomingPrize:String, incomingWinner:Player ){
         prize = incomingPrize

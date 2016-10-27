@@ -108,11 +108,12 @@
 				8221EDE41DB6CCBF00239662 /* Main.storyboard */,
 				75A751011DBFF2AC0036DE26 /* Plans.txt */,
 				75A751031DC073870036DE26 /* Course.swift */,
-				1933E88F1DC28FCA00F03C2C /* HolePrize.swift */,
 				823534351DC01304007AFE70 /* CourseListImporter.swift */,
 				822B7DD71DC270B50075E3A8 /* Event.swift */,
 				822B7DD51DC26FA30075E3A8 /* EventImporter.swift */,
 				822B7DD91DC270E50075E3A8 /* EventExporter.swift */,
+				1933E88F1DC28FCA00F03C2C /* HolePrize.swift */,
+				822B7DDB1DC295830075E3A8 /* Player.swift */,
 				8221EDE71DB6CCBF00239662 /* Assets.xcassets */,
 				8221EDE91DB6CCBF00239662 /* LaunchScreen.storyboard */,
 				8221EDEC1DB6CCBF00239662 /* Info.plist */,
@@ -125,7 +126,6 @@
 				8221EE5D1DBFF87200239662 /* AddHolePrizeViewController.swift */,
 				8221EE5F1DBFF89600239662 /* HolePrizesTableTableViewController.swift */,
 				823534391DC1569C007AFE70 /* UpdateHolePrizeViewController.swift */,
-				822B7DDB1DC295830075E3A8 /* Player.swift */,
 			);
 			path = Golf_Leaderboard_v1;
 			sourceTree = "<group>";

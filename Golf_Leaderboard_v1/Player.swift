@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 
-class Player{
+public class Player{
     
     
     
