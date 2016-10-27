@@ -13,7 +13,7 @@ import Firebase
 class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     var ref: FIRDatabaseReference!
 
-    var availableCourses:CourseList?
+    var availableCourses:[Course]?
     
     @IBOutlet weak var eventNameTextField: UITextField!
     
