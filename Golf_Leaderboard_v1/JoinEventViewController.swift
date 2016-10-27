@@ -20,8 +20,22 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var handicapPicker: UIPickerView!
     @IBOutlet weak var startHolePicker: UIPickerView!
     
-    var handicapData = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"]
-    var holeData = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"]
+    let handicapData = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"]
+    let holeData = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"]
+    
+    var player:Player!
+    
+    @IBAction func joinButtonPressed(_ sender: UIButton) {
+        let name = playerNameTextField.text
+        let handicap = handicapPicker.selectedRow(inComponent: 0)
+        let startHole = startHolePicker.selectedRow(inComponent: 0)
+        
+        player = Player(name: name!, handicap: handicap, startHole: startHole)
+        
+    }
+    
+    
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
