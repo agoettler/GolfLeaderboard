@@ -35,8 +35,8 @@ public class Event
     
     public convenience init(name: String, owner: String, type: String, course: Course, players: [Player], holePrizes: [HolePrize])
     {
+        self.init(name: name, owner: owner, type: type, course: course)
         self.players = players
         self.holePrizes = holePrizes
-        self.init(name: name, owner: owner, type: type, course: course)
     }
 }
