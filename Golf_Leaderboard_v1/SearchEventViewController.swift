@@ -26,7 +26,7 @@ class SearchEventViewController: UIViewController {
             performSegue(withIdentifier: "goToJoinEvent", sender: self)
         }
         else{
-            performSegue(withIdentifier: "ShowSpectatorTabBar", sender: self)
+            performSegue(withIdentifier: "goToSpectatorTabBar", sender: self)
         }
         
     }

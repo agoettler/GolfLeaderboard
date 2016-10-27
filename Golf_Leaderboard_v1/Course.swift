@@ -74,7 +74,7 @@ public class Course
     ///     - numbers: The array of hole numbers of the course.
     ///     - yardages: The array of yardages of the course.
     ///     - pars: The array of par values of the course.
-    public convenience init(name: String, numbers: [Int], yardages: [Double], pars: [Int])
+    public convenience init(name: String, numbers: [Int], yardages: [Int], pars: [Int])
     {
         if numbers.count == yardages.count && yardages.count == pars.count
         {
@@ -103,7 +103,7 @@ public class Course
     ///     - name: The name of the course.
     ///     - yardages: The array of yardages of the course.
     ///     - pars: The array of par values of the course.
-    public convenience init(name: String, yardages: [Double], pars: [Int])
+    public convenience init(name: String, yardages: [Int], pars: [Int])
     {
         if yardages.count == pars.count
         {
@@ -140,7 +140,7 @@ public struct Hole
 {
     public let number: Int
     
-    public let yardage: Double
+    public let yardage: Int
     
     public let par: Int
     
@@ -149,7 +149,7 @@ public struct Hole
     ///     - number: The number of the hole in the course.
     ///     - yardage: The distance from the tee to the hole.
     ///     - par: The ideal number of strokes needed to reach the hole.
-    public init(_ number: Int, _ yardage: Double, _ par: Int)
+    public init(_ number: Int, _ yardage: Int, _ par: Int)
     {
         self.number = number
         self.yardage = yardage

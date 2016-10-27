@@ -13,33 +13,22 @@ import Firebase
 class TitleViewController: UIViewController {
 
     var ref: FIRDatabaseReference!
-    static var courseListObject:[Course]!
+    var courseListImporterObject: CourseListImporter!
+    var ourCourses: [Course]!
     
     @IBAction func createEventPressed(_ sender: UIButton) {
-        getCourses()
-        courseListObject = CourseListImporter.getCourses()
+        //getCourses()
     
 
     }
-    // get the array of courses from database
-    // for each course, create a course object and append it to courseListObject
-    func getCourses(){
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        
-        self.ref.child("Courses").observe(FIRDataEventType.value, with: {(snapshot) in
-            let importedCourses = snapshot.value as? NSDictionary
-            print()
-            print()
-            print("\(importedCourses)")
-            
-            print()
-            print()
-            
-        }){ (error) in
-            print(error.localizedDescription)
+        if(segue.identifier == "goToCreateEventVC"){
+            let destVC: CreateEventViewController = segue.destination as! CreateEventViewController
+            destVC.availableCourses = ourCourses
+            destVC.courseOptions = courseListImporterObject.getCourseNames()
         }
-
-
     }
     
     
@@ -48,6 +37,8 @@ class TitleViewController: UIViewController {
         super.viewDidLoad()
         print("TitleViewController: viewDidLoad")
         ref = FIRDatabase.database().reference()
+        courseListImporterObject = CourseListImporter()
+        ourCourses = courseListImporterObject.getCourses()
 
         // Do any additional setup after loading the view.
     }

@@ -12,7 +12,6 @@ import Firebase
 
 class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     var ref: FIRDatabaseReference!
-
     var availableCourses:[Course]?
     
     @IBOutlet weak var eventNameTextField: UITextField!
@@ -20,7 +19,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var selectCoursePicker: UIPickerView!
     @IBOutlet weak var gameTypePicker: UIPickerView!
     
-    var courseOptions = ["Brown Deer"]
+    var courseOptions: [String]!
     
     var gameTypes = ["Stroke Play","Best Ball","Scramble","Alternate Shot"]
     
@@ -48,17 +47,6 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
             return courseOptions[row]
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     override func viewDidLoad()
