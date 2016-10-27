@@ -14,6 +14,17 @@ class EventExporter{
     var ref: FIRDatabaseReference = FIRDatabase.database().reference()
     
     
+    public init(name: String, course: String, gameType: String, /*prizes: HolePrize*/){
+        
+            
+        
+        
+        
+        
+        
+    }
+    
+    
     
     
 }

@@ -34,7 +34,7 @@ class ScoreEntryViewController: UIViewController {
         super.viewDidLoad()
         print("ScoreEntryViewController: viewDidLoad")
         ref = FIRDatabase.database().reference()
-
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         scoreStepper.stepValue = 1
         scoreStepper.minimumValue = 1
         scoreStepper.maximumValue = 15

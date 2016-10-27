@@ -21,6 +21,7 @@ Game Creation Process
 5.	When the user completes the event creation process, a EventExporter object is instantiated.
 6.	The EventExporter object uploads the data from the Event object to the database. When this is complete, the GameExporter object can then be disposed.
 7.	The Event Owner then begins the Player Setup Process.
+    -Done
 
 Game Joining Process
 1.	When a user selects the option to find an existing event, a EventImporter object is instantiated on their phone. At this point, the user becomes a "Player".
