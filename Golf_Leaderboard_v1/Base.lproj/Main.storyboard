@@ -111,10 +111,18 @@
                                     <segment title="Spectator"/>
                                 </segments>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdy-EL-AQ9">
+                                <frame key="frameInset" minX="135" minY="157" width="224" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.041046944600000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="errorLabel" destination="kdy-EL-AQ9" id="Kkb-oC-Ixn"/>
                         <outlet property="eventNameTextField" destination="5Al-io-U07" id="ZGA-HA-Q54"/>
                         <outlet property="roleSegmentedControl" destination="wW4-n6-619" id="BbT-fc-2NS"/>
                         <segue destination="BOs-vy-7l4" kind="show" identifier="goToJoinEvent" id="l2N-tt-cgb"/>
@@ -123,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1q-xH-ICD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3156" y="-968"/>
+            <point key="canvasLocation" x="3156" y="-968.36581709145435"/>
         </scene>
         <!--Join Event View Controller-->
         <scene sceneID="fkg-dc-ASj">

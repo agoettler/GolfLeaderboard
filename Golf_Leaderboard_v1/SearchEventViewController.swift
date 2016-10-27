@@ -11,25 +11,34 @@ import Firebase
 
 
 class SearchEventViewController: UIViewController {
-    var ref: FIRDatabaseReference!
 
     @IBOutlet weak var eventNameTextField: UITextField!
-    
     @IBOutlet weak var roleSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var errorLabel: UILabel!
     
     var eventName:String = ""
+    var eventImporterObject: EventImporter!
+    var exisitingNames:[String] = [String]()
+    
     
     @IBAction func FindButtonPressed(_ sender: UIButton) {
+        eventName = eventNameTextField.text!
+        exisitingNames = eventImporterObject.getExisitingEventNames()
         
-        if(roleSegmentedControl.selectedSegmentIndex == 0){
-            //let destVC: UIViewController = storyboard!.instantiateViewController(withIdentifier: "JoinEventVC")
-           // present(destVC, animated: true, completion: nil)
-            performSegue(withIdentifier: "goToJoinEvent", sender: self)
+        if(exisitingNames.contains(eventName)){
+            if(roleSegmentedControl.selectedSegmentIndex == 0){
+                //let destVC: UIViewController = storyboard!.instantiateViewController(withIdentifier: "JoinEventVC")
+                // present(destVC, animated: true, completion: nil)
+                performSegue(withIdentifier: "goToJoinEvent", sender: self)
+            }
+            else{
+                performSegue(withIdentifier: "goToSpectatorTabBar", sender: self)
+            }
         }
         else{
-            performSegue(withIdentifier: "goToSpectatorTabBar", sender: self)
+            eventNameTextField.text = ""
+            errorLabel.text = "Error: Event Does Not Exist"
         }
-        
     }
     
     
@@ -38,8 +47,8 @@ class SearchEventViewController: UIViewController {
     {
         super.viewDidLoad()
         print("SearchEventViewController: viewDidLoad")
-        ref = FIRDatabase.database().reference()
         eventNameTextField.text = eventName
+        eventImporterObject = EventImporter()
         // Do any additional setup after loading the view.
     }
 

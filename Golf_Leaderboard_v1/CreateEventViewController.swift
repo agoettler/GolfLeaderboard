@@ -11,9 +11,11 @@ import Firebase
 
 
 class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    var ref: FIRDatabaseReference!
+
     var availableCourses:[Course]?
     var eventName:String!
+    
+    var eventImporterObject: EventImporter!
     var exisitingNames:[String] = [String]()
     
     
@@ -30,7 +32,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBAction func createEventButtonPressed(_ sender: UIButton) {
         
         eventName = eventNameTextField.text
-        
+        exisitingNames = eventImporterObject.getExisitingEventNames()
         
         if(exisitingNames.contains(eventName)){
             eventNameTextField.text = ""
@@ -78,15 +80,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         print("CreateEventViewController: viewDidLoad")
-        ref = FIRDatabase.database().reference()
-        self.ref.child("Events").observe(FIRDataEventType.value, with: {(snapshot) in
-            let existingEventsDictionary = snapshot.value as? NSDictionary
-            self.exisitingNames = existingEventsDictionary?.allKeys as! [String]
-            
-            
-        }){ (error) in
-            print(error.localizedDescription)
-        }
+        eventImporterObject = EventImporter()
         /*
         if let courses = CourseImporter.getCourses(){
             availableCourses = courses

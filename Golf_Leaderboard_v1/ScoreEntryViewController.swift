@@ -21,17 +21,13 @@ class ScoreEntryViewController: UIViewController {
     @IBOutlet weak var scoreStepper: UIStepper!
     
     
-    
     @IBAction func scoreStepperPressed(_ sender: UIStepper) {
         let currentVal:Int = Int(scoreStepper.value)
         scoreLabel.text = "\(currentVal)"
         
     }
     
-    
-    
-    
-    
+
     
     override func viewDidLoad()
     {
