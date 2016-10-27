@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Firebase
+//import Firebase
 
 class Event
 {
@@ -16,4 +16,6 @@ class Event
     let owner: String
     
     let course: Course
+    
+    
 }
