@@ -13,7 +13,7 @@ class CourseListImporter {
     
     var ref: FIRDatabaseReference = FIRDatabase.database().reference()
     
-    var coursesArray: [Course] = [Course]()
+    public static var coursesArray: [Course] = [Course]()
     var aCourse: Course!
     var courseNames: [String]! = [String]()
     var currentCourse: Course!
