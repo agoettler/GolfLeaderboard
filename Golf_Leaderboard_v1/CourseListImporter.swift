@@ -52,7 +52,7 @@ class CourseListImporter {
                 }
                 
                 self.aCourse = Course.init(name: self.courseNames[i], yardages: yardageArray, pars: parArray)
-                self.coursesArray.append(self.aCourse)
+                CourseListImporter.coursesArray.append(self.aCourse)
                 
                 //print()
                 //print("A Course: \(self.aCourse.name)")
@@ -64,25 +64,25 @@ class CourseListImporter {
         }){ (error) in
             print(error.localizedDescription)
         }
-        print("\(coursesArray)")
+        print("\(CourseListImporter.coursesArray)")
     }
     
     
-    func getCurrentCourse(name: String) -> Course{
+    public static func getCurrentCourse(name: String) -> Course{
         var i: Int = 0
-        while(i < coursesArray.count){
-            if(coursesArray[i].name == name){
-                return coursesArray[i]
+        while(i < CourseListImporter.coursesArray.count){
+            if(CourseListImporter.coursesArray[i].name == name){
+                return CourseListImporter.coursesArray[i]
             }
             i = i + 1;
         }
-        
+        return CourseListImporter.coursesArray[0]
     }
     
     
     
-    func getCourses() -> [Course]{
-        return self.coursesArray
+    public static func getCourses() -> [Course]{
+        return CourseListImporter.coursesArray
     }
     
 

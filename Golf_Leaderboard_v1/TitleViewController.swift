@@ -34,7 +34,7 @@ class TitleViewController: UIViewController {
         print("TitleViewController: viewDidLoad")
         ref = FIRDatabase.database().reference()
         courseListImporterObject = CourseListImporter()
-        ourCourses = courseListImporterObject.getCourses()
+        ourCourses = CourseListImporter.getCourses()
 
         // Do any additional setup after loading the view.
     }

@@ -24,42 +24,65 @@ class EventImporter{
 
             var i: Int = 0
             while(i<self.exisitingNames.count){
-                let eventData:NSDictionary = self.exisitingEventDictionary.value(forKey: self.exisitingNames[i]) as! NSDictionary
+                let eventData = self.exisitingEventDictionary.value(forKey: self.exisitingNames[i]) as! NSDictionary
                 
                 let name = self.exisitingNames[i]
-                let owner: String = eventData.value(forKey: "Owner") as! String
+                let owner = eventData.value(forKey: "Owner") as! NSDictionary
                 let type: String = eventData.value(forKey: "GameType") as! String
                 let courseString: String = eventData.value(forKey: "Course") as! String
-                let cLI : CourseListImporter = CourseListImporter()
-                let course:Course = cLI.getCurrentCourse(name: courseString)
+                //let cLI : CourseListImporter = CourseListImporter()
+                let course:Course = CourseListImporter.getCurrentCourse(name: courseString)
                 let playerInDict:NSDictionary = eventData.value(forKey: "Players") as! NSDictionary
                 var playerArray: [Player] = [Player]()
                 var j: Int = 0
+                
+                let pNames: [String] = playerInDict.allKeys as! [String]
+                
+                
+                print("Name \(name)")
+                print("Owner \(owner)")
+                print("gametype \(type)")
+                print("courseString \(name)")
+                print("Course \(course)")
+                print("pNames \(pNames)")
+                print("Name \(name)")
+                print("Name \(name)")
+                print("Name \(name)")
+
+
+                
+                /*
                 while(j<playerInDict.count){
-                    let newPlayer: Player = Player(name: playerInDict.value(forKey: "Name") as! String, handicap: playerInDict.value(forKey: "Handicap") as! Int, startHole: playerInDict.value(forKey: "StartHole") as! Int)
+                    
+                    let pValue: NSDictionary = playerInDict.value(forKey: pNames[i]) as! NSDictionary
+
+                    let newPlayer: Player = Player(name: pNames[i], handicap: pValue.value(forKey: "Handicap") as! Int, startHole: pValue.value(forKey: "StartHole") as! Int)
                     
                     playerArray.append(newPlayer)
                     
                     j = j + 1
                 }
-                
-                let holePrizeInDict:NSDictionary = eventData.value(forKey: "HolePrizes") as! NSDictionary
+                */
+                //let holePrizeInDict:NSDictionary = eventData.value(forKey: "HolePrizes") as! NSDictionary
                 var holeArray: [HolePrize] = [HolePrize]()
                 j = 0
+                /*
                 while(j<holePrizeInDict.count){
+                    
                     let newPrize: HolePrize = HolePrize(incomingPrize: holePrizeInDict.value(forKey: "Prize") as! String, incomingWinner: holePrizeInDict.value(forKey: "Winner") as! String)
                     playerArray.append(newPlayer)
                     
                     j = j + 1
                 }
+                */
                 
-                let nextEvent: Event = Event(name: name, owner: owner as! String, type: type as! String, course: course, players: playerArray, holePrizes: <#T##[HolePrize]#>)
-                self.exisitingEvents.append(nextEvent)
+               // let nextEvent: Event = Event(name: name, owner: owner as! String, type: type as! String, course: course, players: playerArray, holePrizes: holeArray)
+                //self.exisitingEvents.append(nextEvent)
                 
                 
                 i = i + 1
             }
-            
+ 
             
         }){ (error) in
             print(error.localizedDescription)

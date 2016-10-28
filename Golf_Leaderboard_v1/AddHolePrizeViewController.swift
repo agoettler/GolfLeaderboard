@@ -23,7 +23,7 @@ class AddHolePrizeViewController: UIViewController, UIPickerViewDelegate, UIPick
         var completePrize = "Hole " + "\(prizeHoleNumber)"
         completePrize += " "
         completePrize += "\(prizeType)"
-        holePrizeObject = HolePrize(incomingPrize: completePrize, incomingWinner: "Nil")
+        //holePrizeObject = HolePrize(incomingPrize: completePrize, incomingWinner: "Nil")
 
         
         dismiss(animated: true, completion: nil)
