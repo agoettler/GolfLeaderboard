@@ -59,11 +59,6 @@ class EventImporter{
                 print("courseString \(courseString)")
                 print("Course \(course)")
                 print("pNames \(pNames)")
-                print("Name \(name)")
-                print("Name \(name)")
-                print("Name \(name)")
-
-
                 
                 
                 while(j<pNames.count){

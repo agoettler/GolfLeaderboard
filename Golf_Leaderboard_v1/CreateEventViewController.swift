@@ -14,6 +14,8 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
 
     var availableCourses:[Course]?
     var eventName:String!
+    var eventType:String!
+    var courseSelection:String!
     
     var eventImporterObject: EventImporter!
     var exisitingNames:[String] = [String]()
@@ -30,9 +32,13 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var errorLabel: UILabel!
     
     @IBAction func createEventButtonPressed(_ sender: UIButton) {
-        
-        eventName = eventNameTextField.text
         exisitingNames = eventImporterObject.getExisitingEventNames()
+
+        eventName = eventNameTextField.text
+        eventType = gameTypes[gameTypePicker.selectedRow(inComponent: 0)]
+        courseSelection = courseOptions[selectCoursePicker.selectedRow(inComponent: 0)]
+        
+        print("Event type: \(eventType)")
         
         if(exisitingNames.contains(eventName)){
             eventNameTextField.text = ""
@@ -44,10 +50,6 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
         }
         
     }
-    
-    
-    
-    
     
     
     
@@ -108,6 +110,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
         if(segue.identifier == "goToEventSearch"){
             let destVC:SearchEventViewController = segue.destination as! SearchEventViewController
             destVC.eventName = eventName
+        
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
