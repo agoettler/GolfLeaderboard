@@ -73,4 +73,15 @@ public class Event
         // TODO: Code can be added to this method to force an update to the database when a new hole prize is added
         holePrizes.append(newHolePrize)
     }
+    
+    public func getPlayerNames()->[String] {
+        var playerNamesArray: [String] = [String]()
+        var i : Int = 0
+        while(i<players.count){
+            playerNamesArray.append(players[i].name)
+            i = i + 1;
+        }
+        return playerNamesArray
+    }
+    
 }

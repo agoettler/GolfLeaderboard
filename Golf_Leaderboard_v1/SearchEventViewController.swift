@@ -26,6 +26,7 @@ class SearchEventViewController: UIViewController {
         exisitingNames = EventImporter.getExisitingEventNames()
         
         if(exisitingNames.contains(eventName)){
+            
             if(roleSegmentedControl.selectedSegmentIndex == 0){
                 let destVC: JoinEventViewController = storyboard!.instantiateViewController(withIdentifier: "JoinEventVC") as! JoinEventViewController
                 destVC.currentEventName = eventName

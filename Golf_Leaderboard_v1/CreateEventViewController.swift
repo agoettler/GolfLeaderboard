@@ -33,7 +33,8 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     @IBAction func createEventButtonPressed(_ sender: UIButton) {
         exisitingNames = EventImporter.getExisitingEventNames()
-        
+        eventName = eventNameTextField.text
+
         if(exisitingNames.contains(eventName)){
             eventNameTextField.text = ""
             errorLabel.text = "Error, Name Taken"

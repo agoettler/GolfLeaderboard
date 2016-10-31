@@ -17,6 +17,8 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var handicapPicker: UIPickerView!
     @IBOutlet weak var startHolePicker: UIPickerView!
     
+    @IBOutlet weak var playerNameErrorLabel: UILabel!
+    
     let handicapData = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"]
     let holeData = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"]
     
@@ -29,7 +31,15 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         let handicap = handicapPicker.selectedRow(inComponent: 0)
         let startHole = startHolePicker.selectedRow(inComponent: 0) + 1
         
-        player = Player(name: name!, handicap: handicap, startHole: startHole)
+        
+        if(currentEvent.getPlayerNames().contains(name!) != true){
+            playerNameTextField.text = ""
+            player = Player(name: name!, handicap: handicap, startHole: startHole)
+        }
+        else{
+            playerNameTextField.text = ""
+            playerNameErrorLabel.text = "Error: Name Taken"
+        }
     }
     
     

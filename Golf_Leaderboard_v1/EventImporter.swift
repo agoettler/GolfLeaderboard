@@ -14,10 +14,12 @@ class EventImporter{
     var ref: FIRDatabaseReference = FIRDatabase.database().reference()
     public static var exisitingNames: [String]!
     var exisitingEventDictionary: NSDictionary!
-    public static var exisitingEvents: NSDictionary!
-    
+   // public static var exisitingEvents: NSDictionary!
+    public static var exisitingEvents: [Event] = [Event]()
+
     public init(){
         // search for exisitng events int the database
+        // EventImporter.exisitingEvents = NSDictionary()
         self.ref.child("Events").observe(FIRDataEventType.value, with: {(snapshot) in
             self.exisitingEventDictionary = snapshot.value as? NSDictionary
             EventImporter.exisitingNames = self.exisitingEventDictionary?.allKeys as! [String] // put exisitng event names into the exisitingNames array
@@ -86,7 +88,7 @@ class EventImporter{
                 */
                 
                 let nextEvent: Event = Event(name: name, owner: owner.value(forKey: "Name") as! String, type: type, course: course, players: playerArray, holePrizes: holeArray)
-                EventImporter.exisitingEvents.setValue(nextEvent, forKey: name)
+                EventImporter.exisitingEvents.append(nextEvent)
                 
                 
                 i = i + 1
@@ -110,10 +112,20 @@ class EventImporter{
     }
     
     public static func getSpecificEvent(name: String) -> Event {
-        return EventImporter.exisitingEvents.value(forKey: name) as! Event
+        var i:Int = 0
+        var desiredEventIndex:Int = 0
+        while(i<exisitingEvents.count){
+            if(exisitingEvents[i].name == name){
+                desiredEventIndex = i
+            }
+            i = i + 1
+        }
+        
+        return EventImporter.exisitingEvents[desiredEventIndex]
+
     }
     
-    public static func getEvents() -> NSDictionary{
+    public static func getEvents() -> [Event]{
         return EventImporter.exisitingEvents
     }
     
