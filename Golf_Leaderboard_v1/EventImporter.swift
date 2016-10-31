@@ -12,21 +12,21 @@ import Firebase
 class EventImporter{
     
     var ref: FIRDatabaseReference = FIRDatabase.database().reference()
-    var exisitingNames: [String]!
+    public static var exisitingNames: [String]!
     var exisitingEventDictionary: NSDictionary!
-    var exisitingEvents: [Event] = [Event]()
+    public static var exisitingEvents: NSDictionary!
     
     public init(){
         // search for exisitng events int the database
         self.ref.child("Events").observe(FIRDataEventType.value, with: {(snapshot) in
             self.exisitingEventDictionary = snapshot.value as? NSDictionary
-            self.exisitingNames = self.exisitingEventDictionary?.allKeys as! [String] // put exisitng event names into the exisitingNames array
+            EventImporter.exisitingNames = self.exisitingEventDictionary?.allKeys as! [String] // put exisitng event names into the exisitingNames array
 
             var i: Int = 0
-            while(i<self.exisitingNames.count){
-                let eventData = self.exisitingEventDictionary.value(forKey: self.exisitingNames[i]) as! NSDictionary
+            while(i<EventImporter.exisitingNames.count){
+                let eventData = self.exisitingEventDictionary.value(forKey: EventImporter.exisitingNames[i]) as! NSDictionary
                 
-                let name = self.exisitingNames[i]
+                let name = EventImporter.exisitingNames[i]
                 let owner = eventData.value(forKey: "Owner") as! NSDictionary
                 let type: String = eventData.value(forKey: "GameType") as! String
                 let courseString: String = eventData.value(forKey: "Course") as! String
@@ -86,7 +86,7 @@ class EventImporter{
                 */
                 
                 let nextEvent: Event = Event(name: name, owner: owner.value(forKey: "Name") as! String, type: type, course: course, players: playerArray, holePrizes: holeArray)
-                self.exisitingEvents.append(nextEvent)
+                EventImporter.exisitingEvents.setValue(nextEvent, forKey: name)
                 
                 
                 i = i + 1
@@ -101,14 +101,21 @@ class EventImporter{
     }
     
     
-    func getExisitingEventNames() -> [String]{
+    
+    
+    public static func getExisitingEventNames() -> [String]{
         print()
         print("\(exisitingNames)")
         return exisitingNames
     }
     
+    public static func getSpecificEvent(name: String) -> Event {
+        return EventImporter.exisitingEvents.value(forKey: name) as! Event
+    }
     
-    
+    public static func getEvents() -> NSDictionary{
+        return EventImporter.exisitingEvents
+    }
     
     
 }

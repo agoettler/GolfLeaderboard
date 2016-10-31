@@ -14,9 +14,10 @@ class TitleViewController: UIViewController {
 
     var ref: FIRDatabaseReference!
     var courseListImporterObject: CourseListImporter!
+    var eventImporterObject: EventImporter!
     var ourCourses: [Course]!
+    var ourEvents: NSDictionary!
     
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -35,7 +36,10 @@ class TitleViewController: UIViewController {
         ref = FIRDatabase.database().reference()
         courseListImporterObject = CourseListImporter()
         ourCourses = CourseListImporter.getCourses()
-
+        //ourEvents = EventImporter
+        eventImporterObject = EventImporter()
+        ourEvents = EventImporter.getEvents()
+        
         // Do any additional setup after loading the view.
     }
 

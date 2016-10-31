@@ -12,9 +12,6 @@ import Firebase
 
 class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 {
-    var ref: FIRDatabaseReference!
-
-    
     @IBOutlet weak var playerNameTextField: UITextField!
 
     @IBOutlet weak var handicapPicker: UIPickerView!
@@ -23,15 +20,16 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     let handicapData = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"]
     let holeData = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"]
     
-    var player:Player!
+    var player: Player!
+    var currentEventName: String!
+    var currentEvent: Event!
     
     @IBAction func joinButtonPressed(_ sender: UIButton) {
         let name = playerNameTextField.text
         let handicap = handicapPicker.selectedRow(inComponent: 0)
-        let startHole = startHolePicker.selectedRow(inComponent: 0)
+        let startHole = startHolePicker.selectedRow(inComponent: 0) + 1
         
         player = Player(name: name!, handicap: handicap, startHole: startHole)
-        
     }
     
     
@@ -64,28 +62,11 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     override func viewDidLoad()
     {
-        
         super.viewDidLoad()
         print("JoinEventViewController: viewDidLoad")
-        ref = FIRDatabase.database().reference()
 
-        /*
-        // Do any additional setup after loading the view.
-        var index = 0
         
-        while (index < 41)
-        {
-            if (index>0 && index<19)
-            {
-              //  holeData.append(index)
-            }
-            
-            pickerData.append(index)
-            
-            index = index + 1
-        }
         
-        */
     }
     override func didReceiveMemoryWarning()
     {

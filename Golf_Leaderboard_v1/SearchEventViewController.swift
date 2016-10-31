@@ -23,12 +23,13 @@ class SearchEventViewController: UIViewController {
     
     @IBAction func FindButtonPressed(_ sender: UIButton) {
         eventName = eventNameTextField.text!
-        exisitingNames = eventImporterObject.getExisitingEventNames()
+        exisitingNames = EventImporter.getExisitingEventNames()
         
         if(exisitingNames.contains(eventName)){
             if(roleSegmentedControl.selectedSegmentIndex == 0){
-                //let destVC: UIViewController = storyboard!.instantiateViewController(withIdentifier: "JoinEventVC")
-                // present(destVC, animated: true, completion: nil)
+                let destVC: JoinEventViewController = storyboard!.instantiateViewController(withIdentifier: "JoinEventVC") as! JoinEventViewController
+                destVC.currentEventName = eventName
+                destVC.currentEvent = EventImporter.getSpecificEvent(name: eventName)
                 performSegue(withIdentifier: "goToJoinEvent", sender: self)
             }
             else{

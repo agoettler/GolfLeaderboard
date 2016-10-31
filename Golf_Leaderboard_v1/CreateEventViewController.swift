@@ -32,13 +32,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var errorLabel: UILabel!
     
     @IBAction func createEventButtonPressed(_ sender: UIButton) {
-        exisitingNames = eventImporterObject.getExisitingEventNames()
-
-        eventName = eventNameTextField.text
-        eventType = gameTypes[gameTypePicker.selectedRow(inComponent: 0)]
-        courseSelection = courseOptions[selectCoursePicker.selectedRow(inComponent: 0)]
-        
-        print("Event type: \(eventType)")
+        exisitingNames = EventImporter.getExisitingEventNames()
         
         if(exisitingNames.contains(eventName)){
             eventNameTextField.text = ""
@@ -46,9 +40,13 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
         }
         else{
             errorLabel.text = ""
+            eventName = eventNameTextField.text
+            eventType = gameTypes[gameTypePicker.selectedRow(inComponent: 0)]
+            courseSelection = courseOptions[selectCoursePicker.selectedRow(inComponent: 0)]
+            
+            print("Event type: \(eventType)")
             performSegue(withIdentifier: "goToEventSearch", sender: self)
         }
-        
     }
     
     
