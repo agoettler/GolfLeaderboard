@@ -20,6 +20,12 @@ class TitleViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        ourEvents = EventImporter.getEvents()
+
+        ourCourses = CourseListImporter.getCourses()
+        print()
+        print("Courses: \(ourCourses.count)")
+        print()
         
         if(segue.identifier == "goToCreateEventVC"){
             let destVC: CreateEventViewController = segue.destination as! CreateEventViewController
@@ -32,13 +38,15 @@ class TitleViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        print()
         print("TitleViewController: viewDidLoad")
+        print()
         ref = FIRDatabase.database().reference()
-        courseListImporterObject = CourseListImporter()
-        ourCourses = CourseListImporter.getCourses()
+        courseListImporterObject = CourseListImporter.init()
+
         //ourEvents = EventImporter
         eventImporterObject = EventImporter()
-        ourEvents = EventImporter.getEvents()
+        //ourEvents = EventImporter.getEvents()
         
         // Do any additional setup after loading the view.
     }

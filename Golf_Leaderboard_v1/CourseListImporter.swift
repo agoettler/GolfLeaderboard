@@ -21,8 +21,11 @@ class CourseListImporter {
     // for each course, create a course object and append it to courseListObject
     
     public init(){
+        print("HERE I AM")
         self.ref.child("Courses").observe(FIRDataEventType.value, with: {(snapshot) in
             let importedCourses = snapshot.value as? NSDictionary
+            print("HERE I AM 2")
+            print("Imcourses: \(importedCourses?.count)")
             self.courseNames = importedCourses?.allKeys as! [String]
             var i:Int = 0
             while(i < self.courseNames.count){
@@ -38,8 +41,9 @@ class CourseListImporter {
                 var handicapArray: [Int] = [Int]()
                 
                 var j: Int = 0
+                
                 while(j < parString.count){
-                    
+
                     parArray.append(Int(parString[j])!)
                     yardageArray.append(Int(yardageString[j])!)
                     handicapArray.append(Int(handicapString[j])!)
@@ -52,6 +56,7 @@ class CourseListImporter {
                 }
                 
                 self.aCourse = Course.init(name: self.courseNames[i], yardages: yardageArray, pars: parArray)
+                print("Course Count: \(CourseListImporter.coursesArray.count)")
                 CourseListImporter.coursesArray.append(self.aCourse)
                 
                 //print()
@@ -62,6 +67,7 @@ class CourseListImporter {
             }
             
         }){ (error) in
+            print("Local Error")
             print(error.localizedDescription)
         }
         print("\(CourseListImporter.coursesArray)")
@@ -70,6 +76,9 @@ class CourseListImporter {
     
     public static func getCurrentCourse(name: String) -> Course{
         var i: Int = 0
+        print()
+        print(CourseListImporter.coursesArray.count)
+        print()
         while(i < CourseListImporter.coursesArray.count){
             if(CourseListImporter.coursesArray[i].name == name){
                 return CourseListImporter.coursesArray[i]
@@ -79,7 +88,7 @@ class CourseListImporter {
         return CourseListImporter.coursesArray[0]
     }
     
-    
+ 
     
     public static func getCourses() -> [Course]{
         return CourseListImporter.coursesArray

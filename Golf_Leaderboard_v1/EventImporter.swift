@@ -73,7 +73,7 @@ class EventImporter{
                 }
                 
                 //let holePrizeInDict:NSDictionary = eventData.value(forKey: "HolePrizes") as! NSDictionary
-                var holeArray: [HolePrize] = [HolePrize]()
+                let holeArray: [HolePrize] = [HolePrize]()
                 j = 0
                 /*
                 while(j<holePrizeInDict.count){
