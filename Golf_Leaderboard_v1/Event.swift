@@ -60,7 +60,7 @@ public class Event
         self.holePrizes = holePrizes
     }
     
-    /// Used for adding a player from to the array of players.
+    /// Used for adding a player to the array of players.
     /// 
     public func addPlayer(newPlayer: Player)
     {
@@ -68,6 +68,7 @@ public class Event
         players.append(newPlayer)
     }
     
+    /// Used for adding a new hole prize to the list of hole prizes
     public func addHolePrize(newHolePrize: HolePrize)
     {
         // TODO: Code can be added to this method to force an update to the database when a new hole prize is added
