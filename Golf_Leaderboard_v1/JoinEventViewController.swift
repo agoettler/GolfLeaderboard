@@ -37,6 +37,8 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         {
             playerNameTextField.text = ""
             player = Player(name: name!, handicap: handicap, startHole: startHole)
+            currentEvent.addPlayer(newPlayer: player)
+            EventExporter.addPlayer(player: player, event: currentEvent)
         }
         else{
             playerNameTextField.text = ""

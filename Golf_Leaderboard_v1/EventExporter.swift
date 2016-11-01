@@ -11,7 +11,7 @@ import Firebase
 
 public class EventExporter{
     
-    var ref: FIRDatabaseReference = FIRDatabase.database().reference()
+    static var ref: FIRDatabaseReference = FIRDatabase.database().reference()
     
     
     public init(currentEvent: Event){
@@ -24,16 +24,11 @@ public class EventExporter{
         print(name)
         print()
         
-        let key = self.ref.child("Events/\(name)")
+        let key = EventExporter.ref.child("Events/\(name)")
         print("KEY: \(key)")
         
         let updates = EventExporter.toAnyObject(event: currentEvent)
         key.setValue(updates)
-        
-        
-        
-        
-        
     }
     
     public static func toAnyObject(event: Event) -> Any{
@@ -60,6 +55,19 @@ public class EventExporter{
         ]
     }
     
+    public static func addPlayer(player: Player, event: Event)
+    {
+        let key = ref.child("Events/\(event.name)/Players/\(player.name)")
+        print("addPlayer key: \(key)")
+        
+        let updates = exportPlayer(player: player)
+        
+        key.setValue(updates)
+    }
     
+    public static func exportPlayer(player: Player) -> NSDictionary
+    {
+        return ["Current Hole": player.currentHole, "Handicap": player.handicap, "Start Hole": player.startHole]
+    }
     
 }
