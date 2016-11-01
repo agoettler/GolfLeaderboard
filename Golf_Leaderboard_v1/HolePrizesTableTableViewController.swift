@@ -16,6 +16,8 @@ class HolePrizesTableTableViewController: UITableViewController {
 
     var ref: FIRDatabaseReference!
     var holePrizesArray:[HolePrize] = [HolePrize]()
+    var parentVC: CreateEventViewController!
+    
     
     override func viewDidLoad()
     {
@@ -49,11 +51,11 @@ class HolePrizesTableTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "hpReuseID", for: indexPath)
         let cellNum:Int = indexPath.row
 
         // Configure the cell...
-
+        print("prize table: \(holePrizesArray[cellNum].prize)")
         cell.textLabel!.text = holePrizesArray[cellNum].prize
 
         return cell
@@ -61,9 +63,13 @@ class HolePrizesTableTableViewController: UITableViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        print("hp count \(holePrizesArray.count)")
         self.tableView.reloadData()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        parentVC.holePrizesArray = self.holePrizesArray
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -112,7 +118,7 @@ class HolePrizesTableTableViewController: UITableViewController {
         }
         else{
             let destVC:AddHolePrizeViewController = segue.destination as! AddHolePrizeViewController
-            destVC.holePrizesArray = self.holePrizesArray
+            destVC.parentVC = self
         }
     }
     
