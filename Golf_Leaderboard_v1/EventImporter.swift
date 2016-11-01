@@ -44,17 +44,17 @@ class EventImporter{
                 var playerArray: [Player] = [Player]()
                 
                 let pNames: [String] = playerInDict.allKeys as! [String]
-                
+                print("pNames \(pNames.count)")
                 var j: Int = 0
 
                 while(j<pNames.count){
                     
-                    let pValue: NSDictionary = playerInDict.value(forKey: pNames[i]) as! NSDictionary
+                    let pValue: NSDictionary = playerInDict.value(forKey: pNames[j]) as! NSDictionary
                     let currHandicap: Int = pValue.value(forKey: "Handicap") as! Int
                     let startHole: Int = pValue.value(forKey: "Start Hole") as! Int
 
                     print("pValue \(pValue)")
-                    let newPlayer: Player = Player(name: pNames[i], handicap: currHandicap, startHole: startHole)
+                    let newPlayer: Player = Player(name: pNames[j], handicap: currHandicap, startHole: startHole)
                     
                     playerArray.append(newPlayer)
                     

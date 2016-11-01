@@ -14,14 +14,14 @@ public class HolePrize{
     var ref: FIRDatabaseReference = FIRDatabase.database().reference()
     
     let prize: String!
-    var currentWinner: Player!
+    var currentWinner: String!
     
-    public init(incomingPrize:String, incomingWinner:Player ){
+    public init(incomingPrize:String, incomingWinner:String ){
         prize = incomingPrize
         currentWinner = incomingWinner
         
     }
-    func updateWinner(newWinner: Player){
+    func updateWinner(newWinner: String){
         currentWinner = newWinner
     }
 }
