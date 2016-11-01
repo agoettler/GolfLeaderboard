@@ -28,13 +28,41 @@ Game Joining Process
 2.	The Player enters the name of a event they wish to join in the text box on the SearchEventViewController.
 3.	The EventImporter object searches the list of available events on the database to find a match for the name entered by the Player.
 4.	The user is informed if a match is found or not. If no match is found, or if the user chooses to search for a different event name, return to step 2.
-4.	If a match is found and the user chooses to join the event, the GameImporter object retrieves the data for the appropriate event and returns a Event object to the Player's phone. The EventImporter object can then be disposed.
+4.	If a match is found and the user chooses to join the event, the EventImporter object retrieves the data for the appropriate event and returns a Event object to the Player's phone. The EventImporter object can then be disposed.
 5.	The Player then begins the Player Setup Process
 
 Player Setup Process - Incomplete
 1.	When a Player or Game Owner proceeds to the Player Setup Process, a PlayerProfile object is instantiated on their phone.
 2.	The PlayerName, Handicap, and StartHole properties of the PlayerProfile object are modified according to the Player's selections in the PlayerCreationViewController.
-3.	The PlayerScoreCard property of the PlayerProfile object is instantiated and initialized using values from the PlayerProfile object and the Course property of the Player's Game object. The score values of the PlayerScoreCard are initialized to 0 or nil.
+3.	The PlayerScoreCard property of the PlayerProfile object is instantiated and initialized using values from the PlayerProfile object and the Course property of the Player's Event object. The score values of the PlayerScoreCard are initialized to 0 or nil.
 4.	A PlayerExporter object is created and used to add the Player data to a list of Players in the database. (Should updating the player's scorecard on the database be performed by a separate object?)
-5.	????
-6.	Profit
+5.  At this point the Player proceeds to the ScoreEntryViewController and begins gameplay.
+
+
+
+
+
+
+public func toAnyObject() -> Any{
+
+let holePrizesDictionary: NSDictionary = NSDictionary()
+
+for aPrize in holePrizes {
+holePrizesDictionary.setValue(aPrize.currentWinner, forKey: aPrize.prize)
+}
+
+let playerDictionary: NSDictionary = NSDictionary()
+
+for aPlayer in players {
+playerDictionary.setValue(["Current Hole": aPlayer.currentHole, "Handicap": aPlayer.handicap, "Start Hole": aPlayer.startHole], forKey: aPlayer.name)
+}
+
+return [
+"Course": course.name,
+"Owner": owner,
+"GameType": type,
+"Hole Prizes": "Null",
+//"Players": "Null"
+"Players": ["Adam1":["Current Hole": 5,"Gross Score":42, "Net Score": 42, "Handicap": 12, "Start Hole": 4]]
+]
+}

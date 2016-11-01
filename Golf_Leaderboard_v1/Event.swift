@@ -60,7 +60,7 @@ public class Event
         self.holePrizes = holePrizes
     }
     
-    /// Used for adding a player from to the array of players.
+    /// Used for adding a player to the array of players.
     /// 
     public func addPlayer(newPlayer: Player)
     {
@@ -68,44 +68,43 @@ public class Event
         players.append(newPlayer)
     }
     
+    /// Used for adding a new hole prize to the list of hole prizes
     public func addHolePrize(newHolePrize: HolePrize)
     {
         // TODO: Code can be added to this method to force an update to the database when a new hole prize is added
         holePrizes.append(newHolePrize)
     }
     
-    public func getPlayerNames()->[String] {
+    public func getPlayerNames() -> [String]
+    {
         var playerNamesArray: [String] = [String]()
+        
+        /*
         var i : Int = 0
-        while(i<players.count){
+        
+        while(i<players.count)
+        {
             playerNamesArray.append(players[i].name)
             i = i + 1;
         }
+        */
+        
+        // get Swifty
+        for player in players
+        {
+            playerNamesArray.append(player.name)
+        }
+        
         return playerNamesArray
     }
     
-    public func toAnyObject() -> Any{
+
+
     
-        let holePrizesDictionary: NSDictionary = NSDictionary()
-        
-        for aPrize in holePrizes {
-            holePrizesDictionary.setValue(aPrize.currentWinner, forKey: aPrize.prize)
-        }
-        
-        let playerDictionary: NSDictionary = NSDictionary()
-        
-        for aPlayer in players {
-            playerDictionary.setValue(["Current Hole": aPlayer.currentHole, "Handicap": aPlayer.handicap, "Start Hole": aPlayer.startHole], forKey: aPlayer.name)
-        }
-        
-        return [
-            "Course": course.name,
-            "Owner": owner,
-            "GameType": type,
-            "Hole Prizes": "Null",
-            //"Players": "Null"
-            "Players": ["Adam1":["Current Hole": 5,"Gross Score":42, "Net Score": 42, "Handicap": 12, "Start Hole": 4]]
-        ]
+    // get Swift-ier
+    public func containsPlayer(name: String) -> Bool
+    {
+        // we can actually specify what the .contains method "looks at" using a closure
+        return players.contains(where: {(element: Player) -> Bool in element.name == name})
     }
-    
 }
