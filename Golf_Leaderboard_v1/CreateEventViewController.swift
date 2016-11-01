@@ -16,7 +16,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
     var eventName:String!
     var eventType:String!
     var courseSelection:Course!
-    var holePrizesArray: [HolePrize]!
+    var holePrizesArray: [HolePrize] = [HolePrize]()
     var eventImporterObject: EventImporter!
     var exisitingNames:[String] = [String]()
     var createdEvent: Event!
@@ -45,7 +45,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
 
             eventType = gameTypes[gameTypePicker.selectedRow(inComponent: 0)]
             courseSelection = availableCourses?[selectCoursePicker.selectedRow(inComponent: 0)]
-            createdEvent = Event(name: eventName, owner: "Null", type: eventType, course: courseSelection, players: [], holePrizes: [])
+            createdEvent = Event(name: eventName, owner: "Null", type: eventType, course: courseSelection, players: [], holePrizes: holePrizesArray)
             EventExporter(currentEvent: createdEvent)
             performSegue(withIdentifier: "goToEventSearch", sender: self)
         }
@@ -115,6 +115,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
         else if(segue.identifier == "goToHPTableView"){
             let destVC:HolePrizesTableTableViewController = segue.destination as! HolePrizesTableTableViewController
                 destVC.holePrizesArray = self.holePrizesArray
+                destVC.parentVC = self
         }
         
         
