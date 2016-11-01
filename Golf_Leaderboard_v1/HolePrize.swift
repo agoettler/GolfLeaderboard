@@ -13,15 +13,24 @@ public class HolePrize{
     
     var ref: FIRDatabaseReference = FIRDatabase.database().reference()
     
-    let prize: String!
+    let prize: String
     var currentWinner: Player!
     
-    public init(incomingPrize:String, incomingWinner:Player ){
+    // TODO: When a hole prize is created, there probably won't be a winner immediately
+    public init(prize: String)
+    {
+        self.prize = prize
+    }
+    
+    public init(incomingPrize:String, incomingWinner:Player )
+    {
         prize = incomingPrize
         currentWinner = incomingWinner
         
     }
-    func updateWinner(newWinner: Player){
+    
+    func updateWinner(newWinner: Player)
+    {
         currentWinner = newWinner
     }
 }
