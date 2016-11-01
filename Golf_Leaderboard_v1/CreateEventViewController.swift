@@ -16,7 +16,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
     var eventName:String!
     var eventType:String!
     var courseSelection:Course!
-    
+    var holePrizesArray: [HolePrize]!
     var eventImporterObject: EventImporter!
     var exisitingNames:[String] = [String]()
     var createdEvent: Event!
@@ -112,6 +112,12 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
             destVC.eventName = eventName
         
         }
+        else if(segue.identifier == "goToHPTableView"){
+            let destVC:HolePrizesTableTableViewController = segue.destination as! HolePrizesTableTableViewController
+                destVC.holePrizesArray = self.holePrizesArray
+        }
+        
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }

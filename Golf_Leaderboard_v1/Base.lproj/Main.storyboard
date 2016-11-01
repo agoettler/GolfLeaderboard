@@ -426,7 +426,7 @@
         <!--Hole Prizes-->
         <scene sceneID="rED-uX-gcl">
             <objects>
-                <viewController storyboardIdentifier="HolePrizeView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qlB-ql-9bV" customClass="HolePrizesTableTableViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HolePrizeView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qlB-ql-9bV" customClass="HolePrizeTabViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5dJ-xt-If1"/>
                         <viewControllerLayoutGuide type="bottom" id="phT-zZ-RWm"/>
@@ -591,7 +591,7 @@
                                     <color key="titleColor" red="0.97247464780000004" green="1" blue="0.97267601749999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="GTI-pK-yZ7" kind="show" id="zcy-3o-0tC"/>
+                                    <segue destination="GTI-pK-yZ7" kind="show" identifier="goToHPTableView" id="zcy-3o-0tC"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3vc-iK-nYl">
@@ -702,14 +702,14 @@
                     <navigationItem key="navigationItem" title="Hole Prizes" id="TGF-kG-HfZ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gC7-l5-28Y">
                             <connections>
-                                <segue destination="QDm-9v-mSa" kind="presentation" id="r55-WW-tie"/>
+                                <segue destination="QDm-9v-mSa" kind="presentation" identifier="goToAddHP" id="r55-WW-tie"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="txh-7D-0a5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2490" y="1075"/>
+            <point key="canvasLocation" x="2478" y="1075"/>
         </scene>
         <!--Add Hole Prize-->
         <scene sceneID="ZSC-3E-Yns">
@@ -779,7 +779,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fax-pY-kN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3332" y="1075"/>
+            <point key="canvasLocation" x="3327" y="1075"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iAG-e3-tuK">

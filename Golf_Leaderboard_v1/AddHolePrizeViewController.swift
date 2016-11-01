@@ -13,6 +13,7 @@ import Firebase
 class AddHolePrizeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     var ref: FIRDatabaseReference!
     var holePrizeObject:HolePrize!
+    var holePrizesArray:[HolePrize]!
     @IBOutlet weak var holePrizePicker: UIPickerView!
     
     
@@ -23,8 +24,8 @@ class AddHolePrizeViewController: UIViewController, UIPickerViewDelegate, UIPick
         var completePrize = "Hole " + "\(prizeHoleNumber)"
         completePrize += " "
         completePrize += "\(prizeType)"
-        //holePrizeObject = HolePrize(incomingPrize: completePrize, incomingWinner: "Nil")
-
+        holePrizeObject = HolePrize(prize: completePrize)
+        
         
         dismiss(animated: true, completion: nil)
 
