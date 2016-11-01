@@ -10,26 +10,18 @@ import Foundation
 import Firebase
 
 
-public class Player{
-    
+public class Player
+{
     public let name: String
     public let handicap: Int
     public let startHole: Int
     public var currentHole: Int!
     
-    
-    public init(name : String, handicap : Int, startHole : Int){
-        
+    public init(name : String, handicap : Int, startHole : Int)
+    {
         self.name = name
         self.handicap = handicap
         self.startHole = startHole
         self.currentHole = startHole
-        
     }
-    
-    
-    
-    
-    
-    
 }

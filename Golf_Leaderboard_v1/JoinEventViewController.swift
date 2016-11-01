@@ -32,7 +32,9 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         let startHole = startHolePicker.selectedRow(inComponent: 0) + 1
         
         
-        if(currentEvent.getPlayerNames().contains(name!) != true){
+        //if(currentEvent.getPlayerNames().contains(name!) != true){
+        if(!currentEvent.containsPlayer(name: name!))
+        {
             playerNameTextField.text = ""
             player = Player(name: name!, handicap: handicap, startHole: startHole)
         }
