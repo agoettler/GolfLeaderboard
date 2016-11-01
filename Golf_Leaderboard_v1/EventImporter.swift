@@ -40,12 +40,14 @@ class EventImporter{
                 let courseString: String = eventData.value(forKey: "Course") as! String
                 //let cLI : CourseListImporter = CourseListImporter()
                 let course:Course = CourseListImporter.getCurrentCourse(name: courseString)
-                let playerInDict:NSDictionary = eventData.value(forKey: "Players") as! NSDictionary
+                var j: Int = 0
                 var playerArray: [Player] = [Player]()
+                if let playerInDict:NSDictionary = eventData.value(forKey: "Players") as? NSDictionary {
+
                 
                 let pNames: [String] = playerInDict.allKeys as! [String]
                 print("pNames \(pNames.count)")
-                var j: Int = 0
+       
 
                 while(j<pNames.count){
                     
@@ -60,13 +62,13 @@ class EventImporter{
                     
                     j = j + 1
                 }
-                
+                }
                 print("Name \(name)")
                 print("Owner \(owner)")
                 print("gametype \(type)")
                 print("courseString \(courseString)")
                 print("Course \(course)")
-                print("pNames \(pNames)")
+//                print("pNames \(pNames)")
                 
                 //let holePrizeInDict:NSDictionary = eventData.value(forKey: "HolePrizes") as! NSDictionary
                 let holeArray: [HolePrize] = [HolePrize]()
