@@ -98,11 +98,6 @@ public class Event
         return playerNamesArray
     }
     
-
-    
-
-
-    
     // get Swift-ier
     public func containsPlayer(name: String) -> Bool
     {
