@@ -21,20 +21,20 @@ class CourseListImporter {
     // for each course, create a course object and append it to courseListObject
     
     public init(){
-        print("HERE I AM")
+
         self.ref.child("Courses").observe(FIRDataEventType.value, with: {(snapshot) in
             let importedCourses = snapshot.value as? NSDictionary
-            print("HERE I AM 2")
-            print("Imcourses: \(importedCourses?.count)")
+
             self.courseNames = importedCourses?.allKeys as! [String]
+            
             var i:Int = 0
             while(i < self.courseNames.count){
                 let courseDict: NSDictionary = importedCourses?[self.courseNames[i]] as! NSDictionary
-                let courseData: [String] = courseDict.allValues as! [String]
                 
-                var parString: [String] = courseData[0].components(separatedBy: ",")
-                var yardageString: [String] = courseData[1].components(separatedBy: ",")
-                var handicapString: [String] = courseData[2].components(separatedBy: ",")
+                let parString: [String] = (courseDict.value(forKey: "Par") as? String)!.components(separatedBy: ",")
+                let yardageString: [String] = (courseDict.value(forKey: "Yardage") as? String)!.components(separatedBy: ",")
+                let handicapString: [String] = (courseDict.value(forKey: "Handicap") as? String)!.components(separatedBy: ",")
+                
                 
                 var parArray: [Int] = [Int]()
                 var yardageArray: [Int] = [Int]()
@@ -70,7 +70,7 @@ class CourseListImporter {
             print("Local Error")
             print(error.localizedDescription)
         }
-        print("\(CourseListImporter.coursesArray)")
+        // print("\(CourseListImporter.coursesArray)")
     }
     
     
@@ -88,7 +88,6 @@ class CourseListImporter {
         return CourseListImporter.coursesArray[0]
     }
     
- 
     
     public static func getCourses() -> [Course]{
         return CourseListImporter.coursesArray

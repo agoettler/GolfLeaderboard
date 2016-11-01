@@ -84,4 +84,14 @@ public class Event
         return playerNamesArray
     }
     
+    public func toAnyObject() -> Any{
+        return [
+            "Course": course,
+            "Owner": owner,
+            "GameType": type,
+            "Hole Prizes": holePrizes,
+            "Players": players
+        ]
+    }
+    
 }

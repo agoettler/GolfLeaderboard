@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class EventExporter{
+public class EventExporter{
     
     var ref: FIRDatabaseReference = FIRDatabase.database().reference()
     
@@ -20,15 +20,19 @@ class EventExporter{
         let owner: String = currentEvent.owner
         let course: String = currentEvent.course.name
         let gameType: String = currentEvent.type
+        print()
+        print(name)
+        print()
         
-        let key = self.ref.child("Events/\(name)").key
-        let updates = ["Course": course, "GameType": gameType, "Owner" : owner ]
-        
-       // ref.updateChildValues([key : updates])
-
+        let key = self.ref.child("Events/\(name)")
+        //let key = self.ref.child("Events/\(name)").key
+        print("KEY: \(key)")
+        //let updates = ["Course": course, "GameType": gameType, "Owner" : owner, "Hole Prizes" : "Null"]
+        let updates = currentEvent.toAnyObject()
+        //ref.updateChildValues([key : updates])
+        key.setValue(currentEvent.toAnyObject())
         // let key2 = self.ref.child("Events/\(name)/HolePrizes").key
         
-        //ref.updateChildValues(key : )
         
         
         

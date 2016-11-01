@@ -15,11 +15,11 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
     var availableCourses:[Course]?
     var eventName:String!
     var eventType:String!
-    var courseSelection:String!
+    var courseSelection:Course!
     
     var eventImporterObject: EventImporter!
     var exisitingNames:[String] = [String]()
-    
+    var createdEvent: Event!
     
     @IBOutlet weak var eventNameTextField: UITextField!
 
@@ -42,10 +42,11 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
         else{
             errorLabel.text = ""
             eventName = eventNameTextField.text
+
             eventType = gameTypes[gameTypePicker.selectedRow(inComponent: 0)]
-            courseSelection = courseOptions[selectCoursePicker.selectedRow(inComponent: 0)]
-            
-            print("Event type: \(eventType)")
+            courseSelection = availableCourses?[selectCoursePicker.selectedRow(inComponent: 0)]
+            createdEvent = Event(name: eventName, owner: "Null", type: eventType, course: courseSelection, players: [], holePrizes: [])
+            EventExporter(currentEvent: createdEvent)
             performSegue(withIdentifier: "goToEventSearch", sender: self)
         }
     }
