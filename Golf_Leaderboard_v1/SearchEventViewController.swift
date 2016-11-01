@@ -28,9 +28,7 @@ class SearchEventViewController: UIViewController {
         if(exisitingNames.contains(eventName)){
             
             if(roleSegmentedControl.selectedSegmentIndex == 0){
-                let destVC: JoinEventViewController = storyboard!.instantiateViewController(withIdentifier: "JoinEventVC") as! JoinEventViewController
-                destVC.currentEventName = eventName
-                destVC.currentEvent = EventImporter.getSpecificEvent(name: eventName)
+
                 performSegue(withIdentifier: "goToJoinEvent", sender: self)
             }
             else{
@@ -60,14 +58,22 @@ class SearchEventViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if(segue.identifier == "goToJoinEvent"){
+            let destVC: JoinEventViewController = segue.destination as! JoinEventViewController
+            destVC.currentEventName = eventName
+            destVC.currentEvent = EventImporter.getSpecificEvent(name: eventName)
+            print( "Current event: \(destVC.currentEvent.name)")
+
+            
+        }
     }
-    */
+    
 
 }
