@@ -12,7 +12,7 @@ import Firebase
 public class EventExporter{
     
     static var ref: FIRDatabaseReference = FIRDatabase.database().reference()
-    
+    static let globals:CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData
     
     public init(currentEvent: Event){
         
@@ -20,9 +20,6 @@ public class EventExporter{
         //let owner: String = currentEvent.owner
         //let course: String = currentEvent.course.name
         //let gameType: String = currentEvent.type
-        print()
-        print(name)
-        print()
         
         let key = EventExporter.ref.child("Events/\(name)")
         print("KEY: \(key)")
@@ -67,11 +64,23 @@ public class EventExporter{
         let updates = exportPlayer(player: player)
         
         key.setValue(updates)
+        
+        
     }
     
     public static func exportPlayer(player: Player) -> NSDictionary
     {
         return ["Current Hole": player.currentHole, "Handicap": player.handicap, "Start Hole": player.startHole]
+    }
+    
+    
+    public static func updateHolePrizes(holePrize: HolePrize){
+        let eventName:String = globals.globalEvent.name
+        let key = ref.child("Events/\(eventName)/Hole Prizes/\(holePrize.prize)")
+        let updates = globals.globalPlayer.name
+        
+        key.setValue(updates)
+        
     }
     
 }

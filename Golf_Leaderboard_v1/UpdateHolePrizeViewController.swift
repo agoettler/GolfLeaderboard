@@ -27,6 +27,7 @@ class UpdateHolePrizeViewController: UIViewController {
             leader = globals.globalPlayer.name
             selectedPrize.currentWinner = leader
             leaderLabel.text = leader
+            EventExporter.updateHolePrizes(holePrize: selectedPrize)
         }
         else{
             errorLabel.text = "Error: Spectators cannot win hole prizes"

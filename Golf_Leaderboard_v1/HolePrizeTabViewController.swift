@@ -41,12 +41,12 @@ class HolePrizeTabViewController: UIViewController, UITableViewDelegate, UITable
     
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+
         print("hp count \(holePrizesArray.count)")
         holePrizesArray = globals.globalEvent.holePrizes
         self.tableView.reloadData()
     }
-    
-    
     
     
     override func viewDidLoad() {
@@ -74,7 +74,7 @@ class HolePrizeTabViewController: UIViewController, UITableViewDelegate, UITable
         let destVC:UpdateHolePrizeViewController = segue.destination as! UpdateHolePrizeViewController
         let prizeIndex = self.tableView.indexPathForSelectedRow
 
-        destVC.selectedPrize = holePrizesArray[Int((prizeIndex?[0])!)]
+        destVC.selectedPrize = globals.globalEvent.holePrizes[Int((prizeIndex?[0])!)]
     }
     
 
