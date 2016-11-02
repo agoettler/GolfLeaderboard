@@ -453,7 +453,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="p30-Wb-IHB" detailTextLabel="MjP-1q-oua" style="IBUITableViewCellStyleValue1" id="eTS-V7-0ax">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="holePrizeReuseID" textLabel="p30-Wb-IHB" detailTextLabel="MjP-1q-oua" style="IBUITableViewCellStyleValue1" id="eTS-V7-0ax">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eTS-V7-0ax" id="SwX-Ce-NFK">

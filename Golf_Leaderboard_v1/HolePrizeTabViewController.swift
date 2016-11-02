@@ -29,13 +29,13 @@ class HolePrizeTabViewController: UIViewController, UITableViewDelegate, UITable
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "hpReuseID", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "holePrizeReuseID", for: indexPath)
         let cellNum:Int = indexPath.row
         
         // Configure the cell...
         print("prize table: \(holePrizesArray[cellNum].prize)")
         cell.textLabel!.text = holePrizesArray[cellNum].prize
-        
+        cell.detailTextLabel!.text = holePrizesArray[cellNum].currentWinner
         return cell
     }
     
