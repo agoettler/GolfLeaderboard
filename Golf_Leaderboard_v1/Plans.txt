@@ -13,14 +13,15 @@ Proposed design changes, following discussion with Nick Wade:
 
 Game Creation Process
 1.	When a user selects the option to create a new event on their phone, a CourseListImporter object and a Event object are instantiated. At this point, the user becomes the "Event Owner".
-2.	The CourseListImporter object retrieves a list of available courses from the database and returns a CourseList object to the app on the user's phone. The CourseListImporter object can then disposed.
+2.	The CourseListImporter object retrieves a list of available courses from the database and returns a CourseList object to the app on the Event Owner's' phone. The CourseListImporter object can then disposed.
     - Done
 3.	The CourseList object is used to populate the CreateEventViewController with the available courses.
     - Done
-4.	As the user makes selections on the event creation screen, the properties of the Event object are modified accordingly.
-5.	When the user completes the event creation process, a EventExporter object is instantiated.
-6.	The EventExporter object uploads the data from the Event object to the database. When this is complete, the GameExporter object can then be disposed.
-7.	The Event Owner then begins the Player Setup Process.
+4.	As the Event Owner makes selections on the event creation screen, the properties of the Event object are modified accordingly.
+5.  At this point, the Event Owner can choose to create hole prizes for the event.
+7.	When the user completes the event creation process, a EventExporter object is instantiated.
+8.	The EventExporter object uploads the data from the Event object to the database. When this is complete, the GameExporter object can then be disposed.
+9.	The Event Owner then begins the Player Setup Process.
     -Done
 
 Game Joining Process
