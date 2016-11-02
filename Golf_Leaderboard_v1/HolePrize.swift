@@ -20,6 +20,7 @@ public class HolePrize{
     public init(prize: String)
     {
         self.prize = prize
+        self.currentWinner = "Null"
     }
     
     public init(incomingPrize:String, incomingWinner:String )

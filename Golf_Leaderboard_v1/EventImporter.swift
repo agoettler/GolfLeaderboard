@@ -69,21 +69,25 @@ class EventImporter{
                 print("courseString \(courseString)")
                 print("Course \(course)")
 //                print("pNames \(pNames)")
-                
-                //let holePrizeInDict:NSDictionary = eventData.value(forKey: "HolePrizes") as! NSDictionary
-                let holeArray: [HolePrize] = [HolePrize]()
+                var holePrizeArray: [HolePrize] = [HolePrize]()
+
+                let holePrizeForEvent = eventData.value(forKey: "Hole Prizes")
+                print("HPS: \(holePrizeForEvent)")
+
+                if(holePrizeForEvent != nil){
                 j = 0
-                /*
-                while(j<holePrizeInDict.count){
+                let holePrizeDictionary: NSDictionary = eventData.value(forKey: "Hole Prizes") as! NSDictionary
+
+                for aPrize in holePrizeDictionary {
                     
-                    let newPrize: HolePrize = HolePrize(incomingPrize: holePrizeInDict.value(forKey: "Prize") as! String, incomingWinner: holePrizeInDict.value(forKey: "Winner") as! String)
-                    playerArray.append(newPlayer)
+                    let newPrize: HolePrize = HolePrize(incomingPrize: aPrize.key as! String, incomingWinner: aPrize.value as! String)
+                    holePrizeArray.append(newPrize)
                     
                     j = j + 1
                 }
-                */
+                }
                 
-                let nextEvent: Event = Event(name: name, owner: owner/*.value(forKey: "Name") as! String*/, type: type, course: course, players: playerArray, holePrizes: holeArray)
+                let nextEvent: Event = Event(name: name, owner: owner/*.value(forKey: "Name") as! String*/, type: type, course: course, players: playerArray, holePrizes: holePrizeArray)
                 EventImporter.exisitingEvents.append(nextEvent)
                 
                 

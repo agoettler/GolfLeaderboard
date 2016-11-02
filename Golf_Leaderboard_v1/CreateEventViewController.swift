@@ -21,6 +21,8 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
     var exisitingNames:[String] = [String]()
     var createdEvent: Event!
     
+    let globals:CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData
+    
     @IBOutlet weak var eventNameTextField: UITextField!
 
     @IBOutlet weak var selectCoursePicker: UIPickerView!
@@ -47,6 +49,9 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
             courseSelection = availableCourses?[selectCoursePicker.selectedRow(inComponent: 0)]
             createdEvent = Event(name: eventName, owner: "Null", type: eventType, course: courseSelection, players: [], holePrizes: holePrizesArray)
             EventExporter(currentEvent: createdEvent)
+            
+            globals.globalEvent = createdEvent // make the created event the global event for this app
+
             performSegue(withIdentifier: "goToEventSearch", sender: self)
         }
     }
@@ -110,6 +115,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
         if(segue.identifier == "goToEventSearch"){
             let destVC:SearchEventViewController = segue.destination as! SearchEventViewController
             destVC.eventName = eventName
+            //destVC.navigationController?.setNavigationBarHidden(true, animated: false)
         
         }
         else if(segue.identifier == "goToHPTableView"){

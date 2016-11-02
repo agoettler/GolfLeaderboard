@@ -26,30 +26,34 @@ public class EventExporter{
         
         let key = EventExporter.ref.child("Events/\(name)")
         print("KEY: \(key)")
-        print("\(currentEvent.holePrizes[0])")
         let updates = EventExporter.toAnyObject(event: currentEvent)
         key.setValue(updates)
     }
     
     public static func toAnyObject(event: Event) -> Any{
         
-        let holePrizesDictionary: NSArray = NSArray()
-        
+        var hpDictionary: Dictionary<String,String> = Dictionary()
+
         for aPrize in event.holePrizes {
-            holePrizesDictionary.adding(aPrize)
+            print("\(aPrize.prize)")
+            print("Winner: \(aPrize.currentWinner)")
+            let prizeKey: String = aPrize.prize
+            hpDictionary.updateValue(aPrize.currentWinner, forKey: prizeKey)
         }
         
+        /*
         let playerDictionary: NSDictionary = NSDictionary()
         
         for aPlayer in event.players {
+            print("PLAYER HERE")
             playerDictionary.setValue(["Current Hole": aPlayer.currentHole, "Handicap": aPlayer.handicap, "Start Hole": aPlayer.startHole], forKey: aPlayer.name)
         }
-        
+        */
         return [
             "Course": event.course.name,
             "Owner": event.owner,
             "GameType": event.type,
-            "Hole Prizes": holePrizesDictionary,
+            "Hole Prizes": hpDictionary,
             "Players": "Null"
             //"Players": ["Adam1":["Current Hole": 5,"Gross Score":42, "Net Score": 42, "Handicap": 12, "Start Hole": 4]]
         ]

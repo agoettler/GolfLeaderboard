@@ -20,6 +20,8 @@ class SearchEventViewController: UIViewController {
     var eventImporterObject: EventImporter!
     var exisitingNames:[String] = [String]()
     
+    let globals:CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData // searched event will be the global event for this app
+
     
     @IBAction func FindButtonPressed(_ sender: UIButton) {
         eventName = eventNameTextField.text!
@@ -27,6 +29,8 @@ class SearchEventViewController: UIViewController {
         
         if(exisitingNames.contains(eventName)){
             
+            globals.globalEvent = EventImporter.getSpecificEvent(name: eventName) // set the searched event to the global event
+            print("globe event: \(globals.globalEvent.holePrizes.count)")
             if(roleSegmentedControl.selectedSegmentIndex == 0){
 
                 performSegue(withIdentifier: "goToJoinEvent", sender: self)

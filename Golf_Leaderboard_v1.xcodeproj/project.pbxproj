@@ -28,6 +28,7 @@
 		822B7DDA1DC270E50075E3A8 /* EventExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B7DD91DC270E50075E3A8 /* EventExporter.swift */; };
 		822B7DDC1DC295830075E3A8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B7DDB1DC295830075E3A8 /* Player.swift */; };
 		8231D88E1DC9459A009FC2DC /* HolePrizeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231D88D1DC9459A009FC2DC /* HolePrizeTabViewController.swift */; };
+		8231D8901DCA36AD009FC2DC /* CurrentEventGlobalAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231D88F1DCA36AD009FC2DC /* CurrentEventGlobalAccess.swift */; };
 		823534361DC01304007AFE70 /* CourseListImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823534351DC01304007AFE70 /* CourseListImporter.swift */; };
 		8235343A1DC1569C007AFE70 /* UpdateHolePrizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823534391DC1569C007AFE70 /* UpdateHolePrizeViewController.swift */; };
 		8235343C1DC16C11007AFE70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8235343B1DC16C11007AFE70 /* GoogleService-Info.plist */; };
@@ -58,6 +59,7 @@
 		822B7DD91DC270E50075E3A8 /* EventExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventExporter.swift; sourceTree = "<group>"; };
 		822B7DDB1DC295830075E3A8 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		8231D88D1DC9459A009FC2DC /* HolePrizeTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolePrizeTabViewController.swift; sourceTree = "<group>"; };
+		8231D88F1DCA36AD009FC2DC /* CurrentEventGlobalAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentEventGlobalAccess.swift; sourceTree = "<group>"; };
 		823534351DC01304007AFE70 /* CourseListImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListImporter.swift; sourceTree = "<group>"; };
 		823534391DC1569C007AFE70 /* UpdateHolePrizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateHolePrizeViewController.swift; sourceTree = "<group>"; };
 		8235343B1DC16C11007AFE70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				8221EDE21DB6CCBF00239662 /* ViewController.swift */,
 				8221EDE41DB6CCBF00239662 /* Main.storyboard */,
 				75A751011DBFF2AC0036DE26 /* Plans.txt */,
+				8231D88F1DCA36AD009FC2DC /* CurrentEventGlobalAccess.swift */,
 				75A751031DC073870036DE26 /* Course.swift */,
 				823534351DC01304007AFE70 /* CourseListImporter.swift */,
 				822B7DD71DC270B50075E3A8 /* Event.swift */,
@@ -277,6 +280,7 @@
 				8221EE5C1DBFEC4200239662 /* ScoreEntryViewController.swift in Sources */,
 				75A751041DC073870036DE26 /* Course.swift in Sources */,
 				8235343A1DC1569C007AFE70 /* UpdateHolePrizeViewController.swift in Sources */,
+				8231D8901DCA36AD009FC2DC /* CurrentEventGlobalAccess.swift in Sources */,
 				8221EE5E1DBFF87200239662 /* AddHolePrizeViewController.swift in Sources */,
 				8221EDE11DB6CCBF00239662 /* AppDelegate.swift in Sources */,
 				823534361DC01304007AFE70 /* CourseListImporter.swift in Sources */,

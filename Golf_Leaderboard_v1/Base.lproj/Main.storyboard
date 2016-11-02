@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,9 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="m6e-UK-pwa">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="m6e-UK-pwa">
                                 <rect key="frame" x="70" y="458" width="234" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Find Exisiting Event">
@@ -33,10 +33,18 @@
                                     <segue destination="Vzb-PQ-SKM" kind="show" id="Jkp-Wt-CD6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7ot-tH-bcu">
-                                <rect key="frame" x="70" y="288" width="234" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Golf Leaderboard" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5s-12-Ixz">
+                                <rect key="frame" x="70" y="72" width="234" height="76"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7ot-tH-bcu">
+                                <rect key="frame" x="70" y="269" width="234" height="90"/>
                                 <color key="backgroundColor" red="1" green="0.55297519429999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="tpe-dn-nl6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Create Event">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,15 +53,20 @@
                                     <segue destination="4pV-TY-UcC" kind="show" identifier="goToCreateEventVC" id="oRg-X6-ip9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Golf Leaderboard" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5s-12-Ixz">
-                                <rect key="frame" x="70" y="72" width="234" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7ot-tH-bcu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="269" id="1xa-qt-wKR"/>
+                            <constraint firstItem="7ot-tH-bcu" firstAttribute="trailing" secondItem="m6e-UK-pwa" secondAttribute="trailing" id="EvT-Ou-E5L"/>
+                            <constraint firstItem="7ot-tH-bcu" firstAttribute="leading" secondItem="t5s-12-Ixz" secondAttribute="leading" id="Sgp-Wo-yLH"/>
+                            <constraint firstItem="t5s-12-Ixz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="Spa-a7-uHB"/>
+                            <constraint firstItem="7ot-tH-bcu" firstAttribute="leading" secondItem="m6e-UK-pwa" secondAttribute="leading" id="YQN-2R-OjK"/>
+                            <constraint firstItem="t5s-12-Ixz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="dDk-aV-Hou"/>
+                            <constraint firstItem="7ot-tH-bcu" firstAttribute="trailing" secondItem="t5s-12-Ixz" secondAttribute="trailing" id="pJ1-mK-lLE"/>
+                            <constraint firstItem="m6e-UK-pwa" firstAttribute="top" secondItem="7ot-tH-bcu" secondAttribute="bottom" constant="99" id="srU-62-JPd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="t5s-12-Ixz" secondAttribute="trailing" constant="55" id="uIo-Rp-0lC"/>
+                            <constraint firstItem="m6e-UK-pwa" firstAttribute="height" secondItem="7ot-tH-bcu" secondAttribute="height" id="y48-dW-rOs"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="L5h-t6-VP2"/>
                 </viewController>
@@ -469,14 +482,17 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="qlB-ql-9bV" id="i2Q-Kd-1Za"/>
-                                    <outlet property="delegate" destination="qlB-ql-9bV" id="SXG-Md-TJc"/>
+                                    <outlet property="dataSource" destination="qlB-ql-9bV" id="e25-Ao-sgp"/>
+                                    <outlet property="delegate" destination="qlB-ql-9bV" id="KcM-9z-HB7"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Hole Prizes" id="Zg2-Nl-MMu"/>
+                    <connections>
+                        <outlet property="tableView" destination="o8Y-bC-biU" id="dMv-rj-wDf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Riz-fu-eAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -820,8 +836,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Jkp-Wt-CD6"/>
         <segue reference="Zio-ch-z5g"/>
-        <segue reference="3ro-Ra-gEt"/>
         <segue reference="GV0-Cv-MaZ"/>
     </inferredMetricsTieBreakers>
 </document>

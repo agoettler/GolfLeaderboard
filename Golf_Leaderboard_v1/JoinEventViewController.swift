@@ -12,12 +12,16 @@ import Firebase
 
 class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 {
+    
     @IBOutlet weak var playerNameTextField: UITextField!
 
     @IBOutlet weak var handicapPicker: UIPickerView!
     @IBOutlet weak var startHolePicker: UIPickerView!
     
     @IBOutlet weak var playerNameErrorLabel: UILabel!
+    
+    
+    let globals:CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData
     
     let handicapData = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"]
     let holeData = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"]
@@ -39,6 +43,9 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             player = Player(name: name!, handicap: handicap, startHole: startHole)
             currentEvent.addPlayer(newPlayer: player)
             EventExporter.addPlayer(player: player, event: currentEvent)
+            
+            globals.globalPlayer = player // make this new player the global player for this class
+            
         }
         else{
             playerNameTextField.text = ""
