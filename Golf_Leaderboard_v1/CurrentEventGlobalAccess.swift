@@ -15,6 +15,7 @@ class CurrentEventGlobalAccess{
     static let globalData = CurrentEventGlobalAccess()
     var globalEvent: Event!
     var globalPlayer: Player!
+    var role: String!
     var owner: Bool = false
     
 }

@@ -23,7 +23,7 @@ class UpdateHolePrizeViewController: UIViewController {
     @IBAction func claimHolePrizePressed(_ sender: UIButton) {
         print("HP select \(selectedPrize.prize)")
         
-        if(globals.globalPlayer.name != "spectator"){
+        if(globals.role == "player"){
             leader = globals.globalPlayer.name
             selectedPrize.currentWinner = leader
             leaderLabel.text = leader
