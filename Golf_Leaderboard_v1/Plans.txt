@@ -14,23 +14,31 @@ Proposed design changes, following discussion with Nick Wade:
 Game Creation Process
 1.	When a user selects the option to create a new event on their phone, a CourseListImporter object and a Event object are instantiated. At this point, the user becomes the "Event Owner".
 2.	The CourseListImporter object retrieves a list of available courses from the database and returns a CourseList object to the app on the Event Owner's' phone. The CourseListImporter object can then disposed.
-    - Done
+    -Done
 3.	The CourseList object is used to populate the CreateEventViewController with the available courses.
-    - Done
+    -Done
 4.	As the Event Owner makes selections on the event creation screen, the properties of the Event object are modified accordingly.
+    -Done
 5.  At this point, the Event Owner can choose to create hole prizes for the event.
+    -Done
 7.	When the user completes the event creation process, a EventExporter object is instantiated.
+    -Done
 8.	The EventExporter object uploads the data from the Event object to the database. When this is complete, the GameExporter object can then be disposed.
 9.	The Event Owner then begins the Player Setup Process.
     -Done
 
 Game Joining Process
 1.	When a user selects the option to find an existing event, a EventImporter object is instantiated on their phone. At this point, the user becomes a "Player".
+    -Done
 2.	The Player enters the name of a event they wish to join in the text box on the SearchEventViewController.
+    -Done
 3.	The EventImporter object searches the list of available events on the database to find a match for the name entered by the Player.
+    -Done
 4.	The user is informed if a match is found or not. If no match is found, or if the user chooses to search for a different event name, return to step 2.
-4.	If a match is found and the user chooses to join the event, the EventImporter object retrieves the data for the appropriate event and returns a Event object to the Player's phone. The EventImporter object can then be disposed.
-5.	The Player then begins the Player Setup Process
+    -Done
+4.	If a match is found and the user chooses to join the event, the EventImporter object retrieves the data for the appropriate event and returns a Event object to the Player's phone (this event object will be global). The EventImporter object can then be disposed.
+5.	The Player then begins the Player Setup Process.
+    -Done
 
 Player Setup Process - Incomplete
 1.	When a Player or Game Owner proceeds to the Player Setup Process, a PlayerProfile object is instantiated on their phone.

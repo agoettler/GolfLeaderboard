@@ -550,13 +550,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYd-Gw-yOq">
+                                <rect key="frame" x="16" y="362" width="343" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.041046944600000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="errorLabel" destination="dYd-Gw-yOq" id="TCQ-Xu-FRw"/>
+                        <outlet property="leaderLabel" destination="eze-Bm-2iO" id="ZMN-Ea-sk7"/>
+                        <outlet property="prizeLabel" destination="uux-oz-fhv" id="Lcr-lS-mjX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4VL-f2-dmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8570" y="304"/>
+            <point key="canvasLocation" x="8568.7999999999993" y="303.59820089955025"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bTj-jG-F4X">

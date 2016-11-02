@@ -10,21 +10,42 @@ import UIKit
 import Firebase
 
 class UpdateHolePrizeViewController: UIViewController {
+    let globals:CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData
     
-    //var ref: FIRDatabaseReference!
+    @IBOutlet weak var prizeLabel: UILabel!
+    @IBOutlet weak var leaderLabel: UILabel!
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    var selectedPrize: HolePrize!
+    var name: String!
+    var leader: String!
     
     @IBAction func claimHolePrizePressed(_ sender: UIButton) {
+        print("HP select \(selectedPrize.prize)")
         
+        if(globals.globalPlayer.name != "spectator"){
+            leader = globals.globalPlayer.name
+            selectedPrize.currentWinner = leader
+            leaderLabel.text = leader
+        }
+        else{
+            errorLabel.text = "Error: Spectators cannot win hole prizes"
+        }
         // will update the current leader with the name of the player who pressed it
-        dismiss(animated: true, completion: nil)
+        // dismiss(animated: true, completion: nil)
     }
     
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        prizeLabel.text = selectedPrize.prize
+        leaderLabel.text = selectedPrize.currentWinner
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //ref = FIRDatabase.database().reference()
+        print("UpdateHolePrizeViewController Did Load")
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+
         // Do any additional setup after loading the view.
     }
 

@@ -42,17 +42,19 @@ class HolePrizeTabViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewWillAppear(_ animated: Bool) {
         print("hp count \(holePrizesArray.count)")
+        holePrizesArray = globals.globalEvent.holePrizes
         self.tableView.reloadData()
     }
     
     
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("HolePrizeTabViewController Did Load")
         holePrizesArray = globals.globalEvent.holePrizes
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+
         // Do any additional setup after loading the view.
     }
 
@@ -62,14 +64,18 @@ class HolePrizeTabViewController: UIViewController, UITableViewDelegate, UITable
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let destVC:UpdateHolePrizeViewController = segue.destination as! UpdateHolePrizeViewController
+        let prizeIndex = self.tableView.indexPathForSelectedRow
+
+        destVC.selectedPrize = holePrizesArray[Int((prizeIndex?[0])!)]
     }
-    */
+    
 
 }
