@@ -50,11 +50,12 @@ Player Setup Process - Incomplete
 
 
 11/3/16
--   Merge GameCreation branch back into Master
-    -   "Solidify" current codebase
-        -   Make sure most references to local player and event data use the singleton, rather than passing through prepare methods
-        -   Refactor EventImporter and EventExporter into a single class?
-        -
+x  Merge GameCreation branch back into Master
+-   Create ScoreCardEntry branch from master; implement scorecard and score entry, display scorecard
+-   "Solidify" current codebase
+-   Make sure most references to local player and event data use the singleton, rather than passing through prepare methods
+-   Refactor EventImporter and EventExporter into a single class?
+
 
 
 public func toAnyObject() -> Any{
