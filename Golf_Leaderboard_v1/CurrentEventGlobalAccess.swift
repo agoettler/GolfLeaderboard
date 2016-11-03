@@ -10,13 +10,12 @@ import Foundation
 import Firebase
 
 
-class CurrentEventGlobalAccess{
-    
+class CurrentEventGlobalAccess
+{
     static let globalData = CurrentEventGlobalAccess()
     private init() {}
     var globalEvent: Event!
     var globalPlayer: Player!
     var role: String!
     var owner: Bool = false
-    
 }
