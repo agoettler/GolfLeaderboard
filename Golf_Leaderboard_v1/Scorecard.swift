@@ -94,14 +94,15 @@ public class Scorecard{
     
     
     // TODO: Decide if the subscript should be 0-indexed or 1-indexed
-    public subscript(index: Int) -> Hole
+    public subscript(index: Int) -> (hole: Hole, grossScore: Int, netScore: Int)
         {
         get
         {
             assert((index >= 1 && index <= holes.count), "Index out of range")
             
-            return holes[index - 1]
+            return (holes[index - 1], grossScoreArray[index]-1, getNetScore(holeNumber: index-1))
         }
+        
     }
     
     
