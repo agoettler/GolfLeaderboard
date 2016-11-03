@@ -18,34 +18,44 @@ public class Scorecard{
     var cumlativeParSum: Int = 0
 
     
-    public var scoresArray:[HoleScore] = [HoleScore]()
-    
-    
-    // var grossScoreDictionary: Dictionary<Int,Int> = [1:[0,0],2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0]
+    var grossScoreArray: [Int]!
     // var netScoreDictionary: Dictionary<Int,Int> = [1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0]
 
 
-    public init(startHole: Int, handicap: Int){
-        holes = globals.globalEvent.course.holes
+    public init(startHole: Int, handicap: Int, scorecard: [Int]){
+        //holes = globals.globalEvent.course.holes
         playerHandicap = handicap
         playerStartHole = startHole
+        grossScoreArray = scorecard
     }
     
     
     public func updateScore(holeNumber: Int, grossScore: Int){
+        holes = globals.globalEvent.course.holes
+
         let hole:Hole = holes[holeNumber]
         let holeHandicap = hole.handicap
 
-        var netScore:Int = grossScore
-    
         // calculate the strokes over par for the leaderboard
         self.cumlativeParSum += holeHandicap
         
+        grossScoreArray[holeNumber] = grossScore
+        
+    }
+    
+    
+    public func getNetScore(holeNumber: Int) -> Int{
+        
+        let hole:Hole = holes[holeNumber]
+        let holeHandicap = hole.handicap
+    
+        var netScore:Int = grossScoreArray[holeNumber]
+
         // calculate and update the player's net score
         if(holeHandicap <= playerHandicap){ // if the hole handicap is < or = to the players handicap the player gets a stroke
-
-            netScore = grossScore - 1 // player gets a stroke take off for their net score on the hole
- 
+            
+            netScore = netScore - 1 // player gets a stroke take off for their net score on the hole
+            
             if(playerHandicap > 18){ // if a players handicap is over 18
                 let excessiveHandicap: Int = playerHandicap - 18 // find how many strokes over 18
                 if(holeHandicap <= excessiveHandicap){ // if hole handicap is less than or equal to the number of strokes over 18
@@ -54,26 +64,29 @@ public class Scorecard{
             }
         }
         
-        let holeScore:HoleScore = HoleScore(grossScore,netScore)
-        scoresArray.append(holeScore)
-        
+        return netScore
     }
+    
     
     public func getGrossStrokesOverPar() -> Int {
         var totalGrossScore: Int = 0
         
-        for aHole in scoresArray{
-            totalGrossScore += aHole.grossScore
+        for aHole in grossScoreArray{
+            totalGrossScore += aHole
         }
         
         return totalGrossScore - cumlativeParSum
     }
     
+    
+    
     public func getNetStrokesOverPar() -> Int {
         var totalNetScore: Int = 0
+        var net:Int = 0
         
-        for aHole in scoresArray{
-            totalNetScore += aHole.netScore
+        for index in 0..<grossScoreArray.count{
+            net = getNetScore(holeNumber: index)
+            totalNetScore += grossScoreArray[index]
         }
         
         return totalNetScore - cumlativeParSum
@@ -92,25 +105,6 @@ public class Scorecard{
     }
     
     
-    
-}
-
-
-public struct HoleScore
-{
-    public let grossScore: Int
-    
-    public let netScore: Int
-    
-    /// Creates a `HoleScore` structure directly from the given parameters.
-    /// - parameters:
-    ///     - grossScore: The gross score for a player on a given hole.
-    ///     - netScore: The net score for a player on a given hole.
-    public init(_ grossScore: Int, _ netScore: Int)
-    {
-        self.grossScore = grossScore
-        self.netScore = netScore
-    }
     
 }
 
