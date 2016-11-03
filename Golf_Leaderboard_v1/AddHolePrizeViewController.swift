@@ -12,13 +12,24 @@ import Firebase
 
 class AddHolePrizeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     var ref: FIRDatabaseReference!
-
+    var holePrizeObject:HolePrize!
+    var holePrizesArray:[HolePrize]!
+    var parentVC: HolePrizesTableTableViewController!
+    var holeData = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"]
+    var prizeOptions = ["Longest Drive","Longest Putt","Closest to the Pin"]
+    
     @IBOutlet weak var holePrizePicker: UIPickerView!
     
     
     @IBAction func SavePressed(_ sender: UIBarButtonItem) {
-        print("HERE")
-        
+        let prizeHoleNumber = holePrizePicker.selectedRow(inComponent: 0) + 1
+        let prizeType = prizeOptions[holePrizePicker.selectedRow(inComponent: 1)]
+        var completePrize = "Hole \(prizeHoleNumber):"
+        completePrize += " "
+        completePrize += "\(prizeType)"
+        holePrizeObject = HolePrize(prize: completePrize)
+        parentVC.holePrizesArray.append(holePrizeObject)
+
         dismiss(animated: true, completion: nil)
 
     }
@@ -29,9 +40,7 @@ class AddHolePrizeViewController: UIViewController, UIPickerViewDelegate, UIPick
 
     }
     
-    var holeData = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"]
-    
-    var prizeOptions = ["Longest Drive","Longest Putt","Closest to the Pin"]
+
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
@@ -72,7 +81,7 @@ class AddHolePrizeViewController: UIViewController, UIPickerViewDelegate, UIPick
         super.viewDidLoad()
         print("AddHolePrizeViewController: viewDidLoad")
         ref = FIRDatabase.database().reference()
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -80,6 +89,7 @@ class AddHolePrizeViewController: UIViewController, UIPickerViewDelegate, UIPick
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*
@@ -89,7 +99,13 @@ class AddHolePrizeViewController: UIViewController, UIPickerViewDelegate, UIPick
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let viewController = self.navigationController?.viewControllers
+        let count = viewController?.count
+        if count! > 1 {
+            parentVC = viewController?[count!-1] as? HolePrizesTableTableViewController
+            
+        }
     }
     */
-
+    
 }

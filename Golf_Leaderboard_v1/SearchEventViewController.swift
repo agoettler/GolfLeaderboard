@@ -20,18 +20,26 @@ class SearchEventViewController: UIViewController {
     var eventImporterObject: EventImporter!
     var exisitingNames:[String] = [String]()
     
+    let globals:CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData // searched event will be the global event for this app
+
     
-    @IBAction func FindButtonPressed(_ sender: UIButton) {
+    @IBAction func FindButtonPressed(_ sender: UIButton)
+    {
+        // TODO: Move search functionality into a separate function
+        // TODO: Streamline this process so the event owner doesn't need to search for their own event
         eventName = eventNameTextField.text!
-        exisitingNames = eventImporterObject.getExisitingEventNames()
+        exisitingNames = EventImporter.getExisitingEventNames()
         
         if(exisitingNames.contains(eventName)){
+            
+            globals.globalEvent = EventImporter.getSpecificEvent(name: eventName) // set the searched event to the global event
+
             if(roleSegmentedControl.selectedSegmentIndex == 0){
-                //let destVC: UIViewController = storyboard!.instantiateViewController(withIdentifier: "JoinEventVC")
-                // present(destVC, animated: true, completion: nil)
+                globals.role = "player"
                 performSegue(withIdentifier: "goToJoinEvent", sender: self)
             }
             else{
+                globals.role = "spectator"
                 performSegue(withIdentifier: "goToSpectatorTabBar", sender: self)
             }
         }
@@ -58,14 +66,22 @@ class SearchEventViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if(segue.identifier == "goToJoinEvent"){
+            let destVC: JoinEventViewController = segue.destination as! JoinEventViewController
+            destVC.currentEventName = eventName
+            destVC.currentEvent = EventImporter.getSpecificEvent(name: eventName)
+            print( "Current event: \(destVC.currentEvent.name)")
+
+            
+        }
     }
-    */
+    
 
 }

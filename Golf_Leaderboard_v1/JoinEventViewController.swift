@@ -12,16 +12,49 @@ import Firebase
 
 class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 {
-    var ref: FIRDatabaseReference!
-
     
     @IBOutlet weak var playerNameTextField: UITextField!
 
     @IBOutlet weak var handicapPicker: UIPickerView!
     @IBOutlet weak var startHolePicker: UIPickerView!
     
-    var handicapData = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"]
-    var holeData = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"]
+    @IBOutlet weak var playerNameErrorLabel: UILabel!
+    
+    
+    let globals:CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData
+    
+    let handicapData = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"]
+    let holeData = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"]
+    
+    var player: Player!
+    var currentEventName: String!
+    var currentEvent: Event!
+    
+    @IBAction func joinButtonPressed(_ sender: UIButton) {
+        let name = playerNameTextField.text
+        let handicap = handicapPicker.selectedRow(inComponent: 0)
+        let startHole = startHolePicker.selectedRow(inComponent: 0) + 1
+        
+        
+        //if(currentEvent.getPlayerNames().contains(name!) != true){
+        if(!currentEvent.containsPlayer(name: name!))
+        {
+            playerNameTextField.text = ""
+            player = Player(name: name!, handicap: handicap, startHole: startHole)
+            currentEvent.addPlayer(newPlayer: player)
+            EventExporter.addPlayer(player: player, event: currentEvent)
+            
+            globals.globalPlayer = player // make this new player the global player
+            
+        }
+        else{
+            playerNameTextField.text = ""
+            playerNameErrorLabel.text = "Error: Name Taken"
+        }
+    }
+    
+    
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -50,28 +83,11 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     override func viewDidLoad()
     {
-        
         super.viewDidLoad()
         print("JoinEventViewController: viewDidLoad")
-        ref = FIRDatabase.database().reference()
 
-        /*
-        // Do any additional setup after loading the view.
-        var index = 0
         
-        while (index < 41)
-        {
-            if (index>0 && index<19)
-            {
-              //  holeData.append(index)
-            }
-            
-            pickerData.append(index)
-            
-            index = index + 1
-        }
         
-        */
     }
     override func didReceiveMemoryWarning()
     {

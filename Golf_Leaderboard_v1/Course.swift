@@ -76,7 +76,7 @@ public class Course
     ///     - pars: The array of par values of the course.
     public convenience init(name: String, numbers: [Int], yardages: [Int], pars: [Int], handicaps: [Int])
     {
-        if numbers.count == yardages.count && yardages.count == pars.count
+        if numbers.count == yardages.count && yardages.count == pars.count && numbers.count == handicaps.count
         {
             var tempHoles: [Hole] = []
             
@@ -136,6 +136,7 @@ public class Course
 /// - `number`: The number of the hole in the course.
 /// - `yardage`: The distance from the tee to the hole.
 /// - `par`: The ideal number of strokes needed to reach the hole.
+/// - `handicap`: The handicap of a given hole.
 public struct Hole
 {
     public let number: Int

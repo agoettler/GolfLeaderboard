@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1933E8901DC28FCA00F03C2C /* HolePrize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933E88F1DC28FCA00F03C2C /* HolePrize.swift */; };
 		1D6A2B93958596DFAE8C4AB0 /* Pods_Golf_Leaderboard_v1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7439C3635AEDB28DCBBADBF6 /* Pods_Golf_Leaderboard_v1.framework */; };
 		75A751021DBFF2AC0036DE26 /* Plans.txt in Resources */ = {isa = PBXBuildFile; fileRef = 75A751011DBFF2AC0036DE26 /* Plans.txt */; };
 		75A751041DC073870036DE26 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A751031DC073870036DE26 /* Course.swift */; };
@@ -25,13 +26,18 @@
 		822B7DD61DC26FA30075E3A8 /* EventImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B7DD51DC26FA30075E3A8 /* EventImporter.swift */; };
 		822B7DD81DC270B50075E3A8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B7DD71DC270B50075E3A8 /* Event.swift */; };
 		822B7DDA1DC270E50075E3A8 /* EventExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B7DD91DC270E50075E3A8 /* EventExporter.swift */; };
+		822B7DDC1DC295830075E3A8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B7DDB1DC295830075E3A8 /* Player.swift */; };
+		8231D88E1DC9459A009FC2DC /* HolePrizeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231D88D1DC9459A009FC2DC /* HolePrizeTabViewController.swift */; };
+		8231D8901DCA36AD009FC2DC /* CurrentEventGlobalAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231D88F1DCA36AD009FC2DC /* CurrentEventGlobalAccess.swift */; };
 		823534361DC01304007AFE70 /* CourseListImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823534351DC01304007AFE70 /* CourseListImporter.swift */; };
 		8235343A1DC1569C007AFE70 /* UpdateHolePrizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823534391DC1569C007AFE70 /* UpdateHolePrizeViewController.swift */; };
 		8235343C1DC16C11007AFE70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8235343B1DC16C11007AFE70 /* GoogleService-Info.plist */; };
+		8250A7E31DCBA59100528C63 /* Scorecard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250A7E21DCBA59100528C63 /* Scorecard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0D367B910C9FF4D44BD5A769 /* Pods-Golf_Leaderboard_v1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Golf_Leaderboard_v1.release.xcconfig"; path = "Pods/Target Support Files/Pods-Golf_Leaderboard_v1/Pods-Golf_Leaderboard_v1.release.xcconfig"; sourceTree = "<group>"; };
+		1933E88F1DC28FCA00F03C2C /* HolePrize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolePrize.swift; sourceTree = "<group>"; };
 		7439C3635AEDB28DCBBADBF6 /* Pods_Golf_Leaderboard_v1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Golf_Leaderboard_v1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A751011DBFF2AC0036DE26 /* Plans.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Plans.txt; sourceTree = "<group>"; };
 		75A751031DC073870036DE26 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
@@ -52,9 +58,13 @@
 		822B7DD51DC26FA30075E3A8 /* EventImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventImporter.swift; sourceTree = "<group>"; };
 		822B7DD71DC270B50075E3A8 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		822B7DD91DC270E50075E3A8 /* EventExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventExporter.swift; sourceTree = "<group>"; };
+		822B7DDB1DC295830075E3A8 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		8231D88D1DC9459A009FC2DC /* HolePrizeTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolePrizeTabViewController.swift; sourceTree = "<group>"; };
+		8231D88F1DCA36AD009FC2DC /* CurrentEventGlobalAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentEventGlobalAccess.swift; sourceTree = "<group>"; };
 		823534351DC01304007AFE70 /* CourseListImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListImporter.swift; sourceTree = "<group>"; };
 		823534391DC1569C007AFE70 /* UpdateHolePrizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateHolePrizeViewController.swift; sourceTree = "<group>"; };
 		8235343B1DC16C11007AFE70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8250A7E21DCBA59100528C63 /* Scorecard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scorecard.swift; sourceTree = "<group>"; };
 		DDF1800807DCCD9CD5771F92 /* Pods-Golf_Leaderboard_v1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Golf_Leaderboard_v1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Golf_Leaderboard_v1/Pods-Golf_Leaderboard_v1.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,11 +113,15 @@
 				8221EDE21DB6CCBF00239662 /* ViewController.swift */,
 				8221EDE41DB6CCBF00239662 /* Main.storyboard */,
 				75A751011DBFF2AC0036DE26 /* Plans.txt */,
+				8231D88F1DCA36AD009FC2DC /* CurrentEventGlobalAccess.swift */,
 				75A751031DC073870036DE26 /* Course.swift */,
 				823534351DC01304007AFE70 /* CourseListImporter.swift */,
 				822B7DD71DC270B50075E3A8 /* Event.swift */,
 				822B7DD51DC26FA30075E3A8 /* EventImporter.swift */,
 				822B7DD91DC270E50075E3A8 /* EventExporter.swift */,
+				1933E88F1DC28FCA00F03C2C /* HolePrize.swift */,
+				822B7DDB1DC295830075E3A8 /* Player.swift */,
+				8250A7E21DCBA59100528C63 /* Scorecard.swift */,
 				8221EDE71DB6CCBF00239662 /* Assets.xcassets */,
 				8221EDE91DB6CCBF00239662 /* LaunchScreen.storyboard */,
 				8221EDEC1DB6CCBF00239662 /* Info.plist */,
@@ -120,6 +134,7 @@
 				8221EE5D1DBFF87200239662 /* AddHolePrizeViewController.swift */,
 				8221EE5F1DBFF89600239662 /* HolePrizesTableTableViewController.swift */,
 				823534391DC1569C007AFE70 /* UpdateHolePrizeViewController.swift */,
+				8231D88D1DC9459A009FC2DC /* HolePrizeTabViewController.swift */,
 			);
 			path = Golf_Leaderboard_v1;
 			sourceTree = "<group>";
@@ -268,16 +283,21 @@
 				8221EE5C1DBFEC4200239662 /* ScoreEntryViewController.swift in Sources */,
 				75A751041DC073870036DE26 /* Course.swift in Sources */,
 				8235343A1DC1569C007AFE70 /* UpdateHolePrizeViewController.swift in Sources */,
+				8231D8901DCA36AD009FC2DC /* CurrentEventGlobalAccess.swift in Sources */,
 				8221EE5E1DBFF87200239662 /* AddHolePrizeViewController.swift in Sources */,
 				8221EDE11DB6CCBF00239662 /* AppDelegate.swift in Sources */,
 				823534361DC01304007AFE70 /* CourseListImporter.swift in Sources */,
 				8221EE581DBFEC1100239662 /* SearchEventViewController.swift in Sources */,
+				8231D88E1DC9459A009FC2DC /* HolePrizeTabViewController.swift in Sources */,
 				8221EE5A1DBFEC2800239662 /* JoinEventViewController.swift in Sources */,
 				8221EE601DBFF89600239662 /* HolePrizesTableTableViewController.swift in Sources */,
 				822B7DDA1DC270E50075E3A8 /* EventExporter.swift in Sources */,
 				8221EE541DBFEBA300239662 /* TitleViewController.swift in Sources */,
+				1933E8901DC28FCA00F03C2C /* HolePrize.swift in Sources */,
 				8221EE561DBFEBD900239662 /* CreateEventViewController.swift in Sources */,
+				8250A7E31DCBA59100528C63 /* Scorecard.swift in Sources */,
 				822B7DD81DC270B50075E3A8 /* Event.swift in Sources */,
+				822B7DDC1DC295830075E3A8 /* Player.swift in Sources */,
 				822B7DD61DC26FA30075E3A8 /* EventImporter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +342,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -371,6 +392,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

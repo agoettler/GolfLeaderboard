@@ -14,10 +14,14 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
 
     var availableCourses:[Course]?
     var eventName:String!
-    
+    var eventType:String!
+    var courseSelection:Course!
+    var holePrizesArray: [HolePrize] = [HolePrize]()
     var eventImporterObject: EventImporter!
     var exisitingNames:[String] = [String]()
+    var createdEvent: Event!
     
+    let globals:CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData
     
     @IBOutlet weak var eventNameTextField: UITextField!
 
@@ -30,24 +34,28 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var errorLabel: UILabel!
     
     @IBAction func createEventButtonPressed(_ sender: UIButton) {
-        
+        exisitingNames = EventImporter.getExisitingEventNames()
         eventName = eventNameTextField.text
-        exisitingNames = eventImporterObject.getExisitingEventNames()
-        
+
         if(exisitingNames.contains(eventName)){
             eventNameTextField.text = ""
             errorLabel.text = "Error, Name Taken"
         }
         else{
             errorLabel.text = ""
+            eventName = eventNameTextField.text
+
+            eventType = gameTypes[gameTypePicker.selectedRow(inComponent: 0)]
+            courseSelection = availableCourses?[selectCoursePicker.selectedRow(inComponent: 0)]
+            createdEvent = Event(name: eventName, owner: "Null", type: eventType, course: courseSelection, players: [], holePrizes: holePrizesArray)
+            let _ = EventExporter(currentEvent: createdEvent)
+            
+            globals.globalEvent = createdEvent // make the created event the global event for this app
+            globals.owner = true
+            
             performSegue(withIdentifier: "goToEventSearch", sender: self)
         }
-        
     }
-    
-    
-    
-    
     
     
     
@@ -108,7 +116,16 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
         if(segue.identifier == "goToEventSearch"){
             let destVC:SearchEventViewController = segue.destination as! SearchEventViewController
             destVC.eventName = eventName
+            //destVC.navigationController?.setNavigationBarHidden(true, animated: false)
+        
         }
+        else if(segue.identifier == "goToHPTableView"){
+            let destVC:HolePrizesTableTableViewController = segue.destination as! HolePrizesTableTableViewController
+                destVC.holePrizesArray = self.holePrizesArray
+                destVC.parentVC = self
+        }
+        
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
