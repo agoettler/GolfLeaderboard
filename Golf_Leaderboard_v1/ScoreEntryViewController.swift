@@ -32,29 +32,33 @@ class ScoreEntryViewController: UIViewController {
     
     
     @IBAction func submitScorePressed(_ sender: UIButton) {
+        let currentHole: Int = globals.globalPlayer.currentHole
+        let enteredScore: Int = Int(scoreLabel.text!)!
+        print("CURRENT HOLE: \(currentHole)")
+        globals.globalPlayer.scorecard.updateScore(holeNumber: currentHole, grossScore: enteredScore)
         
-        var enteredScore
+        globals.globalPlayer.goToNextHole()
         
-        
-        
-        
-        var currentHole: Int = globals.globalPlayer.currentHole
-        var hole:Hole = globals.globalEvent.course.holes[currentHole]
-        holeLabel.text = "\(currentHole)"
-        yardageLabel.text = "\(hole.yardage)"
-        parLabel.text = "\(hole.par)"
-        handicapLabel.text = "\(hole.handicap)"
-        
-        
+        updateLabels(currentHole: globals.globalPlayer.currentHole)
+        print("CURRENT HOLE 2: \(globals.globalPlayer.currentHole)")
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        var currentHole: Int = globals.globalPlayer.currentHole
-        var hole:Hole = globals.globalEvent.course.holes[currentHole]
+        let currentHole: Int = globals.globalPlayer.currentHole
+        
+        updateLabels(currentHole: currentHole)
+    }
+    
+    
+    func updateLabels(currentHole: Int){
+        let hole:Hole = globals.globalEvent.course[currentHole]
         holeLabel.text = "\(currentHole)"
         yardageLabel.text = "\(hole.yardage)"
         parLabel.text = "\(hole.par)"
         handicapLabel.text = "\(hole.handicap)"
+        scoreLabel.text = "\(hole.par)"
+        scoreStepper.value = Double(hole.par)
     }
     
     override func viewDidLoad()
@@ -66,7 +70,7 @@ class ScoreEntryViewController: UIViewController {
         scoreStepper.stepValue = 1
         scoreStepper.minimumValue = 1
         scoreStepper.maximumValue = 15
-        scoreStepper.value = 4
+        
         scoreLabel.text = "\(scoreStepper.value)"
         // Do any additional setup after loading the view.
     }

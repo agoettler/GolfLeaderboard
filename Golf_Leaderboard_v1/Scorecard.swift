@@ -18,7 +18,7 @@ public class Scorecard{
     var cumlativeParSum: Int = 0
 
     
-    var grossScoreArray: [Int]!
+    var grossScoreArray: [Int]=[Int]()
     // var netScoreDictionary: Dictionary<Int,Int> = [1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0]
 
 
@@ -31,22 +31,21 @@ public class Scorecard{
     
     
     public func updateScore(holeNumber: Int, grossScore: Int){
-        holes = globals.globalEvent.course.holes
+        let hole:Hole = globals.globalEvent.course[holeNumber]
 
-        let hole:Hole = holes[holeNumber]
         let holeHandicap = hole.handicap
 
         // calculate the strokes over par for the leaderboard
         self.cumlativeParSum += holeHandicap
         
-        grossScoreArray[holeNumber] = grossScore
+        grossScoreArray[holeNumber-1] = grossScore
         
     }
     
     
     public func getNetScore(holeNumber: Int) -> Int{
         
-        let hole:Hole = holes[holeNumber]
+        let hole:Hole = globals.globalEvent.course[holeNumber]
         let holeHandicap = hole.handicap
     
         var netScore:Int = grossScoreArray[holeNumber]
@@ -86,7 +85,7 @@ public class Scorecard{
         
         for index in 0..<grossScoreArray.count{
             net = getNetScore(holeNumber: index)
-            totalNetScore += grossScoreArray[index]
+            totalNetScore += net
         }
         
         return totalNetScore - cumlativeParSum
@@ -98,11 +97,10 @@ public class Scorecard{
         {
         get
         {
-            assert((index >= 1 && index <= holes.count), "Index out of range")
+            assert((index >= 1 && index <= grossScoreArray.count), "Index out of range")
             
             return (holes[index - 1], grossScoreArray[index]-1, getNetScore(holeNumber: index-1))
         }
-        
     }
     
     

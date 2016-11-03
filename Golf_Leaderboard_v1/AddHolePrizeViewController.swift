@@ -22,6 +22,7 @@ class AddHolePrizeViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     
     @IBAction func SavePressed(_ sender: UIBarButtonItem) {
+        
         let prizeHoleNumber = holePrizePicker.selectedRow(inComponent: 0) + 1
         let prizeType = prizeOptions[holePrizePicker.selectedRow(inComponent: 1)]
         var completePrize = "Hole \(prizeHoleNumber):"

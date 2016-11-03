@@ -29,7 +29,12 @@ public class Player{
     }
     
     public func goToNextHole(){
-        self.currentHole = self.currentHole + 1
+        if(self.currentHole == 18){
+            self.currentHole = 1
+        }
+        else{
+            self.currentHole = self.currentHole + 1
+        }
     }
     
     
