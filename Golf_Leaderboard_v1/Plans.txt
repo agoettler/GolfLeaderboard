@@ -40,7 +40,7 @@ Game Joining Process
 5.	The Player then begins the Player Setup Process.
     -Done
 
-Player Setup Process - Incomplete
+Player Setup Process
 1.	When a Player or Game Owner proceeds to the Player Setup Process, a PlayerProfile object is instantiated on their phone.
 2.	The PlayerName, Handicap, and StartHole properties of the PlayerProfile object are modified according to the Player's selections in the PlayerCreationViewController.
 3.	The PlayerScoreCard property of the PlayerProfile object is instantiated and initialized using values from the PlayerProfile object and the Course property of the Player's Event object. The score values of the PlayerScoreCard are initialized to 0 or nil.
@@ -54,6 +54,7 @@ x  Merge GameCreation branch back into Master
 -   Create ScoreCardEntry branch from master; implement scorecard and score entry, display scorecard
 -   "Solidify" current codebase
 -   Make sure most references to local player and event data use the singleton, rather than passing through prepare methods
+    - Not needed for the hole prize creation process, but other references to local data should be through the singleton
 -   Refactor EventImporter and EventExporter into a single class?
 
 
