@@ -23,7 +23,10 @@ class SearchEventViewController: UIViewController {
     let globals:CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData // searched event will be the global event for this app
 
     
-    @IBAction func FindButtonPressed(_ sender: UIButton) {
+    @IBAction func FindButtonPressed(_ sender: UIButton)
+    {
+        // TODO: Move search functionality into a separate function
+        // TODO: Streamline this process so the event owner doesn't need to search for their own event
         eventName = eventNameTextField.text!
         exisitingNames = EventImporter.getExisitingEventNames()
         
