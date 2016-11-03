@@ -40,7 +40,8 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         if(!currentEvent.containsPlayer(name: name!))
         {
             playerNameTextField.text = ""
-            player = Player(name: name!, handicap: handicap, startHole: startHole)
+            let emptyCard: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+            player = Player(name: name!, handicap: handicap, startHole: startHole, card: emptyCard)
             currentEvent.addPlayer(newPlayer: player)
             EventExporter.addPlayer(player: player, event: currentEvent)
             
