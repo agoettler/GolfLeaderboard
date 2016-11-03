@@ -44,7 +44,7 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             currentEvent.addPlayer(newPlayer: player)
             EventExporter.addPlayer(player: player, event: currentEvent)
             
-            globals.globalPlayer = player // make this new player the global player for this class
+            globals.globalPlayer = player // make this new player the global player
             
         }
         else{

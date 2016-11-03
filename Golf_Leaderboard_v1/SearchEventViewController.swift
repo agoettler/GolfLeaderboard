@@ -30,7 +30,7 @@ class SearchEventViewController: UIViewController {
         if(exisitingNames.contains(eventName)){
             
             globals.globalEvent = EventImporter.getSpecificEvent(name: eventName) // set the searched event to the global event
-            print("globe event: \(globals.globalEvent.holePrizes.count)")
+
             if(roleSegmentedControl.selectedSegmentIndex == 0){
                 globals.role = "player"
                 performSegue(withIdentifier: "goToJoinEvent", sender: self)

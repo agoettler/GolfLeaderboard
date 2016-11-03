@@ -55,7 +55,7 @@ class CourseListImporter {
                     j=j+1
                 }
                 
-                self.aCourse = Course.init(name: self.courseNames[i], yardages: yardageArray, pars: parArray)
+                self.aCourse = Course.init(name: self.courseNames[i], yardages: yardageArray, pars: parArray, handicaps: handicapArray)
                 print("Course Count: \(CourseListImporter.coursesArray.count)")
                 CourseListImporter.coursesArray.append(self.aCourse)
                 

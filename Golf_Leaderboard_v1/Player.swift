@@ -16,7 +16,7 @@ public class Player{
     public let handicap: Int
     public let startHole: Int
     public var currentHole: Int!
-    
+    public var scoreCard:Scorecard!
     
     public init(name : String, handicap : Int, startHole : Int){
         
@@ -24,11 +24,13 @@ public class Player{
         self.handicap = handicap
         self.startHole = startHole
         self.currentHole = startHole
+        self.scoreCard = Scorecard(startHole: self.startHole, handicap: self.handicap)
         
     }
     
-    
-    
+    public func goToNextHole(){
+        self.currentHole = self.currentHole + 1
+    }
     
     
     

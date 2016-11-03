@@ -52,10 +52,12 @@ public class EventExporter{
             "GameType": event.type,
             "Hole Prizes": hpDictionary,
             "Players": "Null"
-            //"Players": ["Adam1":["Current Hole": 5,"Gross Score":42, "Net Score": 42, "Handicap": 12, "Start Hole": 4]]
         ]
     }
     
+    // Function to add a new player to the database
+    // Format for the new player -> "Players": ["Adam1":["Current Hole": 5,"Gross Score":42, "Net Score": 42, "Handicap": 12, "Start Hole": 4]]
+
     public static func addPlayer(player: Player, event: Event)
     {
         let key = ref.child("Events/\(event.name)/Players/\(player.name)")
@@ -68,12 +70,13 @@ public class EventExporter{
         
     }
     
+    // Function to format a player's information for the database
     public static func exportPlayer(player: Player) -> NSDictionary
     {
         return ["Current Hole": player.currentHole, "Handicap": player.handicap, "Start Hole": player.startHole]
     }
     
-    
+    // Function to update hole prizes in the database
     public static func updateHolePrizes(holePrize: HolePrize){
         let eventName:String = globals.globalEvent.name
         let key = ref.child("Events/\(eventName)/Hole Prizes/\(holePrize.prize)")
@@ -82,5 +85,7 @@ public class EventExporter{
         key.setValue(updates)
         
     }
+    
+    
     
 }
