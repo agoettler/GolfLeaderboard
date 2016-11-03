@@ -13,6 +13,9 @@ import Firebase
 class ScoreEntryViewController: UIViewController {
     var ref: FIRDatabaseReference!
     
+    var globals: CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData
+    
+    
     @IBOutlet weak var holeLabel: UILabel!
     @IBOutlet weak var yardageLabel: UILabel!
     @IBOutlet weak var parLabel: UILabel!
@@ -27,7 +30,32 @@ class ScoreEntryViewController: UIViewController {
         
     }
     
-
+    
+    @IBAction func submitScorePressed(_ sender: UIButton) {
+        
+        var enteredScore
+        
+        
+        
+        
+        var currentHole: Int = globals.globalPlayer.currentHole
+        var hole:Hole = globals.globalEvent.course.holes[currentHole]
+        holeLabel.text = "\(currentHole)"
+        yardageLabel.text = "\(hole.yardage)"
+        parLabel.text = "\(hole.par)"
+        handicapLabel.text = "\(hole.handicap)"
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        var currentHole: Int = globals.globalPlayer.currentHole
+        var hole:Hole = globals.globalEvent.course.holes[currentHole]
+        holeLabel.text = "\(currentHole)"
+        yardageLabel.text = "\(hole.yardage)"
+        parLabel.text = "\(hole.par)"
+        handicapLabel.text = "\(hole.handicap)"
+    }
     
     override func viewDidLoad()
     {
