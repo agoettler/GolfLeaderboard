@@ -73,7 +73,15 @@ public class EventExporter{
     // Function to format a player's information for the database
     public static func exportPlayer(player: Player) -> NSDictionary
     {
-        return ["Current Hole": player.currentHole, "Handicap": player.handicap, "Start Hole": player.startHole]
+        
+        var scoreString:String = ""
+        
+        for hole in player.scorecard.grossScoreArray{
+            scoreString += "\(hole),"
+        }
+        scoreString.remove(at: scoreString.index(before: scoreString.endIndex))
+        
+        return ["Current Hole": player.currentHole, "Handicap": player.handicap, "Start Hole": player.startHole, "Scorecard": scoreString]
     }
     
     // Function to update hole prizes in the database
