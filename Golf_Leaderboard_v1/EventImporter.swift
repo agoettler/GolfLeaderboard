@@ -14,7 +14,7 @@ class EventImporter{
     var ref: FIRDatabaseReference = FIRDatabase.database().reference()
     public static var exisitingNames: [String]!
     var exisitingEventDictionary: NSDictionary!
-   // public static var exisitingEvents: NSDictionary!
+    // public static var exisitingEvents: NSDictionary!
     public static var exisitingEvents: [Event] = [Event]()
 
     public init(){
@@ -42,52 +42,51 @@ class EventImporter{
                 let course:Course = CourseListImporter.getCurrentCourse(name: courseString)
                 var j: Int = 0
                 var playerArray: [Player] = [Player]()
-                if let playerInDict:NSDictionary = eventData.value(forKey: "Players") as? NSDictionary {
-
                 
-                let pNames: [String] = playerInDict.allKeys as! [String]
-                print("pNames \(pNames.count)")
-       
+                if let playerInDict:NSDictionary = eventData.value(forKey: "Players") as? NSDictionary {
+                
+                    let pNames: [String] = playerInDict.allKeys as! [String]
+                    print("pNames \(pNames.count)")
 
-                while(j<pNames.count){
+                    while(j<pNames.count){
                     
-                    let pValue: NSDictionary = playerInDict.value(forKey: pNames[j]) as! NSDictionary
-                    let currHandicap: Int = pValue.value(forKey: "Handicap") as! Int
-                    let startHole: Int = pValue.value(forKey: "Start Hole") as! Int
+                        let pValue: NSDictionary = playerInDict.value(forKey: pNames[j]) as! NSDictionary
+                        let currHandicap: Int = pValue.value(forKey: "Handicap") as! Int
+                        let startHole: Int = pValue.value(forKey: "Start Hole") as! Int
 
-                    print("pValue \(pValue)")
-                    let newPlayer: Player = Player(name: pNames[j], handicap: currHandicap, startHole: startHole)
+                        print("pValue \(pValue)")
+                        let newPlayer: Player = Player(name: pNames[j], handicap: currHandicap, startHole: startHole)
                     
-                    playerArray.append(newPlayer)
+                        playerArray.append(newPlayer)
                     
-                    j = j + 1
+                        j = j + 1
+                    }
                 }
-                }
-                print("Name \(name)")
-                print("Owner \(owner)")
-                print("gametype \(type)")
-                print("courseString \(courseString)")
-                print("Course \(course)")
+//                print("Name \(name)")
+//                print("Owner \(owner)")
+//                print("gametype \(type)")
+//                print("courseString \(courseString)")
+//                print("Course \(course)")
 //                print("pNames \(pNames)")
                 var holePrizeArray: [HolePrize] = [HolePrize]()
 
                 let holePrizeForEvent = eventData.value(forKey: "Hole Prizes")
-                print("HPS: \(holePrizeForEvent)")
+//                print("HPS: \(holePrizeForEvent)")
 
                 if(holePrizeForEvent != nil){
-                j = 0
-                let holePrizeDictionary: NSDictionary = eventData.value(forKey: "Hole Prizes") as! NSDictionary
+                    j = 0
+                    let holePrizeDictionary: NSDictionary = eventData.value(forKey: "Hole Prizes") as! NSDictionary
 
-                for aPrize in holePrizeDictionary {
+                    for aPrize in holePrizeDictionary {
                     
-                    let newPrize: HolePrize = HolePrize(incomingPrize: aPrize.key as! String, incomingWinner: aPrize.value as! String)
-                    holePrizeArray.append(newPrize)
+                        let newPrize: HolePrize = HolePrize(incomingPrize: aPrize.key as! String, incomingWinner: aPrize.value as! String)
+                        holePrizeArray.append(newPrize)
                     
-                    j = j + 1
-                }
+                        j = j + 1
+                    }
                 }
                 
-                let nextEvent: Event = Event(name: name, owner: owner/*.value(forKey: "Name") as! String*/, type: type, course: course, players: playerArray, holePrizes: holePrizeArray)
+                let nextEvent: Event = Event(name: name, owner: owner, type: type, course: course, players: playerArray, holePrizes: holePrizeArray)
                 EventImporter.exisitingEvents.append(nextEvent)
                 
                 
@@ -120,9 +119,7 @@ class EventImporter{
             }
             i = i + 1
         }
-        
         return EventImporter.exisitingEvents[desiredEventIndex]
-
     }
     
     public static func getEvents() -> [Event]{
