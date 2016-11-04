@@ -42,7 +42,8 @@ class HolePrizeTabBarTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        
+        holePrizesArray = globals.globalEvent.holePrizes
+
         print("hp count \(holePrizesArray.count)")
         holePrizesArray = globals.globalEvent.holePrizes
         self.tableView.reloadData()
@@ -53,8 +54,10 @@ class HolePrizeTabBarTableViewController: UITableViewController {
         super.viewDidLoad()
         print("HolePrizeTabViewController Did Load")
         holePrizesArray = globals.globalEvent.holePrizes
+        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        
+        //self.navigationItem.hidesBackButton = true
+
         // Do any additional setup after loading the view.
     }
     

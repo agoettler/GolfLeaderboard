@@ -376,7 +376,7 @@
         <!--Scorecard-->
         <scene sceneID="If5-VS-46H">
             <objects>
-                <tableViewController id="l01-Jz-o5J" sceneMemberID="viewController">
+                <tableViewController id="l01-Jz-o5J" customClass="ScorecardTableViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bwA-T9-bPM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -422,7 +422,7 @@
         <!--Leaderboard-->
         <scene sceneID="Nf6-Md-zL8">
             <objects>
-                <tableViewController storyboardIdentifier="LeaderboardVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vv5-9E-ATg" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LeaderboardVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vv5-9E-ATg" customClass="LeaderboardTableViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="j7r-ki-nCY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -540,7 +540,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="SQS-Ec-sfR" kind="show" id="lwz-qK-7Mn"/>
+                                    <segue destination="SQS-Ec-sfR" kind="show" id="IsO-vg-W5w"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -631,6 +631,7 @@
         <scene sceneID="bTj-jG-F4X">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3M8-Ir-BKP" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="psz-Kt-UdD">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -906,7 +907,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Jkp-Wt-CD6"/>
-        <segue reference="Czb-Wb-Ong"/>
-        <segue reference="3p0-Pc-HJI"/>
+        <segue reference="GV0-Cv-MaZ"/>
+        <segue reference="XJb-p8-uLI"/>
     </inferredMetricsTieBreakers>
 </document>
