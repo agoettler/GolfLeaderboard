@@ -336,7 +336,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sae-4E-sSB">
-                                <rect key="frame" x="88" y="507" width="198" height="76"/>
+                                <rect key="frame" x="91" y="482" width="198" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.66740204020000005" blue="0.01527244053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -347,6 +347,13 @@
                                     <action selector="submitScorePressed:" destination="kWC-mz-8oB" eventType="touchUpInside" id="f4R-VX-jIj"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGa-79-Ieq">
+                                <rect key="frame" x="70" y="566" width="234" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.041046944600000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -355,8 +362,10 @@
                         <outlet property="handicapLabel" destination="PFo-Zc-ydt" id="tu3-Vg-Lgg"/>
                         <outlet property="holeLabel" destination="9yh-Lu-eft" id="TsC-vL-agt"/>
                         <outlet property="parLabel" destination="zcq-sl-GWV" id="mfI-lM-iYj"/>
+                        <outlet property="roundCompleteLabel" destination="YGa-79-Ieq" id="ocp-NV-0Zr"/>
                         <outlet property="scoreLabel" destination="dlV-Rd-1HB" id="xNW-wJ-X7n"/>
                         <outlet property="scoreStepper" destination="46j-Bc-cQi" id="KcV-sG-whw"/>
+                        <outlet property="submitScoreButton" destination="sae-4E-sSB" id="qGW-iL-XlN"/>
                         <outlet property="yardageLabel" destination="Cb3-EY-boh" id="ugY-K1-8x1"/>
                     </connections>
                 </viewController>
@@ -442,6 +451,7 @@
         <!--Hole Prizes-->
         <scene sceneID="rED-uX-gcl">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Riz-fu-eAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="HolePrizeView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qlB-ql-9bV" customClass="HolePrizeTabViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5dJ-xt-If1"/>
@@ -452,7 +462,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o8Y-bC-biU">
-                                <rect key="frame" x="0.0" y="64" width="375" height="546"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -479,9 +489,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="SQS-Ec-sfR" kind="show" id="tZp-D0-Iin"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -497,9 +504,56 @@
                         <outlet property="tableView" destination="o8Y-bC-biU" id="dMv-rj-wDf"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Riz-fu-eAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7696.8000000000002" y="303.59820089955025"/>
+            <point key="canvasLocation" x="8569" y="-880"/>
+        </scene>
+        <!--Hole Prizes-->
+        <scene sceneID="0QR-wK-nou">
+            <objects>
+                <tableViewController id="jZH-l5-hou" customClass="HolePrizeTabBarTableViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="q6l-5X-H1m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="holePrizeReuseID" textLabel="QRu-YS-cYC" detailTextLabel="YU9-zI-4t1" style="IBUITableViewCellStyleValue1" id="DwO-mb-g1P">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DwO-mb-g1P" id="JGn-tP-RO2">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QRu-YS-cYC">
+                                            <rect key="frame" x="15" y="11" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YU9-zI-4t1">
+                                            <rect key="frame" x="296" y="11" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="SQS-Ec-sfR" kind="show" id="lwz-qK-7Mn"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jZH-l5-hou" id="7Tk-Ix-6gv"/>
+                            <outlet property="delegate" destination="jZH-l5-hou" id="4w5-Yy-Mf1"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Hole Prizes" id="CeJ-OB-3Ym"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NIe-Lg-w89" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7743" y="304"/>
         </scene>
         <!--Update Hole Prize View Controller-->
         <scene sceneID="Idv-eP-2S3">
@@ -587,7 +641,7 @@
                         <segue destination="kWC-mz-8oB" kind="relationship" relationship="viewControllers" id="GR2-wF-NMh"/>
                         <segue destination="l01-Jz-o5J" kind="relationship" relationship="viewControllers" id="fKO-tu-jjN"/>
                         <segue destination="Vv5-9E-ATg" kind="relationship" relationship="viewControllers" id="3p0-Pc-HJI"/>
-                        <segue destination="qlB-ql-9bV" kind="relationship" relationship="viewControllers" id="r7o-0t-8GJ"/>
+                        <segue destination="jZH-l5-hou" kind="relationship" relationship="viewControllers" id="Czb-Wb-Ong"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqc-rD-DXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -842,7 +896,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Vv5-9E-ATg" kind="relationship" relationship="viewControllers" id="GV0-Cv-MaZ"/>
-                        <segue destination="qlB-ql-9bV" kind="relationship" relationship="viewControllers" id="Zio-ch-z5g"/>
+                        <segue destination="jZH-l5-hou" kind="relationship" relationship="viewControllers" id="XJb-p8-uLI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5D8-n5-bDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -852,7 +906,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Jkp-Wt-CD6"/>
-        <segue reference="Zio-ch-z5g"/>
-        <segue reference="GV0-Cv-MaZ"/>
+        <segue reference="Czb-Wb-Ong"/>
+        <segue reference="3p0-Pc-HJI"/>
     </inferredMetricsTieBreakers>
 </document>

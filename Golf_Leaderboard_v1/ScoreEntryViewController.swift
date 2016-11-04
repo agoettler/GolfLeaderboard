@@ -22,6 +22,8 @@ class ScoreEntryViewController: UIViewController {
     @IBOutlet weak var handicapLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var scoreStepper: UIStepper!
+    @IBOutlet weak var submitScoreButton: UIButton!
+    @IBOutlet weak var roundCompleteLabel: UILabel!
     
     
     @IBAction func scoreStepperPressed(_ sender: UIStepper) {
@@ -37,10 +39,18 @@ class ScoreEntryViewController: UIViewController {
         print("CURRENT HOLE: \(currentHole)")
         globals.globalPlayer.scorecard.updateScore(holeNumber: currentHole, grossScore: enteredScore)
         
+        EventExporter.updatePlayerScorecardInDatabase()
         globals.globalPlayer.goToNextHole()
         
-        updateLabels(currentHole: globals.globalPlayer.currentHole)
-        print("CURRENT HOLE 2: \(globals.globalPlayer.currentHole)")
+        if(globals.globalPlayer.currentHole != globals.globalPlayer.startHole){
+            updateLabels(currentHole: globals.globalPlayer.currentHole)
+            print("CURRENT HOLE 2: \(globals.globalPlayer.currentHole)")
+        }
+        else{
+            submitScoreButton.isEnabled = true
+            submitScoreButton.alpha = 0.5
+            roundCompleteLabel.text = "Round Completed"
+        }
 
     }
     
