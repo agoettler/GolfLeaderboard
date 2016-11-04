@@ -21,8 +21,12 @@ class CourseListImporter {
     // for each course, create a course object and append it to courseListObject
     
     public init(){
+        //self.ref.child("Courses").observeSingleEvent(of: .value, with: { (snapshot) in let importedCourses1 = snapshot.value as? NSDictionary }, withCancel: {(error) in print(error.localizedDescription)})
+        
 
-        self.ref.child("Courses").observe(FIRDataEventType.value, with: {(snapshot) in
+        
+        
+        self.ref.child("Courses").observeSingleEvent(of: FIRDataEventType.value, with: {(snapshot) in
             let importedCourses = snapshot.value as? NSDictionary
 
             self.courseNames = importedCourses?.allKeys as! [String]

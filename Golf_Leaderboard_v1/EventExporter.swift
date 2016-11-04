@@ -111,6 +111,11 @@ public class EventExporter{
         
         key.setValue(scoreString)
         
+        let key2 = ref.child("Events/\(event.name)/Players/\(player.name)/Current Hole")
+        
+        key2.setValue(player.currentHole)
+
+        
     }
     
 }

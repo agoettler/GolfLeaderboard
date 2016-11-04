@@ -39,8 +39,9 @@ class ScoreEntryViewController: UIViewController {
         print("CURRENT HOLE: \(currentHole)")
         globals.globalPlayer.scorecard.updateScore(holeNumber: currentHole, grossScore: enteredScore)
         
-        EventExporter.updatePlayerScorecardInDatabase()
         globals.globalPlayer.goToNextHole()
+
+        EventExporter.updatePlayerScorecardInDatabase()
         
         if(globals.globalPlayer.currentHole != globals.globalPlayer.startHole){
             updateLabels(currentHole: globals.globalPlayer.currentHole)
