@@ -94,6 +94,28 @@ public class EventExporter{
         
     }
     
-    
+    public static func updatePlayerScorecardInDatabase(){
+        let player:Player = globals.globalPlayer
+        let event:Event = globals.globalEvent
+        
+        let key = ref.child("Events/\(event.name)/Players/\(player.name)/Scorecard")
+        print("scorecard key: \(key)")
+        
+        var scoreString:String = ""
+        
+        for hole in player.scorecard.grossScoreArray{
+            scoreString += "\(hole),"
+        }
+        
+        scoreString.remove(at: scoreString.index(before: scoreString.endIndex))
+        
+        key.setValue(scoreString)
+        
+        let key2 = ref.child("Events/\(event.name)/Players/\(player.name)/Current Hole")
+        
+        key2.setValue(player.currentHole)
+
+        
+    }
     
 }
