@@ -30,12 +30,14 @@ class ScorecardCollectionViewController: UIViewController, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        <#code#>
+        return 0 // added so I can keep moving on the leaderboard
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LabelCell", for: indexPath)
+        return cell // added so I can keep moving on the leaderboard
+
     }
 
     /*
