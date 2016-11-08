@@ -26,6 +26,17 @@ class ScorecardCollectionViewController: UIViewController, UICollectionViewDataS
         // Dispose of any resources that can be recreated.
     }
     
+    // UICollectionViewDataSource methods
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
+        <#code#>
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        <#code#>
+    }
 
     /*
     // MARK: - Navigation
