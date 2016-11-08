@@ -11,17 +11,7 @@ import UIKit
 class LeaderboardTableViewController: UITableViewController {
 
     let globals:CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData
-    var leaderboard:[String]!
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    var leaderboard:[[String]]!
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +25,7 @@ class LeaderboardTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
+        //self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         leaderboard = LeaderboardCalculator.updateLeaderboard()
 
@@ -67,8 +57,12 @@ class LeaderboardTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "leaderboardCellReuseID", for: indexPath)
-        cell.contentView
+        let cell = tableView.dequeueReusableCell(withIdentifier: "leaderboardCellReuseID", for: indexPath) as! LeaderboardCustomCellTableViewCell
+        cell.rankLabel?.text = "\(indexPath.row+1)"
+        cell.nameLabel?.text = leaderboard[indexPath.row][0]
+        cell.scoreLabel?.text = leaderboard[indexPath.row][1]
+        cell.thruLabel?.text = leaderboard[indexPath.row][2]
+
         //cell.textLabel?.text = "\(indexPath.row+1) \(leaderboard[indexPath.row])"
         /*
         cell.textLabel?.text = "\(indexPath.row+1) "
@@ -81,13 +75,17 @@ class LeaderboardTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return CGFloat(40.0)
+        return CGFloat(64.0)
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
         return "Rank        Name        Score       Thru"
     }
  
+    
+
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

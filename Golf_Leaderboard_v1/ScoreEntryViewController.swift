@@ -43,7 +43,7 @@ class ScoreEntryViewController: UIViewController {
 
         EventExporter.updatePlayerScorecardInDatabase()
         
-        if(globals.globalPlayer.currentHole != globals.globalPlayer.startHole){
+        if(globals.globalPlayer.currentHole != -1){
             updateLabels(currentHole: globals.globalPlayer.currentHole)
             print("CURRENT HOLE 2: \(globals.globalPlayer.currentHole)")
         }
@@ -51,15 +51,17 @@ class ScoreEntryViewController: UIViewController {
             submitScoreButton.isEnabled = true
             submitScoreButton.alpha = 0.5
             roundCompleteLabel.text = "Round Completed"
-            globals.globalPlayer.currentHole = -1
+            //globals.globalPlayer.currentHole = -1
+            
         }
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         let currentHole: Int = globals.globalPlayer.currentHole
-        
-        updateLabels(currentHole: currentHole)
+        if(currentHole != -1){
+            updateLabels(currentHole: currentHole)
+        }
     }
     
     

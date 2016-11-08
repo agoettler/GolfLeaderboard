@@ -14,9 +14,9 @@ public class LeaderboardCalculator{
     
     static var currentPlayers: [Player]!
     
-    public static func updateLeaderboard() -> [String]{
+    public static func updateLeaderboard() -> [[String]]{
         var leaderboardDictionary: Dictionary<String,[Int]> = Dictionary<String,[Int]>()
-        var leaderboardOuput: [String] = [String]()
+        var leaderboardOuput: [[String]] = [[String]]()
         LeaderboardCalculator.currentPlayers = LeaderboardCalculator.globals.globalEvent.players
         
         for aPlayer in LeaderboardCalculator.currentPlayers{
@@ -36,13 +36,14 @@ public class LeaderboardCalculator{
         print("LB: \(leaderboardDictionary.keys)")
 
         for aKey in leaderboardDictionary{
-            let newEntry: String = "    \(aKey.key)             \(aKey.value[0])            \(aKey.value[1])"
+            let newEntry: [String] = [aKey.key,"\(aKey.value[0])","\(aKey.value[1])"]
             leaderboardOuput.append(newEntry)
         }
         
         return leaderboardOuput
     }
 
+    
     public static func getCumlativeParSum(playerStartHole: Int, playerCurrentHole: Int)->[Int]{
         var sum:Int = 0
         
@@ -59,9 +60,9 @@ public class LeaderboardCalculator{
                 if(i > 18){
                     i = 1
                 }
-                else{
-                    sum = sum + globals.globalEvent.course.holes[i].par
-                }
+                
+                sum = sum + globals.globalEvent.course.holes[i-1].par
+                
                 i = i + 1
                 counter += 1
             }
