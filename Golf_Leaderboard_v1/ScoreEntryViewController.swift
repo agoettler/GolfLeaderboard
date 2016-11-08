@@ -51,6 +51,7 @@ class ScoreEntryViewController: UIViewController {
             submitScoreButton.isEnabled = true
             submitScoreButton.alpha = 0.5
             roundCompleteLabel.text = "Round Completed"
+            globals.globalPlayer.currentHole = -1
         }
 
     }

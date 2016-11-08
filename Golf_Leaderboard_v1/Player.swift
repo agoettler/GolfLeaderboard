@@ -28,6 +28,16 @@ public class Player{
         
     }
     
+    public init(name : String, handicap : Int, startHole : Int, card: [Int], currentHole: Int){
+        
+        self.name = name
+        self.handicap = handicap
+        self.startHole = startHole
+        self.currentHole = currentHole
+        self.scorecard = Scorecard(startHole: self.startHole, handicap: self.handicap, scorecard: card)
+        
+    }
+    
     public func goToNextHole(){
         if(self.currentHole == 18){
             self.currentHole = 1

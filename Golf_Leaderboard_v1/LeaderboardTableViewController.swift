@@ -11,9 +11,22 @@ import UIKit
 class LeaderboardTableViewController: UITableViewController {
 
     let globals:CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData
+    var leaderboard:[String]!
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        leaderboard = LeaderboardCalculator.updateLeaderboard()
         
         self.tableView.reloadData()
     }
@@ -24,6 +37,7 @@ class LeaderboardTableViewController: UITableViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        leaderboard = LeaderboardCalculator.updateLeaderboard()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -46,14 +60,21 @@ class LeaderboardTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return globals.globalEvent.getPlayerNames().count
+        // return globals.globalEvent.getPlayerNames().count
+        return leaderboard.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "leaderboardCellReuseID", for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row+1)"
+        cell.contentView
+        //cell.textLabel?.text = "\(indexPath.row+1) \(leaderboard[indexPath.row])"
+        /*
+        cell.textLabel?.text = "\(indexPath.row+1) "
+        cell.detailTextLabel?.text = " \(leaderboard[indexPath.row])"
+         */
+        
         
         return cell
     }

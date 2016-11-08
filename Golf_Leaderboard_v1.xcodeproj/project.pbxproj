@@ -16,6 +16,7 @@
 		820F0DF71DCCDC6F0008EC42 /* HolePrizeTabBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F0DF61DCCDC6F0008EC42 /* HolePrizeTabBarTableViewController.swift */; };
 		820F0DF91DCD10350008EC42 /* LeaderboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F0DF81DCD10350008EC42 /* LeaderboardTableViewController.swift */; };
 		820F0DFB1DCD104B0008EC42 /* ScorecardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F0DFA1DCD104B0008EC42 /* ScorecardTableViewController.swift */; };
+		820F0E7B1DD2180B0008EC42 /* LeaderboardCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F0E7A1DD2180B0008EC42 /* LeaderboardCalculator.swift */; };
 		8221EDE11DB6CCBF00239662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221EDE01DB6CCBF00239662 /* AppDelegate.swift */; };
 		8221EDE31DB6CCBF00239662 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221EDE21DB6CCBF00239662 /* ViewController.swift */; };
 		8221EDE61DB6CCBF00239662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8221EDE41DB6CCBF00239662 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		822B7DDA1DC270E50075E3A8 /* EventExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B7DD91DC270E50075E3A8 /* EventExporter.swift */; };
 		822B7DDC1DC295830075E3A8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B7DDB1DC295830075E3A8 /* Player.swift */; };
 		8231D8901DCA36AD009FC2DC /* CurrentEventGlobalAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231D88F1DCA36AD009FC2DC /* CurrentEventGlobalAccess.swift */; };
+		82339E781DD23EC20066DE77 /* LeaderboardCustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82339E771DD23EC20066DE77 /* LeaderboardCustomCellTableViewCell.swift */; };
 		823534361DC01304007AFE70 /* CourseListImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823534351DC01304007AFE70 /* CourseListImporter.swift */; };
 		8235343A1DC1569C007AFE70 /* UpdateHolePrizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823534391DC1569C007AFE70 /* UpdateHolePrizeViewController.swift */; };
 		8235343C1DC16C11007AFE70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8235343B1DC16C11007AFE70 /* GoogleService-Info.plist */; };
@@ -50,6 +52,7 @@
 		820F0DF61DCCDC6F0008EC42 /* HolePrizeTabBarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolePrizeTabBarTableViewController.swift; sourceTree = "<group>"; };
 		820F0DF81DCD10350008EC42 /* LeaderboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewController.swift; sourceTree = "<group>"; };
 		820F0DFA1DCD104B0008EC42 /* ScorecardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorecardTableViewController.swift; sourceTree = "<group>"; };
+		820F0E7A1DD2180B0008EC42 /* LeaderboardCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardCalculator.swift; sourceTree = "<group>"; };
 		8221EDDD1DB6CCBF00239662 /* Golf_Leaderboard_v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Golf_Leaderboard_v1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8221EDE01DB6CCBF00239662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8221EDE21DB6CCBF00239662 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 		822B7DD91DC270E50075E3A8 /* EventExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventExporter.swift; sourceTree = "<group>"; };
 		822B7DDB1DC295830075E3A8 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		8231D88F1DCA36AD009FC2DC /* CurrentEventGlobalAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentEventGlobalAccess.swift; sourceTree = "<group>"; };
+		82339E771DD23EC20066DE77 /* LeaderboardCustomCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardCustomCellTableViewCell.swift; sourceTree = "<group>"; };
 		823534351DC01304007AFE70 /* CourseListImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListImporter.swift; sourceTree = "<group>"; };
 		823534391DC1569C007AFE70 /* UpdateHolePrizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateHolePrizeViewController.swift; sourceTree = "<group>"; };
 		8235343B1DC16C11007AFE70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 				1933E88F1DC28FCA00F03C2C /* HolePrize.swift */,
 				822B7DDB1DC295830075E3A8 /* Player.swift */,
 				8250A7E21DCBA59100528C63 /* Scorecard.swift */,
+				820F0E7A1DD2180B0008EC42 /* LeaderboardCalculator.swift */,
 				8221EDE71DB6CCBF00239662 /* Assets.xcassets */,
 				8221EDE91DB6CCBF00239662 /* LaunchScreen.storyboard */,
 				8221EDEC1DB6CCBF00239662 /* Info.plist */,
@@ -147,6 +152,7 @@
 				820F0DF61DCCDC6F0008EC42 /* HolePrizeTabBarTableViewController.swift */,
 				820F0DF81DCD10350008EC42 /* LeaderboardTableViewController.swift */,
 				820F0DFA1DCD104B0008EC42 /* ScorecardTableViewController.swift */,
+				82339E771DD23EC20066DE77 /* LeaderboardCustomCellTableViewCell.swift */,
 			);
 			path = Golf_Leaderboard_v1;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 				8221EDE31DB6CCBF00239662 /* ViewController.swift in Sources */,
 				8221EE5C1DBFEC4200239662 /* ScoreEntryViewController.swift in Sources */,
 				7538A4801DD1A7BB009F1EB4 /* ScorecardCollectionView.swift in Sources */,
+				82339E781DD23EC20066DE77 /* LeaderboardCustomCellTableViewCell.swift in Sources */,
 				820F0DF91DCD10350008EC42 /* LeaderboardTableViewController.swift in Sources */,
 				75A751041DC073870036DE26 /* Course.swift in Sources */,
 				8235343A1DC1569C007AFE70 /* UpdateHolePrizeViewController.swift in Sources */,
@@ -314,6 +321,7 @@
 				8250A7E31DCBA59100528C63 /* Scorecard.swift in Sources */,
 				822B7DD81DC270B50075E3A8 /* Event.swift in Sources */,
 				822B7DDC1DC295830075E3A8 /* Player.swift in Sources */,
+				820F0E7B1DD2180B0008EC42 /* LeaderboardCalculator.swift in Sources */,
 				822B7DD61DC26FA30075E3A8 /* EventImporter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

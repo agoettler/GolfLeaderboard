@@ -53,6 +53,8 @@ class EventImporter{
                         let pValue: NSDictionary = playerInDict.value(forKey: pNames[j]) as! NSDictionary
                         let currHandicap: Int = pValue.value(forKey: "Handicap") as! Int
                         let startHole: Int = pValue.value(forKey: "Start Hole") as! Int
+                        let currentHole: Int = pValue.value(forKey: "Current Hole") as! Int
+
                         let currScoreCardString: String = pValue.value(forKey: "Scorecard") as! String
 
                         let currScoreCardArray: [String] = currScoreCardString.components(separatedBy: ",")
@@ -63,7 +65,7 @@ class EventImporter{
                         }
                         
                         print("pValue \(pValue)")
-                        let newPlayer: Player = Player(name: pNames[j], handicap: currHandicap, startHole: startHole, card: currScorecard)
+                        let newPlayer: Player = Player(name: pNames[j], handicap: currHandicap, startHole: startHole, card: currScorecard, currentHole: currentHole)
                     
                         playerArray.append(newPlayer)
                     
