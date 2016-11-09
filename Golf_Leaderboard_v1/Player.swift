@@ -45,6 +45,10 @@ public class Player{
         else{
             self.currentHole = self.currentHole + 1
         }
+        if(self.currentHole == self.startHole){
+            print("current hole is -1")
+            currentHole = -1
+        }
     }
     
     

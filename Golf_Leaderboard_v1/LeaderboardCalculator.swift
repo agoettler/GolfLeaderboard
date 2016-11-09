@@ -14,9 +14,9 @@ public class LeaderboardCalculator{
     
     static var currentPlayers: [Player]!
     
-    public static func updateLeaderboard() -> [String]{
+    public static func updateLeaderboard() -> [[String]]{
         var leaderboardDictionary: Dictionary<String,[Int]> = Dictionary<String,[Int]>()
-        var leaderboardOuput: [String] = [String]()
+        var leaderboardOuput: [[String]] = [[String]]()
         LeaderboardCalculator.currentPlayers = LeaderboardCalculator.globals.globalEvent.players
         
         for aPlayer in LeaderboardCalculator.currentPlayers{
@@ -35,14 +35,50 @@ public class LeaderboardCalculator{
         
         print("LB: \(leaderboardDictionary.keys)")
 
+        
         for aKey in leaderboardDictionary{
-            let newEntry: String = "    \(aKey.key)             \(aKey.value[0])            \(aKey.value[1])"
+            let newEntry: [String] = ["0",aKey.key,"\(aKey.value[0])","\(aKey.value[1])"]
             leaderboardOuput.append(newEntry)
         }
+        
+        var hold:[String]
+        var m:Int
+
+        for k in 0..<leaderboardOuput.count-1{
+            m = k;
+            for j in (k+1)..<leaderboardOuput.count{
+                if(leaderboardOuput[j][2] < leaderboardOuput[m][2]){
+                    m = j;
+                }
+            }
+            
+            hold = leaderboardOuput[m];
+            leaderboardOuput[m] = leaderboardOuput[k];
+            leaderboardOuput[k] = hold;
+            
+        }
+        
+        leaderboardOuput[0][0] = "1"
+        
+        var counter: Int = 2
+        m = 1
+        while(m < leaderboardOuput.count){
+            if(leaderboardOuput[m][2] == leaderboardOuput[m-1][2]){
+                leaderboardOuput[m][0] = leaderboardOuput[m-1][0]
+            }
+            else{
+                leaderboardOuput[m][0] = "\(counter)"
+            }
+            
+            counter += 1
+            m += 1
+        }
+        
         
         return leaderboardOuput
     }
 
+    
     public static func getCumlativeParSum(playerStartHole: Int, playerCurrentHole: Int)->[Int]{
         var sum:Int = 0
         
@@ -59,9 +95,9 @@ public class LeaderboardCalculator{
                 if(i > 18){
                     i = 1
                 }
-                else{
-                    sum = sum + globals.globalEvent.course.holes[i].par
-                }
+                
+                sum = sum + globals.globalEvent.course.holes[i-1].par
+                
                 i = i + 1
                 counter += 1
             }

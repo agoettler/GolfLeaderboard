@@ -37,7 +37,11 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         
         
         //if(currentEvent.getPlayerNames().contains(name!) != true){
-        if(!currentEvent.containsPlayer(name: name!))
+        if(currentEvent.containsPlayer(name: name!)){
+            playerNameTextField.text = ""
+            playerNameErrorLabel.text = "Error: Name Taken"
+        }
+        else
         {
             playerNameTextField.text = ""
             let emptyCard: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -46,12 +50,10 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             EventExporter.addPlayer(player: player, event: currentEvent)
             
             globals.globalPlayer = player // make this new player the global player
-            
+            performSegue(withIdentifier: "goToScoreEntryVC", sender: self)
+
         }
-        else{
-            playerNameTextField.text = ""
-            playerNameErrorLabel.text = "Error: Name Taken"
-        }
+
     }
     
     
