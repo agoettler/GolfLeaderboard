@@ -58,10 +58,12 @@ class LeaderboardTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "leaderboardCellReuseID", for: indexPath) as! LeaderboardCustomCellTableViewCell
-        cell.rankLabel?.text = "\(indexPath.row+1)"
-        cell.nameLabel?.text = leaderboard[indexPath.row][0]
-        cell.scoreLabel?.text = leaderboard[indexPath.row][1]
-        cell.thruLabel?.text = leaderboard[indexPath.row][2]
+        var currentPerson = leaderboard[indexPath.row]
+        
+        cell.rankLabel?.text = currentPerson[0]
+        cell.nameLabel?.text = currentPerson[1]
+        cell.scoreLabel?.text = currentPerson[2]
+        cell.thruLabel?.text = currentPerson[3]
 
         //cell.textLabel?.text = "\(indexPath.row+1) \(leaderboard[indexPath.row])"
         /*
