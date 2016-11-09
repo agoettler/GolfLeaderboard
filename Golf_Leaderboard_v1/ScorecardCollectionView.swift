@@ -10,5 +10,6 @@ import UIKit
 
 class ScorecardCollectionView: UICollectionViewLayout
 {
-
+    let numberOfColumns = 6
+    
 }
