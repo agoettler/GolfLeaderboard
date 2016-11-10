@@ -62,8 +62,8 @@ class LeaderboardTableViewController: UITableViewController {
         
         cell.rankLabel?.text = currentPerson[0]
         cell.nameLabel?.text = currentPerson[1]
-        cell.scoreLabel?.text = currentPerson[2]
-        cell.thruLabel?.text = currentPerson[3]
+        cell.scoreLabel?.text = currentPerson[3]
+        cell.thruLabel?.text = currentPerson[2]
 
         //cell.textLabel?.text = "\(indexPath.row+1) \(leaderboard[indexPath.row])"
         /*
