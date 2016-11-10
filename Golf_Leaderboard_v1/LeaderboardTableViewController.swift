@@ -85,7 +85,59 @@ class LeaderboardTableViewController: UITableViewController {
         return "Rank        Name        Score       Thru"
     }
  
-    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: tableView.frame.width, height: 64))
+        
+        let rank: UILabel = UILabel()
+        let name: UILabel = UILabel()
+        let score: UILabel = UILabel()
+        let thru: UILabel = UILabel()
+        rank.text = "Rank"
+        name.text = "Name"
+        score.text = "Score"
+        thru.text = "Thru"
+        
+        
+        
+        let horizontalStack: UIStackView = UIStackView(arrangedSubviews: [rank, name, score, thru])
+        
+        horizontalStack.translatesAutoresizingMaskIntoConstraints = false
+        horizontalStack.axis = UILayoutConstraintAxis.horizontal
+        horizontalStack.distribution = UIStackViewDistribution.equalCentering
+        horizontalStack.alignment = UIStackViewAlignment.center
+        //horizontalStack.spacing = 58
+        
+        headerView.addSubview(horizontalStack)
+        
+        horizontalStack.center = headerView.center
+        horizontalStack.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20).isActive = true
+        horizontalStack.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -20).isActive = true
+        //horizontalStack.topAnchor.constraint(equalTo: headerView.topAnchor)
+        horizontalStack.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -12).isActive = true
+        
+        rank.textColor = UIColor.black
+        name.textColor = UIColor.black
+        score.textColor = UIColor.black
+        thru.textColor = UIColor.black
+        
+        /*
+         rank.backgroundColor = UIColor.magenta
+         name.backgroundColor = UIColor.cyan
+         score.backgroundColor = UIColor.orange
+         thru.backgroundColor = UIColor.yellow
+         
+         rank.addConstraint(NSLayoutConstraint(item: rank, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 36))
+         name.addConstraint(NSLayoutConstraint(item: name, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 50))
+         score.addConstraint(NSLayoutConstraint(item: score, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 36))
+         thru.addConstraint(NSLayoutConstraint(item: thru, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 36))
+         */
+        headerView.backgroundColor = UIColor.groupTableViewBackground
+        
+        
+        return headerView
+        
+    }
+
 
     
     /*
