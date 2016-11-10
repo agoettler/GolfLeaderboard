@@ -12,6 +12,7 @@ import Firebase
 class EventImporter{
     
     var ref: FIRDatabaseReference = FIRDatabase.database().reference()
+    var globals: CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData
     public static var exisitingNames: [String]!
     var exisitingEventDictionary: NSDictionary!
     // public static var exisitingEvents: NSDictionary!
@@ -98,6 +99,10 @@ class EventImporter{
                 
                 let nextEvent: Event = Event(name: name, owner: owner, type: type, course: course, players: playerArray, holePrizes: holePrizeArray)
                 EventImporter.exisitingEvents.append(nextEvent)
+                
+                if(nextEvent.name == self.globals.globalEvent.name){
+                    self.globals.globalEvent = nextEvent
+                }
                 
                 
                 i = i + 1
