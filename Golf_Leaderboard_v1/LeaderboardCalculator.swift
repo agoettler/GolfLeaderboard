@@ -47,7 +47,7 @@ public class LeaderboardCalculator{
         for k in 0..<leaderboardOuput.count-1{
             m = k;
             for j in (k+1)..<leaderboardOuput.count{
-                if(leaderboardOuput[j][2] < leaderboardOuput[m][2]){
+                if(Int(leaderboardOuput[j][2])! < Int(leaderboardOuput[m][2])!){
                     m = j;
                 }
             }
@@ -68,12 +68,13 @@ public class LeaderboardCalculator{
             }
             else{
                 leaderboardOuput[m][0] = "\(counter)"
+                
             }
             
             counter += 1
             m += 1
         }
-        
+        print("leoutput: \(leaderboardOuput)")
         
         return leaderboardOuput
     }
