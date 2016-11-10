@@ -13,10 +13,11 @@ import Firebase
 class AddHolePrizeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     var ref: FIRDatabaseReference!
     var holePrizeObject:HolePrize!
-    var holePrizesArray:[HolePrize]!
+    var holePrizesArray:[HolePrize] = [HolePrize] ()
+    var holePrizesDictionary:Dictionary<Int,HolePrize> = Dictionary<Int,HolePrize> ()
     var parentVC: HolePrizesTableTableViewController!
     var holeData = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"]
-    var prizeOptions = ["Longest Drive","Longest Putt","Closest to the Pin"]
+    var prizeOptions = ["Closest to the Pin","Longest Drive","Longest Putt"]
     
     @IBOutlet weak var holePrizePicker: UIPickerView!
     
@@ -30,7 +31,17 @@ class AddHolePrizeViewController: UIViewController, UIPickerViewDelegate, UIPick
         completePrize += "\(prizeType)"
         holePrizeObject = HolePrize(prize: completePrize)
         parentVC.holePrizesArray.append(holePrizeObject)
-
+        
+        parentVC.holePrizesDictionary.updateValue(holePrizeObject, forKey: prizeHoleNumber)
+        
+        let unsortedKeys = Array(parentVC.holePrizesDictionary.keys)
+        let sortedKeys = unsortedKeys.sorted()
+        
+        for aKey in sortedKeys{
+            holePrizesArray.append(parentVC.holePrizesDictionary[aKey]!)
+        }
+        parentVC.holePrizesArray = holePrizesArray
+        
         dismiss(animated: true, completion: nil)
 
     }

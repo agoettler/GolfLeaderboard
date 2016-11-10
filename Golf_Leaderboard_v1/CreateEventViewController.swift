@@ -47,6 +47,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
 
             eventType = gameTypes[gameTypePicker.selectedRow(inComponent: 0)]
             courseSelection = availableCourses?[selectCoursePicker.selectedRow(inComponent: 0)]
+            print("HP should sort \(holePrizesArray[0].prize)")
             createdEvent = Event(name: eventName, owner: "Null", type: eventType, course: courseSelection, players: [], holePrizes: holePrizesArray)
             let _ = EventExporter(currentEvent: createdEvent)
             

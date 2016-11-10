@@ -17,7 +17,8 @@ class HolePrizesTableTableViewController: UITableViewController {
     var ref: FIRDatabaseReference!
     var holePrizesArray:[HolePrize] = [HolePrize]()
     var parentVC: CreateEventViewController!
-    
+    var holePrizesDictionary:Dictionary<Int,HolePrize> = Dictionary<Int,HolePrize>()
+
     
     override func viewDidLoad()
     {
