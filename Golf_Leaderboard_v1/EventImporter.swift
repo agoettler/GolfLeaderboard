@@ -100,7 +100,7 @@ class EventImporter{
                 let nextEvent: Event = Event(name: name, owner: owner, type: type, course: course, players: playerArray, holePrizes: holePrizeArray)
                 EventImporter.exisitingEvents.append(nextEvent)
                 
-                if(nextEvent.name == self.globals.globalEvent.name){
+                if(self.globals.globalEvent != nil && nextEvent.name == self.globals.globalEvent.name){
                     self.globals.globalEvent = nextEvent
                 }
                 
