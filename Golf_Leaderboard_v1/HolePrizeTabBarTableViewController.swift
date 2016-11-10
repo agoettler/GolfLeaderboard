@@ -77,7 +77,7 @@ class HolePrizeTabBarTableViewController: UITableViewController {
         let destVC:UpdateHolePrizeViewController = segue.destination as! UpdateHolePrizeViewController
         let prizeIndex = self.tableView.indexPathForSelectedRow
         
-        destVC.selectedPrize = globals.globalEvent.holePrizes[Int((prizeIndex?[0])!)]
+        destVC.selectedPrize = globals.globalEvent.holePrizes[(prizeIndex?.row)!]
     }
     
     
