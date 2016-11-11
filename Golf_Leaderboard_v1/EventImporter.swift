@@ -95,7 +95,33 @@ class EventImporter{
                     
                         j = j + 1
                     }
+                    
+                    if(holePrizeArray.count > 1){
+                        
+                        for aPrize in holePrizeArray{
+                            let prizeSplit:[String] = aPrize.prize.components(separatedBy: " ")
+                            let removedColon:String = prizeSplit[1].substring(to: prizeSplit[1].index(prizeSplit[1].endIndex, offsetBy: -1))
+                            let extractedNum: Int = Int(removedColon)!
+                            //print("PrizeSplit[0]: \(prizeSplit[0])")
+                            //print("PrizeSplit[1]: \(prizeSplit[1])")
+                            //print("PrizeSplit[2]: \(prizeSplit[2])")
+                            //print("Extracted num: \(removedColon)")
+                            
+                            
+                            
+                        }
+                        
+                        
+                        
+                        
+                    }
+                    
                 }
+                
+
+                
+                
+                
                 
                 let nextEvent: Event = Event(name: name, owner: owner, type: type, course: course, players: playerArray, holePrizes: holePrizeArray)
                 EventImporter.exisitingEvents.append(nextEvent)
