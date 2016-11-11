@@ -43,39 +43,39 @@ public class LeaderboardCalculator{
         
         var hold:[String]
         var m:Int
-
-        for k in 0..<leaderboardOuput.count-1{
-            m = k;
-            for j in (k+1)..<leaderboardOuput.count{
-                if(Int(leaderboardOuput[j][2])! < Int(leaderboardOuput[m][2])!){
-                    m = j;
+        if(leaderboardOuput.count>0){
+            for k in 0..<leaderboardOuput.count-1{
+                m = k;
+                for j in (k+1)..<leaderboardOuput.count{
+                    if(Int(leaderboardOuput[j][2])! < Int(leaderboardOuput[m][2])!){
+                        m = j;
+                    }
                 }
-            }
-            
-            hold = leaderboardOuput[m];
-            leaderboardOuput[m] = leaderboardOuput[k];
-            leaderboardOuput[k] = hold;
-            
-        }
-        
-        leaderboardOuput[0][0] = "1"
-        
-        var counter: Int = 2
-        m = 1
-        while(m < leaderboardOuput.count){
-            if(leaderboardOuput[m][2] == leaderboardOuput[m-1][2]){
-                leaderboardOuput[m][0] = leaderboardOuput[m-1][0]
-            }
-            else{
-                leaderboardOuput[m][0] = "\(counter)"
+                
+                hold = leaderboardOuput[m];
+                leaderboardOuput[m] = leaderboardOuput[k];
+                leaderboardOuput[k] = hold;
                 
             }
             
-            counter += 1
-            m += 1
+            leaderboardOuput[0][0] = "1"
+            
+            var counter: Int = 2
+            m = 1
+            while(m < leaderboardOuput.count){
+                if(leaderboardOuput[m][2] == leaderboardOuput[m-1][2]){
+                    leaderboardOuput[m][0] = leaderboardOuput[m-1][0]
+                }
+                else{
+                    leaderboardOuput[m][0] = "\(counter)"
+                    
+                }
+                
+                counter += 1
+                m += 1
+            }
+            print("leoutput: \(leaderboardOuput)")
         }
-        print("leoutput: \(leaderboardOuput)")
-        
         return leaderboardOuput
     }
 

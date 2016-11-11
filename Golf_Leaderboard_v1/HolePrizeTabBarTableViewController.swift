@@ -54,7 +54,10 @@ class HolePrizeTabBarTableViewController: UITableViewController {
         super.viewDidLoad()
         print("HolePrizeTabViewController Did Load")
         holePrizesArray = globals.globalEvent.holePrizes
-        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
+        for aPrize in holePrizesArray{
+            print("Aprize: \(aPrize.prize)")
+        }
+        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         //self.navigationItem.hidesBackButton = true
 

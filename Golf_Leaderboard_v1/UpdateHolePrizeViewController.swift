@@ -15,6 +15,7 @@ class UpdateHolePrizeViewController: UIViewController {
     @IBOutlet weak var prizeLabel: UILabel!
     @IBOutlet weak var leaderLabel: UILabel!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var claimHolePrizeButton: UIButton!
     
     var selectedPrize: HolePrize!
     var name: String!
@@ -40,6 +41,9 @@ class UpdateHolePrizeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         prizeLabel.text = selectedPrize.prize
         leaderLabel.text = selectedPrize.currentWinner
+        if(globals.role != "player"){
+            claimHolePrizeButton.isHidden = true
+        }
     }
     
     override func viewDidLoad() {
