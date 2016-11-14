@@ -35,11 +35,16 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         let handicap = handicapPicker.selectedRow(inComponent: 0)
         let startHole = startHolePicker.selectedRow(inComponent: 0) + 1
         
-        
-        //if(currentEvent.getPlayerNames().contains(name!) != true){
+        let whiteSpaceSet = NSCharacterSet.whitespaces
+        let trimmedString = name?.trimmingCharacters(in: whiteSpaceSet)
+
         if(currentEvent.containsPlayer(name: name!)){
             playerNameTextField.text = ""
             playerNameErrorLabel.text = "Error: Name Taken"
+        }
+        else if ((trimmedString?.isEmpty)!){
+            playerNameTextField.text = ""
+            playerNameErrorLabel.text = "Error: Invalid Name"
         }
         else
         {
@@ -51,7 +56,6 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             
             globals.globalPlayer = player // make this new player the global player
             performSegue(withIdentifier: "goToScoreEntryVC", sender: self)
-
         }
 
     }

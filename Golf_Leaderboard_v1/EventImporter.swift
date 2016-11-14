@@ -80,6 +80,7 @@ class EventImporter{
 //                print("Course \(course)")
 //                print("pNames \(pNames)")
                 var holePrizeArray: [HolePrize] = [HolePrize]()
+                var sortedHolePrizeArray: [HolePrize] = [HolePrize]()
 
                 let holePrizeForEvent = eventData.value(forKey: "Hole Prizes")
 //                print("HPS: \(holePrizeForEvent)")
@@ -97,23 +98,38 @@ class EventImporter{
                     }
                     
                     if(holePrizeArray.count > 1){
-                        
+                        var holeOptions:[Int] = [Int]()
                         for aPrize in holePrizeArray{
                             let prizeSplit:[String] = aPrize.prize.components(separatedBy: " ")
                             let removedColon:String = prizeSplit[1].substring(to: prizeSplit[1].index(prizeSplit[1].endIndex, offsetBy: -1))
                             let extractedNum: Int = Int(removedColon)!
+                            holeOptions.append(extractedNum)
                             //print("PrizeSplit[0]: \(prizeSplit[0])")
                             //print("PrizeSplit[1]: \(prizeSplit[1])")
                             //print("PrizeSplit[2]: \(prizeSplit[2])")
                             //print("Extracted num: \(removedColon)")
                             
+                        }
+                        
+                        holeOptions.sort()
+                        var counter:Int = 0
+                        for aOption in holeOptions{
                             
+                            for aPrize in holePrizeArray{
+                                if(aPrize.prize.contains(String(aOption))){
+                                    sortedHolePrizeArray.append(aPrize)
+                                }
+                            }
+                            
+                             print("aOption: \(aOption)")
+                             print("sortedHolePrizeArray: \(sortedHolePrizeArray[counter])")
+
+                            counter += 1;
                             
                         }
                         
-                        
-                        
-                        
+                       
+
                     }
                     
                 }

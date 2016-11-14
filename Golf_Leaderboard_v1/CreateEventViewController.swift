@@ -36,10 +36,16 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBAction func createEventButtonPressed(_ sender: UIButton) {
         exisitingNames = EventImporter.getExisitingEventNames()
         eventName = eventNameTextField.text
+        let whiteSpaceSet = NSCharacterSet.whitespaces
+        let trimmedString = eventName?.trimmingCharacters(in: whiteSpaceSet)
 
         if(exisitingNames.contains(eventName)){
             eventNameTextField.text = ""
             errorLabel.text = "Error, Name Taken"
+        }
+        else if ((trimmedString?.isEmpty)!){
+            eventNameTextField.text = ""
+            errorLabel.text = "Error: Invalid Name"
         }
         else{
             errorLabel.text = ""
