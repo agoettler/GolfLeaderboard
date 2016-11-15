@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 
-class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
+class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate
 {
     
     @IBOutlet weak var playerNameTextField: UITextField!
@@ -60,7 +60,11 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
 
     }
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("textFieldShouldReturn")
+        textField.resignFirstResponder()
+        return true
+    }
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -92,7 +96,7 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     {
         super.viewDidLoad()
         print("JoinEventViewController: viewDidLoad")
-
+        self.playerNameTextField.delegate = self
         
         
     }

@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 
-class SearchEventViewController: UIViewController {
+class SearchEventViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var eventNameTextField: UITextField!
     @IBOutlet weak var roleSegmentedControl: UISegmentedControl!
@@ -49,7 +49,11 @@ class SearchEventViewController: UIViewController {
         }
     }
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("textFieldShouldReturn")
+        textField.resignFirstResponder()
+        return true
+    }
     
     override func viewDidLoad()
     {
@@ -57,6 +61,7 @@ class SearchEventViewController: UIViewController {
         print("SearchEventViewController: viewDidLoad")
         eventNameTextField.text = eventName
         eventImporterObject = EventImporter()
+        self.eventNameTextField.delegate = self
         // Do any additional setup after loading the view.
     }
 

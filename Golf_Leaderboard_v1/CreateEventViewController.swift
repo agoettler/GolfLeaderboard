@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 
-class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
 
     var availableCourses:[Course]?
     var eventName:String!
@@ -27,6 +27,8 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
 
     @IBOutlet weak var selectCoursePicker: UIPickerView!
     @IBOutlet weak var gameTypePicker: UIPickerView!
+    
+    
     
     var courseOptions: [String]!
     var gameTypes = ["Stroke Play","Best Ball","Scramble","Alternate Shot"]
@@ -64,7 +66,11 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
         }
     }
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("textFieldShouldReturn")
+        textField.resignFirstResponder()
+        return true
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -96,6 +102,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
         // Do any additional setup after loading the view.
         print("CreateEventViewController: viewDidLoad")
         eventImporterObject = EventImporter()
+        self.eventNameTextField.delegate = self
         /*
         if let courses = CourseImporter.getCourses(){
             availableCourses = courses
