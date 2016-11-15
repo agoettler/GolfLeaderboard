@@ -97,7 +97,7 @@ class EventImporter{
                         j = j + 1
                     }
                     
-                    if(holePrizeArray.count > 1){
+                    if(holePrizeArray.count >= 1){
                         var holeOptions:[Int] = [Int]()
                         for aPrize in holePrizeArray{
                             let prizeSplit:[String] = aPrize.prize.components(separatedBy: " ")
