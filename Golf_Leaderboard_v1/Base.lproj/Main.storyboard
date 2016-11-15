@@ -22,10 +22,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Course 2" translatesAutoresizingMaskIntoConstraints="NO" id="q5f-vj-cCX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="m6e-UK-pwa">
                                 <rect key="frame" x="70" y="458" width="234" height="90"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="backgroundColor" white="0.5" alpha="0.5" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                 <state key="normal" title="Find Exisiting Event">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -41,13 +44,13 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7ot-tH-bcu">
                                 <rect key="frame" x="70" y="269" width="234" height="90"/>
-                                <color key="backgroundColor" red="1" green="0.55297519429999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.5" alpha="0.50430757705479445" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="tpe-dn-nl6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                 <state key="normal" title="Create Event">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="4pV-TY-UcC" kind="show" identifier="goToCreateEventVC" id="oRg-X6-ip9"/>
@@ -57,18 +60,25 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7ot-tH-bcu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="269" id="1xa-qt-wKR"/>
+                            <constraint firstItem="q5f-vj-cCX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8Pa-Uz-2wp"/>
+                            <constraint firstItem="q5f-vj-cCX" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="C1n-Zr-eUr"/>
                             <constraint firstItem="7ot-tH-bcu" firstAttribute="trailing" secondItem="m6e-UK-pwa" secondAttribute="trailing" id="EvT-Ou-E5L"/>
                             <constraint firstItem="7ot-tH-bcu" firstAttribute="leading" secondItem="t5s-12-Ixz" secondAttribute="leading" id="Sgp-Wo-yLH"/>
                             <constraint firstItem="t5s-12-Ixz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="Spa-a7-uHB"/>
                             <constraint firstItem="7ot-tH-bcu" firstAttribute="leading" secondItem="m6e-UK-pwa" secondAttribute="leading" id="YQN-2R-OjK"/>
                             <constraint firstItem="t5s-12-Ixz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="dDk-aV-Hou"/>
+                            <constraint firstItem="q5f-vj-cCX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="mQ1-AN-yli"/>
                             <constraint firstItem="7ot-tH-bcu" firstAttribute="trailing" secondItem="t5s-12-Ixz" secondAttribute="trailing" id="pJ1-mK-lLE"/>
+                            <constraint firstItem="q5f-vj-cCX" firstAttribute="centerX" secondItem="7ot-tH-bcu" secondAttribute="centerX" id="pjO-vI-rfO"/>
                             <constraint firstItem="m6e-UK-pwa" firstAttribute="top" secondItem="7ot-tH-bcu" secondAttribute="bottom" constant="99" id="srU-62-JPd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="t5s-12-Ixz" secondAttribute="trailing" constant="55" id="uIo-Rp-0lC"/>
                             <constraint firstItem="m6e-UK-pwa" firstAttribute="height" secondItem="7ot-tH-bcu" secondAttribute="height" id="y48-dW-rOs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="L5h-t6-VP2"/>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="q5f-vj-cCX" id="Vom-6k-i7H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -1127,8 +1137,11 @@
             <point key="canvasLocation" x="6862" y="-939"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Course 2" width="1424" height="1780"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3ro-Ra-gEt"/>
+        <segue reference="Jkp-Wt-CD6"/>
         <segue reference="XJb-p8-uLI"/>
         <segue reference="GV0-Cv-MaZ"/>
     </inferredMetricsTieBreakers>

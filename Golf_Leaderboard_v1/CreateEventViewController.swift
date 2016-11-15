@@ -103,6 +103,8 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
         print("CreateEventViewController: viewDidLoad")
         eventImporterObject = EventImporter()
         self.eventNameTextField.delegate = self
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+
         /*
         if let courses = CourseImporter.getCourses(){
             availableCourses = courses

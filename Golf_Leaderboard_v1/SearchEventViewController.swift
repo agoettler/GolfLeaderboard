@@ -62,6 +62,8 @@ class SearchEventViewController: UIViewController, UITextFieldDelegate {
         eventNameTextField.text = eventName
         eventImporterObject = EventImporter()
         self.eventNameTextField.delegate = self
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+
         // Do any additional setup after loading the view.
     }
 

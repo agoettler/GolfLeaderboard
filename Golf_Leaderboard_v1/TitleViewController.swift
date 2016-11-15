@@ -18,6 +18,7 @@ class TitleViewController: UIViewController {
     var ourCourses: [Course]!
     var ourEvents: NSDictionary!
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
@@ -31,9 +32,14 @@ class TitleViewController: UIViewController {
             destVC.availableCourses = ourCourses
             destVC.courseOptions = courseListImporterObject.getCourseNames()
         }
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+
+    }
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -43,9 +49,11 @@ class TitleViewController: UIViewController {
         ref = FIRDatabase.database().reference()
         courseListImporterObject = CourseListImporter.init()
         ourCourses = CourseListImporter.coursesArray
-
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         // print("Courses count: \(ourCourses.count)")
         // Do any additional setup after loading the view.
+        
+        self.view.sendSubview(toBack: backgroundImageView)
     }
 
     override func didReceiveMemoryWarning() {

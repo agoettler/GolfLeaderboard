@@ -97,6 +97,8 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         super.viewDidLoad()
         print("JoinEventViewController: viewDidLoad")
         self.playerNameTextField.delegate = self
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+
         
         
     }

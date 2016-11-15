@@ -93,7 +93,8 @@ class AddHolePrizeViewController: UIViewController, UIPickerViewDelegate, UIPick
         super.viewDidLoad()
         print("AddHolePrizeViewController: viewDidLoad")
         ref = FIRDatabase.database().reference()
-        
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+
         // Do any additional setup after loading the view.
     }
 
