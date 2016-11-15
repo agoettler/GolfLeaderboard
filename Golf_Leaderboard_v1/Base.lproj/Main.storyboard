@@ -367,7 +367,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Score Entry" id="j1t-l5-fOq"/>
+                    <tabBarItem key="tabBarItem" title="Score Entry" image="Score Entry Tab Image" id="j1t-l5-fOq"/>
                     <connections>
                         <outlet property="handicapLabel" destination="PFo-Zc-ydt" id="tu3-Vg-Lgg"/>
                         <outlet property="holeLabel" destination="9yh-Lu-eft" id="TsC-vL-agt"/>
@@ -455,7 +455,7 @@
                             <outlet property="delegate" destination="l01-Jz-o5J" id="OGT-lJ-l1u"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Scorecard" id="en9-s8-bbo"/>
+                    <tabBarItem key="tabBarItem" title="Scorecard" image="Scorecard Tab Image" id="en9-s8-bbo"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MRZ-F5-064" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -732,7 +732,7 @@
                             <outlet property="delegate" destination="Vv5-9E-ATg" id="04d-Ho-RvC"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Leaderboard" id="mTd-tG-Hxs"/>
+                    <tabBarItem key="tabBarItem" title="Leaderboard" image="Leaderboard Tab Image" id="mTd-tG-Hxs"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLA-0b-fjV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -780,7 +780,7 @@
                             <outlet property="delegate" destination="jZH-l5-hou" id="4w5-Yy-Mf1"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Hole Prizes" id="CeJ-OB-3Ym"/>
+                    <tabBarItem key="tabBarItem" title="Hole Prizes" image="Hole Prize Tab Image" id="CeJ-OB-3Ym"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NIe-Lg-w89" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1139,6 +1139,10 @@
     </scenes>
     <resources>
         <image name="Course 2" width="1424" height="1780"/>
+        <image name="Hole Prize Tab Image" width="25" height="25"/>
+        <image name="Leaderboard Tab Image" width="25" height="25"/>
+        <image name="Score Entry Tab Image" width="25" height="25"/>
+        <image name="Scorecard Tab Image" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Jkp-Wt-CD6"/>
