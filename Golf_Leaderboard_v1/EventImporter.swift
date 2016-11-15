@@ -116,7 +116,7 @@ class EventImporter{
                         for aOption in holeOptions{
                             
                             for aPrize in holePrizeArray{
-                                if(aPrize.prize.contains(String(aOption))){
+                                if(aPrize.prize.contains("Hole \(aOption):")){
                                     sortedHolePrizeArray.append(aPrize)
                                 }
                             }
@@ -135,11 +135,12 @@ class EventImporter{
                 }
                 
 
+                print("sorted count \(sortedHolePrizeArray.count)")
+
                 
                 
                 
-                
-                let nextEvent: Event = Event(name: name, owner: owner, type: type, course: course, players: playerArray, holePrizes: holePrizeArray)
+                let nextEvent: Event = Event(name: name, owner: owner, type: type, course: course, players: playerArray, holePrizes: sortedHolePrizeArray)
                 EventImporter.exisitingEvents.append(nextEvent)
                 
                 if(self.globals.globalEvent != nil && nextEvent.name == self.globals.globalEvent.name){
