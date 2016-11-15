@@ -39,6 +39,7 @@
 		8235343A1DC1569C007AFE70 /* UpdateHolePrizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823534391DC1569C007AFE70 /* UpdateHolePrizeViewController.swift */; };
 		8235343C1DC16C11007AFE70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8235343B1DC16C11007AFE70 /* GoogleService-Info.plist */; };
 		8250A7E31DCBA59100528C63 /* Scorecard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250A7E21DCBA59100528C63 /* Scorecard.swift */; };
+		82A28FE31DDBC07800ED7571 /* OptionsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A28FE21DDBC07800ED7571 /* OptionsTabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		823534391DC1569C007AFE70 /* UpdateHolePrizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateHolePrizeViewController.swift; sourceTree = "<group>"; };
 		8235343B1DC16C11007AFE70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8250A7E21DCBA59100528C63 /* Scorecard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scorecard.swift; sourceTree = "<group>"; };
+		82A28FE21DDBC07800ED7571 /* OptionsTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTabViewController.swift; sourceTree = "<group>"; };
 		DDF1800807DCCD9CD5771F92 /* Pods-Golf_Leaderboard_v1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Golf_Leaderboard_v1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Golf_Leaderboard_v1/Pods-Golf_Leaderboard_v1.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +155,7 @@
 				820F0DF81DCD10350008EC42 /* LeaderboardTableViewController.swift */,
 				820F0DFA1DCD104B0008EC42 /* ScorecardTableViewController.swift */,
 				82339E771DD23EC20066DE77 /* LeaderboardCustomCellTableViewCell.swift */,
+				82A28FE21DDBC07800ED7571 /* OptionsTabViewController.swift */,
 			);
 			path = Golf_Leaderboard_v1;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				8221EE5A1DBFEC2800239662 /* JoinEventViewController.swift in Sources */,
 				8221EE601DBFF89600239662 /* HolePrizesTableTableViewController.swift in Sources */,
 				820F0DF71DCCDC6F0008EC42 /* HolePrizeTabBarTableViewController.swift in Sources */,
+				82A28FE31DDBC07800ED7571 /* OptionsTabViewController.swift in Sources */,
 				822B7DDA1DC270E50075E3A8 /* EventExporter.swift in Sources */,
 				8221EE541DBFEBA300239662 /* TitleViewController.swift in Sources */,
 				1933E8901DC28FCA00F03C2C /* HolePrize.swift in Sources */,

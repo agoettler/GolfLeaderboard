@@ -13,7 +13,7 @@
         <!--Title View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TitleViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TitleVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="TitleViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -786,6 +786,49 @@
             </objects>
             <point key="canvasLocation" x="7743" y="304"/>
         </scene>
+        <!--Options-->
+        <scene sceneID="waK-H2-Rnu">
+            <objects>
+                <viewController id="VTH-KA-VwA" customClass="OptionsTabViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Efo-qQ-vIm"/>
+                        <viewControllerLayoutGuide type="bottom" id="E0Y-Cg-3gC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mbG-zR-ayN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7r-tZ-OSY">
+                                <rect key="frame" x="16" y="297" width="343" height="72"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.041046944600000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="HOc-dx-o5K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                <state key="normal" title="Leave Game">
+                                    <color key="titleColor" red="0.97247464780000004" green="1" blue="0.97267601749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="leaveGameButtonPressed" destination="VTH-KA-VwA" eventType="touchUpInside" id="Gdv-yc-LF7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="b7r-tZ-OSY" secondAttribute="trailing" id="7mD-Rg-2W0"/>
+                            <constraint firstItem="b7r-tZ-OSY" firstAttribute="centerY" secondItem="mbG-zR-ayN" secondAttribute="centerY" id="J9A-6C-2s6"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="b7r-tZ-OSY" secondAttribute="leading" id="KNQ-iC-g2v"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Options" id="M5n-es-aFO"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="leaveGameSegue" id="cnT-Zb-ebE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7iZ-2Q-TwW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7742" y="1057"/>
+        </scene>
         <!--Update Hole Prize View Controller-->
         <scene sceneID="Idv-eP-2S3">
             <objects>
@@ -875,6 +918,7 @@
                         <segue destination="l01-Jz-o5J" kind="relationship" relationship="viewControllers" id="fKO-tu-jjN"/>
                         <segue destination="Vv5-9E-ATg" kind="relationship" relationship="viewControllers" id="3p0-Pc-HJI"/>
                         <segue destination="jZH-l5-hou" kind="relationship" relationship="viewControllers" id="Czb-Wb-Ong"/>
+                        <segue destination="VTH-KA-VwA" kind="relationship" relationship="viewControllers" id="w6H-wh-K7Z"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqc-rD-DXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1130,6 +1174,7 @@
                     <connections>
                         <segue destination="Vv5-9E-ATg" kind="relationship" relationship="viewControllers" id="GV0-Cv-MaZ"/>
                         <segue destination="jZH-l5-hou" kind="relationship" relationship="viewControllers" id="XJb-p8-uLI"/>
+                        <segue destination="VTH-KA-VwA" kind="relationship" relationship="viewControllers" id="E0g-AC-TMH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5D8-n5-bDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1145,6 +1190,8 @@
         <image name="Scorecard Tab Image" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="cnT-Zb-ebE"/>
+        <segue reference="E0g-AC-TMH"/>
         <segue reference="Jkp-Wt-CD6"/>
         <segue reference="XJb-p8-uLI"/>
         <segue reference="GV0-Cv-MaZ"/>
