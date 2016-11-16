@@ -19,27 +19,59 @@ class HolePrizeTabBarTableViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return holePrizesArray.count
+        if (section == 0) {
+            return holePrizesArray.count
+        }
+        else{
+            return 18
+        }
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "holePrizeReuseID", for: indexPath)
+
+        let section:Int = indexPath.section
         let cellNum:Int = indexPath.row
+        var cellName:String = "holePrizeReuseID"
+        if section == 1{
+            cellName = "skinsReuseID"
+        }
         
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath)
+        
+        print("cellnum: \(cellNum) section: \(section)")
+        if(cellName == "holePrizeReuseID"){
         // Configure the cell...
-        print("prize table: \(holePrizesArray[cellNum].prize)")
-        cell.textLabel!.text = holePrizesArray[cellNum].prize
-        cell.detailTextLabel!.text = holePrizesArray[cellNum].currentWinner
+            print("prize table: \(holePrizesArray[cellNum].prize)")
+            cell.textLabel!.text = holePrizesArray[cellNum].prize
+            cell.detailTextLabel!.text = holePrizesArray[cellNum].currentWinner
+        }
+        else{
+            cell.textLabel?.text = "\(cellNum + 1)"
+        }
+        
         return cell
     }
     
-    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Hole Prizes"
+        }
+        else {
+            return "Skins"
+        }
+    }
+    /*
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    }
+    */
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         holePrizesArray = globals.globalEvent.holePrizes
@@ -57,7 +89,8 @@ class HolePrizeTabBarTableViewController: UITableViewController {
         for aPrize in holePrizesArray{
             print("Aprize: \(aPrize.prize)")
         }
-        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 45, 0)
+        
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         //self.navigationItem.hidesBackButton = true
 
