@@ -36,7 +36,11 @@ class EventImporter{
                 let name = EventImporter.exisitingNames[i]
                 //let owner = eventData.value(forKey: "Owner") as! NSDictionary
                 let owner = eventData.value(forKey: "Owner") as! String
-
+                let skinsString:String = eventData.value(forKey: "Skins") as! String
+                var skinsBool:Bool = false
+                if (skinsString == "true"){
+                    skinsBool = true
+                }
                 let type: String = eventData.value(forKey: "GameType") as! String
                 let courseString: String = eventData.value(forKey: "Course") as! String
                 //let cLI : CourseListImporter = CourseListImporter()
@@ -140,7 +144,7 @@ class EventImporter{
                 
                 
                 
-                let nextEvent: Event = Event(name: name, owner: owner, type: type, course: course, players: playerArray, holePrizes: sortedHolePrizeArray)
+                let nextEvent: Event = Event(name: name, owner: owner, type: type, course: course, players: playerArray, holePrizes: sortedHolePrizeArray, skins: skinsBool)
                 EventImporter.exisitingEvents.append(nextEvent)
                 
                 if(self.globals.globalEvent != nil && nextEvent.name == self.globals.globalEvent.name){

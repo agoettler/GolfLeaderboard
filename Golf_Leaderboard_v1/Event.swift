@@ -28,6 +28,8 @@ public class Event
     
     public let course: Course
     
+    public var skins: Bool
+    
     public var players: [Player] = []
     
     public var holePrizes: [HolePrize] = []
@@ -42,22 +44,24 @@ public class Event
     ///     - owner: The name of the player that created and owns this event.
     ///     - type: The type of event being played.
     ///     - course: The golf course where this event is played.
-    public init(name: String, owner: String, type: String, course: Course)
+    public init(name: String, owner: String, type: String, course: Course, skins: Bool)
     {
         self.name = name
         self.owner = owner
         self.type = type
         self.course = course
+        self.skins = true
     }
     
     /// A convenience initializer for the `Event` class.
     /// Creates an event with the player and hole prize arrays set to the given parameters.
     /// Intended for reconstructing an `Event` object from database values.
-    public convenience init(name: String, owner: String, type: String, course: Course, players: [Player], holePrizes: [HolePrize])
+    public convenience init(name: String, owner: String, type: String, course: Course, players: [Player], holePrizes: [HolePrize], skins: Bool)
     {
-        self.init(name: name, owner: owner, type: type, course: course)
+        self.init(name: name, owner: owner, type: type, course: course, skins: skins)
         self.players = players
         self.holePrizes = holePrizes
+        self.skins = skins
     }
     
     /// Used for adding a player to the array of players.

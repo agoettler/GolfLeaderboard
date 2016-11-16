@@ -56,8 +56,13 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
 
             eventType = gameTypes[gameTypePicker.selectedRow(inComponent: 0)]
             courseSelection = availableCourses?[selectCoursePicker.selectedRow(inComponent: 0)]
-
-            createdEvent = Event(name: eventName, owner: "Null", type: eventType, course: courseSelection, players: [], holePrizes: holePrizesArray)
+            var skinsBool:Bool = false
+            
+            if(skinsSwitch.isOn){
+                skinsBool = true
+            }
+            
+            createdEvent = Event(name: eventName, owner: "Null", type: eventType, course: courseSelection, players: [], holePrizes: holePrizesArray, skins: skinsBool)
             let _ = EventExporter(currentEvent: createdEvent)
             
             globals.globalEvent = createdEvent // make the created event the global event for this app

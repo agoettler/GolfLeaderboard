@@ -20,6 +20,9 @@ class HolePrizeTabBarTableViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        if(globals.globalEvent.skins == false){
+            return 1
+        }
         return 2
     }
     

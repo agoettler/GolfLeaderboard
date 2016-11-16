@@ -51,7 +51,8 @@ public class EventExporter{
             "Owner": event.owner,
             "GameType": event.type,
             "Hole Prizes": hpDictionary,
-            "Players": "Null"
+            "Players": "Null",
+            "Skins": String(event.skins)
         ]
     }
     
