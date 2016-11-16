@@ -891,7 +891,7 @@
                             <constraint firstAttribute="leadingMargin" secondItem="b7r-tZ-OSY" secondAttribute="leading" id="KNQ-iC-g2v"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Options" id="M5n-es-aFO"/>
+                    <tabBarItem key="tabBarItem" title="Options" image="Options Tab Image" id="M5n-es-aFO"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="leaveGameSegue" id="cnT-Zb-ebE"/>
                     </connections>
@@ -1270,6 +1270,7 @@
         <image name="Course 2" width="1424" height="1780"/>
         <image name="Hole Prize Tab Image" width="25" height="25"/>
         <image name="Leaderboard Tab Image" width="25" height="25"/>
+        <image name="Options Tab Image" width="25" height="25"/>
         <image name="Score Entry Tab Image" width="25" height="25"/>
         <image name="Scorecard Tab Image" width="25" height="25"/>
     </resources>
