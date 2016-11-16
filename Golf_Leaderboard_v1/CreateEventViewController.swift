@@ -28,6 +28,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var selectCoursePicker: UIPickerView!
     @IBOutlet weak var gameTypePicker: UIPickerView!
     
+    @IBOutlet weak var skinsSwitch: UISwitch!
     
     
     var courseOptions: [String]!
@@ -104,7 +105,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
         eventImporterObject = EventImporter()
         self.eventNameTextField.delegate = self
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-
+        self.skinsSwitch.setOn(false, animated: true)
         /*
         if let courses = CourseImporter.getCourses(){
             availableCourses = courses

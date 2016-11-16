@@ -1008,16 +1008,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHb-Eq-N5t">
-                                <rect key="frame" x="16" y="368" width="112" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.66740204020000005" blue="0.01527244053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.97247464780000004" green="1" blue="0.97267601749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0L-o4-oz9">
-                                <rect key="frame" x="103" y="474" width="176" height="54"/>
+                                <rect key="frame" x="103" y="502" width="176" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.041046944600000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Add Hole Prizes">
@@ -1036,7 +1028,7 @@
                                 </connections>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Pd-cN-FKU">
-                                <rect key="frame" x="136" y="325" width="223" height="121"/>
+                                <rect key="frame" x="136" y="308" width="223" height="121"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="4pV-TY-UcC" id="6f7-1s-Rxy"/>
@@ -1044,7 +1036,7 @@
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atM-7Y-zJv">
-                                <rect key="frame" x="103" y="558" width="176" height="54"/>
+                                <rect key="frame" x="103" y="574" width="176" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.041046944600000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Create Event">
@@ -1084,6 +1076,26 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.041046944600000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwQ-sD-Sfx">
+                                <rect key="frame" x="16" y="450" width="112" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.66740204020000005" blue="0.01527244053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.97247464780000004" green="1" blue="0.97267601749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RyG-cT-esh">
+                                <rect key="frame" x="223" y="450" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHb-Eq-N5t">
+                                <rect key="frame" x="16" y="351" width="112" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.66740204020000005" blue="0.01527244053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.97247464780000004" green="1" blue="0.97267601749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1093,6 +1105,7 @@
                         <outlet property="eventNameTextField" destination="frX-iI-IzC" id="r0T-6W-MLH"/>
                         <outlet property="gameTypePicker" destination="2Pd-cN-FKU" id="dI9-xJ-N7c"/>
                         <outlet property="selectCoursePicker" destination="3vc-iK-nYl" id="p23-wZ-Siq"/>
+                        <outlet property="skinsSwitch" destination="RyG-cT-esh" id="dYA-hq-dRR"/>
                         <segue destination="Vzb-PQ-SKM" kind="show" identifier="goToEventSearch" id="3ro-Ra-gEt"/>
                     </connections>
                 </viewController>
@@ -1263,7 +1276,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="cnT-Zb-ebE"/>
         <segue reference="E0g-AC-TMH"/>
-        <segue reference="Jkp-Wt-CD6"/>
+        <segue reference="3ro-Ra-gEt"/>
         <segue reference="XJb-p8-uLI"/>
         <segue reference="GV0-Cv-MaZ"/>
     </inferredMetricsTieBreakers>
