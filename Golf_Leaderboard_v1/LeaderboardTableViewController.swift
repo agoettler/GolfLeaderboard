@@ -25,7 +25,7 @@ class LeaderboardTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        //self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 64, 0);
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         leaderboard = LeaderboardCalculator.updateLeaderboard()
 
