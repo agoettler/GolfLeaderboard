@@ -15,7 +15,8 @@ class HolePrizeTabBarTableViewController: UITableViewController {
     
     var holePrizesArray: [HolePrize]!
     // MARK: - Table view data source
-    
+    var skinsDictionary: Dictionary<Int,String>!
+
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -28,7 +29,7 @@ class HolePrizeTabBarTableViewController: UITableViewController {
             return holePrizesArray.count
         }
         else{
-            return 18
+            return skinsDictionary.count
         }
     }
     
@@ -54,7 +55,9 @@ class HolePrizeTabBarTableViewController: UITableViewController {
             cell.detailTextLabel!.text = holePrizesArray[cellNum].currentWinner
         }
         else{
-            cell.textLabel?.text = "\(cellNum + 1)"
+            let skinsHoles = skinsDictionary.keys.sorted()
+            cell.textLabel!.text = "Hole \(skinsHoles[cellNum])"
+            cell.detailTextLabel!.text = skinsDictionary[skinsHoles[cellNum]]
         }
         
         return cell
@@ -75,9 +78,12 @@ class HolePrizeTabBarTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         holePrizesArray = globals.globalEvent.holePrizes
+        self.skinsDictionary = SkinsCalculator.updateSkins()
 
         print("hp count \(holePrizesArray.count)")
         holePrizesArray = globals.globalEvent.holePrizes
+        
+        
         self.tableView.reloadData()
     }
     
@@ -89,8 +95,8 @@ class HolePrizeTabBarTableViewController: UITableViewController {
         for aPrize in holePrizesArray{
             print("Aprize: \(aPrize.prize)")
         }
-        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 45, 0)
-        
+        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 64, 0)
+        self.skinsDictionary = SkinsCalculator.updateSkins()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         //self.navigationItem.hidesBackButton = true
 

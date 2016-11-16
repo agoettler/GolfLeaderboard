@@ -40,6 +40,7 @@
 		8235343C1DC16C11007AFE70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8235343B1DC16C11007AFE70 /* GoogleService-Info.plist */; };
 		8250A7E31DCBA59100528C63 /* Scorecard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250A7E21DCBA59100528C63 /* Scorecard.swift */; };
 		82A28FE31DDBC07800ED7571 /* OptionsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A28FE21DDBC07800ED7571 /* OptionsTabViewController.swift */; };
+		82A28FE51DDCB3C800ED7571 /* SkinsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A28FE41DDCB3C800ED7571 /* SkinsCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		8235343B1DC16C11007AFE70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8250A7E21DCBA59100528C63 /* Scorecard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scorecard.swift; sourceTree = "<group>"; };
 		82A28FE21DDBC07800ED7571 /* OptionsTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTabViewController.swift; sourceTree = "<group>"; };
+		82A28FE41DDCB3C800ED7571 /* SkinsCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinsCalculator.swift; sourceTree = "<group>"; };
 		DDF1800807DCCD9CD5771F92 /* Pods-Golf_Leaderboard_v1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Golf_Leaderboard_v1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Golf_Leaderboard_v1/Pods-Golf_Leaderboard_v1.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +141,7 @@
 				822B7DDB1DC295830075E3A8 /* Player.swift */,
 				8250A7E21DCBA59100528C63 /* Scorecard.swift */,
 				820F0E7A1DD2180B0008EC42 /* LeaderboardCalculator.swift */,
+				82A28FE41DDCB3C800ED7571 /* SkinsCalculator.swift */,
 				8221EDE71DB6CCBF00239662 /* Assets.xcassets */,
 				8221EDE91DB6CCBF00239662 /* LaunchScreen.storyboard */,
 				8221EDEC1DB6CCBF00239662 /* Info.plist */,
@@ -302,6 +305,7 @@
 			files = (
 				820F0DFB1DCD104B0008EC42 /* ScorecardTableViewController.swift in Sources */,
 				8221EDE31DB6CCBF00239662 /* ViewController.swift in Sources */,
+				82A28FE51DDCB3C800ED7571 /* SkinsCalculator.swift in Sources */,
 				8221EE5C1DBFEC4200239662 /* ScoreEntryViewController.swift in Sources */,
 				7538A4801DD1A7BB009F1EB4 /* ScorecardCollectionView.swift in Sources */,
 				82339E781DD23EC20066DE77 /* LeaderboardCustomCellTableViewCell.swift in Sources */,
