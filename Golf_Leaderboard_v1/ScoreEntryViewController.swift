@@ -59,6 +59,11 @@ class ScoreEntryViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         let currentHole: Int = globals.globalPlayer.currentHole
+        //self.navigationController?.navigationBar.backgroundColor = UIColor.red
+        
+        
+        
+        
         if(currentHole != -1){
             updateLabels(currentHole: currentHole)
         }
@@ -80,7 +85,11 @@ class ScoreEntryViewController: UIViewController {
         super.viewDidLoad()
         print("ScoreEntryViewController: viewDidLoad")
         ref = FIRDatabase.database().reference()
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        //navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+       // navigationController?.navigationBar.
+        //self.navigationController?.navigationBar.shadowImage = UIImage()
+        //self.navigationController?.navigationBar.isTranslucent = true
         scoreStepper.stepValue = 1
         scoreStepper.minimumValue = 1
         scoreStepper.maximumValue = 15

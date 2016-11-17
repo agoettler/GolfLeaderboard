@@ -88,6 +88,9 @@ class SearchEventViewController: UIViewController, UITextFieldDelegate {
 
             
         }
+        else{
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
+        }
     }
     
 

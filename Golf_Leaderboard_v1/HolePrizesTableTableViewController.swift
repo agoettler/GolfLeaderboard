@@ -25,7 +25,7 @@ class HolePrizesTableTableViewController: UITableViewController {
         super.viewDidLoad()
         print("HolePrizesTableViewController: viewDidLoad")
         ref = FIRDatabase.database().reference()
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        //self.navigationController?.setNavigationBarHidden(false, animated: false)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

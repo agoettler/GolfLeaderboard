@@ -15,7 +15,7 @@ class LeaderboardTableViewController: UITableViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        //self.navigationController?.setNavigationBarHidden(true, animated: false)
         leaderboard = LeaderboardCalculator.updateLeaderboard()
         
         self.tableView.reloadData()
@@ -24,9 +24,9 @@ class LeaderboardTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        //self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 64, 0);
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        //self.navigationController?.setNavigationBarHidden(true, animated: false)
         leaderboard = LeaderboardCalculator.updateLeaderboard()
 
         // Uncomment the following line to preserve selection between presentations
@@ -77,7 +77,7 @@ class LeaderboardTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return CGFloat(64.0)
+        return CGFloat(30)
     }
     /*
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -86,7 +86,7 @@ class LeaderboardTableViewController: UITableViewController {
     }
     */
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: tableView.frame.width, height: 64))
+        let headerView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: tableView.frame.width, height: 20))
         
         let rank: UILabel = UILabel()
         let name: UILabel = UILabel()
@@ -113,7 +113,7 @@ class LeaderboardTableViewController: UITableViewController {
         horizontalStack.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20).isActive = true
         horizontalStack.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -20).isActive = true
         //horizontalStack.topAnchor.constraint(equalTo: headerView.topAnchor)
-        horizontalStack.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -12).isActive = true
+        horizontalStack.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -5).isActive = true
         
         rank.textColor = UIColor.black
         name.textColor = UIColor.black

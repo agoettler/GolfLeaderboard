@@ -37,7 +37,7 @@ class TitleViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        //self.navigationController?.setNavigationBarHidden(true, animated: false)
 
     }
     override func viewDidLoad()
@@ -49,7 +49,7 @@ class TitleViewController: UIViewController {
         ref = FIRDatabase.database().reference()
         courseListImporterObject = CourseListImporter.init()
         ourCourses = CourseListImporter.coursesArray
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        //self.navigationController?.setNavigationBarHidden(true, animated: false)
         // print("Courses count: \(ourCourses.count)")
         // Do any additional setup after loading the view.
         

@@ -116,6 +116,7 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) 
     {
         print("JoinEventViewController: prepare for segue")
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }

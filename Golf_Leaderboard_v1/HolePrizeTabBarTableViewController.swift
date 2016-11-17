@@ -79,7 +79,7 @@ class HolePrizeTabBarTableViewController: UITableViewController {
     }
     */
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        //self.navigationController?.setNavigationBarHidden(true, animated: false)
         holePrizesArray = globals.globalEvent.holePrizes
         self.skinsDictionary = SkinsCalculator.updateSkins()
 
@@ -98,9 +98,9 @@ class HolePrizeTabBarTableViewController: UITableViewController {
         for aPrize in holePrizesArray{
             print("Aprize: \(aPrize.prize)")
         }
-        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 64, 0)
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 64, 0)
         self.skinsDictionary = SkinsCalculator.updateSkins()
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        //self.navigationController?.setNavigationBarHidden(true, animated: false)
         //self.navigationItem.hidesBackButton = true
 
         // Do any additional setup after loading the view.
