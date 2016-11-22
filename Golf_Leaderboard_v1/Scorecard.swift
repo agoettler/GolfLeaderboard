@@ -13,9 +13,8 @@ public class Scorecard
     
     let globals:CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData
     
-    var holes:[Hole]!
-    var playerHandicap: Int!
-    var playerStartHole: Int!
+    var playerHandicap: Int
+    var playerStartHole: Int
     var cumlativeParSum: Int = 0
 
     
@@ -113,13 +112,13 @@ public class Scorecard
     
     
     // TODO: Decide if the subscript should be 0-indexed or 1-indexed
-    public subscript(index: Int) -> (hole: Hole, grossScore: Int, netScore: Int)
+    public subscript(index: Int) -> ( grossScore: Int, netScore: Int)
     {
         get
         {
             assert((index >= 1 && index <= grossScoreArray.count), "Index out of range")
             
-            return (holes[index - 1], grossScoreArray[index]-1, getNetScore(holeNumber: index-1))
+            return (grossScoreArray[index]-1, getNetScore(holeNumber: index-1))
         }
     }
     
