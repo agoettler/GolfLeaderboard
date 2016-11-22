@@ -10,19 +10,11 @@
 
 import UIKit
 
-//private let reuseIdentifier = "Cell"
-
 class ScorecardViewController: UICollectionViewController
 {
     // TODO: Try using an ordinary prototyple collection view cell with a label instead of Jose's custom nibs
     
     @IBOutlet var scorecardCollectionView: UICollectionView!
-    
-    /*
-    let dateCellIdentifier = "DateCellIdentifier"
-    
-    let contentCellIdentifier = "ContentCellIdentifier"
-    */
     
     let scorecardCellIdentifier = "ScorecardCell"
     
@@ -34,13 +26,6 @@ class ScorecardViewController: UICollectionViewController
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-        /*
-        // Register cell classes
-        self.collectionView!.register(UINib(nibName: "DateCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: dateCellIdentifier)
-        
-        self.collectionView!.register(UINib(nibName: "ContentCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: contentCellIdentifier)
-        */
 
         // Do any additional setup after loading the view.
     }
@@ -85,8 +70,6 @@ class ScorecardViewController: UICollectionViewController
         {
             let labelCell : ScorecardCell = collectionView.dequeueReusableCell(withReuseIdentifier: scorecardCellIdentifier, for: indexPath) as! ScorecardCell
             labelCell.backgroundColor = UIColor.white
-            //labelCell.cellLabel.font = UIFont.systemFont(ofSize: 13)
-            //labelCell.cellLabel.textColor = UIColor.black
             
             switch indexPath.row
             {
@@ -117,8 +100,7 @@ class ScorecardViewController: UICollectionViewController
             {
                 let holeCell : ScorecardCell = collectionView.dequeueReusableCell(withReuseIdentifier: scorecardCellIdentifier, for: indexPath) as! ScorecardCell
                 holeCell.backgroundColor = UIColor.white
-                //holeCell.cellLabel.font = UIFont.systemFont(ofSize: 13)
-                //holeCell.cellLabel.textColor = UIColor.black
+
                 holeCell.cellLabel.text = "\(globals.globalEvent.course.holes[indexPath.section - 1].number)"
                 
                 alternateCellColors(indexPath: indexPath, cell: holeCell)
@@ -130,8 +112,6 @@ class ScorecardViewController: UICollectionViewController
             else
             {
                 let contentCell : ScorecardCell = collectionView .dequeueReusableCell(withReuseIdentifier: scorecardCellIdentifier, for: indexPath) as! ScorecardCell
-                //contentCell.cellLabel.font = UIFont.systemFont(ofSize: 13)
-                //contentCell.cellLabel.textColor = UIColor.black
                 
                 switch indexPath.row
                 {
@@ -180,29 +160,34 @@ class ScorecardViewController: UICollectionViewController
 
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool 
+    {
         return true
     }
     */
 
     /*
     // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool 
+    {
         return true
     }
     */
 
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
+    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool 
+    {
         return false
     }
 
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool 
+    {
         return false
     }
 
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) 
+    {
     
     }
     */
