@@ -1148,7 +1148,7 @@
         <scene sceneID="mbT-cu-1lz">
             <objects>
                 <collectionViewController title="Scorecard View Controller" id="Hbp-st-Rji" customClass="ScorecardViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="jST-DI-lMz">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="jST-DI-lMz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1183,6 +1183,7 @@
                             <outlet property="delegate" destination="Hbp-st-Rji" id="490-Rr-IpB"/>
                         </connections>
                     </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="MSy-F0-jEb"/>
                     <connections>
                         <outlet property="scorecardCollectionView" destination="jST-DI-lMz" id="T2i-iy-05a"/>
