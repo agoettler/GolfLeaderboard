@@ -73,7 +73,7 @@ public class Scorecard
             }
             */
             }
-            print("netScore: \(netScore)")
+            //print("netScore: \(netScore)")
             return netScore
         }
         return 0
@@ -118,7 +118,7 @@ public class Scorecard
         {
             assert((index >= 1 && index <= grossScoreArray.count), "Index out of range")
             
-            return (grossScoreArray[index]-1, getNetScore(holeNumber: index-1))
+            return (grossScoreArray[index-1], getNetScore(holeNumber: index-1))
         }
     }
     
