@@ -12,8 +12,6 @@ import UIKit
 
 class ScorecardViewController: UICollectionViewController
 {
-    // TODO: Try using an ordinary prototyple collection view cell with a label instead of Jose's custom nibs
-    
     @IBOutlet var scorecardCollectionView: UICollectionView!
     
     let scorecardCellIdentifier = "ScorecardCell"
@@ -125,13 +123,27 @@ class ScorecardViewController: UICollectionViewController
                     // handicap
                     contentCell.cellLabel.text = "\(globals.globalEvent.course.holes[indexPath.section - 1].handicap)"
                 case 4:
-                    // gross
-                    // FIXME: Crashes if the scorecard does not have a score for each hole
-                    contentCell.cellLabel.text = "\(globals.globalPlayer.scorecard![indexPath.section].grossScore)"
+                    // gross score
+                    if globals.globalPlayer.scorecard.grossScoreArray.indices.contains(indexPath.section-1)
+                    {
+                        contentCell.cellLabel.text = "\(globals.globalPlayer.scorecard[indexPath.section].grossScore)"
+                    }
+                        
+                    else
+                    {
+                        contentCell.cellLabel.text = "-"
+                    }
                 case 5:
-                    // net
-                    // FIXME: Crashes if the scorecard does not have a score for each hole
-                    contentCell.cellLabel.text = "\(globals.globalPlayer.scorecard![indexPath.section].netScore)"
+                    // net score
+                    if globals.globalPlayer.scorecard.grossScoreArray.indices.contains(indexPath.section-1)
+                    {
+                        contentCell.cellLabel.text = "\(globals.globalPlayer.scorecard[indexPath.section].grossScore)"
+                    }
+                        
+                    else
+                    {
+                        contentCell.cellLabel.text = "-"
+                    }
                 default:
                     contentCell.cellLabel.text = ""
                 }

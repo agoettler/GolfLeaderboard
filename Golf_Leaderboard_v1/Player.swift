@@ -15,8 +15,8 @@ public class Player{
     public let name: String
     public let handicap: Int
     public let startHole: Int
-    public var currentHole: Int!
-    public var scorecard:Scorecard!
+    public var currentHole: Int
+    public var scorecard:Scorecard
     
     public init(name : String, handicap : Int, startHole : Int, card: [Int]){
         
