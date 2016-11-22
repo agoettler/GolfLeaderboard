@@ -9,12 +9,13 @@
 import Foundation
 import Firebase
 
-public class HolePrize{
+public class HolePrize
+{
     
     var ref: FIRDatabaseReference = FIRDatabase.database().reference()
     
     let prize: String
-    var currentWinner: String!
+    var currentWinner: String
     
     // TODO: When a hole prize is created, there probably won't be a winner immediately
     public init(prize: String)

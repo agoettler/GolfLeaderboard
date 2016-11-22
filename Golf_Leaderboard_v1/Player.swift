@@ -10,7 +10,8 @@ import Foundation
 import Firebase
 
 
-public class Player{
+public class Player
+{
     
     public let name: String
     public let handicap: Int
