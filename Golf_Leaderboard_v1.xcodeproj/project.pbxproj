@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		1933E8901DC28FCA00F03C2C /* HolePrize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1933E88F1DC28FCA00F03C2C /* HolePrize.swift */; };
 		1D6A2B93958596DFAE8C4AB0 /* Pods_Golf_Leaderboard_v1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7439C3635AEDB28DCBBADBF6 /* Pods_Golf_Leaderboard_v1.framework */; };
-		7538A4801DD1A7BB009F1EB4 /* ScorecardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7538A47F1DD1A7BB009F1EB4 /* ScorecardCollectionView.swift */; };
-		7538A4821DD1AEF5009F1EB4 /* ScorecardCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7538A4811DD1AEF5009F1EB4 /* ScorecardCollectionViewController.swift */; };
 		75A751021DBFF2AC0036DE26 /* Plans.txt in Resources */ = {isa = PBXBuildFile; fileRef = 75A751011DBFF2AC0036DE26 /* Plans.txt */; };
 		75A751041DC073870036DE26 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A751031DC073870036DE26 /* Course.swift */; };
 		75F313ED1DE40F0D00306A6E /* CustomCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F313EA1DE40F0D00306A6E /* CustomCollectionViewLayout.swift */; };
@@ -50,8 +48,6 @@
 		0D367B910C9FF4D44BD5A769 /* Pods-Golf_Leaderboard_v1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Golf_Leaderboard_v1.release.xcconfig"; path = "Pods/Target Support Files/Pods-Golf_Leaderboard_v1/Pods-Golf_Leaderboard_v1.release.xcconfig"; sourceTree = "<group>"; };
 		1933E88F1DC28FCA00F03C2C /* HolePrize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolePrize.swift; sourceTree = "<group>"; };
 		7439C3635AEDB28DCBBADBF6 /* Pods_Golf_Leaderboard_v1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Golf_Leaderboard_v1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7538A47F1DD1A7BB009F1EB4 /* ScorecardCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorecardCollectionView.swift; sourceTree = "<group>"; };
-		7538A4811DD1AEF5009F1EB4 /* ScorecardCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorecardCollectionViewController.swift; sourceTree = "<group>"; };
 		75A751011DBFF2AC0036DE26 /* Plans.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Plans.txt; sourceTree = "<group>"; };
 		75A751031DC073870036DE26 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		75F313EA1DE40F0D00306A6E /* CustomCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewLayout.swift; sourceTree = "<group>"; };
@@ -137,8 +133,6 @@
 				8221EDE01DB6CCBF00239662 /* AppDelegate.swift */,
 				8221EDE21DB6CCBF00239662 /* ViewController.swift */,
 				8221EDE41DB6CCBF00239662 /* Main.storyboard */,
-				7538A4811DD1AEF5009F1EB4 /* ScorecardCollectionViewController.swift */,
-				7538A47F1DD1A7BB009F1EB4 /* ScorecardCollectionView.swift */,
 				75A751011DBFF2AC0036DE26 /* Plans.txt */,
 				8231D88F1DCA36AD009FC2DC /* CurrentEventGlobalAccess.swift */,
 				75A751031DC073870036DE26 /* Course.swift */,
@@ -316,7 +310,6 @@
 				8221EDE31DB6CCBF00239662 /* ViewController.swift in Sources */,
 				82A28FE51DDCB3C800ED7571 /* SkinsCalculator.swift in Sources */,
 				8221EE5C1DBFEC4200239662 /* ScoreEntryViewController.swift in Sources */,
-				7538A4801DD1A7BB009F1EB4 /* ScorecardCollectionView.swift in Sources */,
 				82339E781DD23EC20066DE77 /* LeaderboardCustomCellTableViewCell.swift in Sources */,
 				820F0DF91DCD10350008EC42 /* LeaderboardTableViewController.swift in Sources */,
 				75A751041DC073870036DE26 /* Course.swift in Sources */,
@@ -326,7 +319,6 @@
 				8221EE5E1DBFF87200239662 /* AddHolePrizeViewController.swift in Sources */,
 				8221EDE11DB6CCBF00239662 /* AppDelegate.swift in Sources */,
 				823534361DC01304007AFE70 /* CourseListImporter.swift in Sources */,
-				7538A4821DD1AEF5009F1EB4 /* ScorecardCollectionViewController.swift in Sources */,
 				8221EE581DBFEC1100239662 /* SearchEventViewController.swift in Sources */,
 				8221EE5A1DBFEC2800239662 /* JoinEventViewController.swift in Sources */,
 				8221EE601DBFF89600239662 /* HolePrizesTableTableViewController.swift in Sources */,

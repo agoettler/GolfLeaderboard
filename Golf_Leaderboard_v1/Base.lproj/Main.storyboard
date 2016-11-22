@@ -1155,14 +1155,14 @@
                         <collectionViewLayout key="collectionViewLayout" id="50X-j1-ppx" customClass="CustomCollectionViewLayout" customModule="Golf_Leaderboard_v1" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ScorecardCell" id="rhV-gQ-Ldh" customClass="ScorecardCell" customModule="Golf_Leaderboard_v1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="60" height="32"/>
+                                <rect key="frame" x="0.0" y="0.0" width="52" height="27"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="60" height="32"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="52" height="27"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wED-aH-DGs">
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -1172,7 +1172,7 @@
                                     <constraint firstItem="wED-aH-DGs" firstAttribute="centerY" secondItem="rhV-gQ-Ldh" secondAttribute="centerY" id="GJw-pU-ddv"/>
                                     <constraint firstItem="wED-aH-DGs" firstAttribute="centerX" secondItem="rhV-gQ-Ldh" secondAttribute="centerX" id="YPc-0W-kHU"/>
                                 </constraints>
-                                <size key="customSize" width="60" height="32"/>
+                                <size key="customSize" width="52" height="27"/>
                                 <connections>
                                     <outlet property="cellLabel" destination="wED-aH-DGs" id="1PU-NO-Mdc"/>
                                 </connections>
@@ -1191,7 +1191,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0L6-qI-8X3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4785" y="-457"/>
+            <point key="canvasLocation" x="4784.8000000000002" y="-457.42128935532236"/>
         </scene>
     </scenes>
     <resources>
