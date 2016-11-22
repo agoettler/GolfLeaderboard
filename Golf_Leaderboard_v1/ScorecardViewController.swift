@@ -124,6 +124,7 @@ class ScorecardViewController: UICollectionViewController
                     contentCell.cellLabel.text = "\(globals.globalEvent.course.holes[indexPath.section - 1].handicap)"
                 case 4:
                     // gross score
+                    // check for a submitted score for this hole
                     if globals.globalPlayer.scorecard.grossScoreArray.indices.contains(indexPath.section-1)
                     {
                         contentCell.cellLabel.text = "\(globals.globalPlayer.scorecard[indexPath.section].grossScore)"
@@ -135,6 +136,7 @@ class ScorecardViewController: UICollectionViewController
                     }
                 case 5:
                     // net score
+                    // check for a submitted score for this hole
                     if globals.globalPlayer.scorecard.grossScoreArray.indices.contains(indexPath.section-1)
                     {
                         contentCell.cellLabel.text = "\(globals.globalPlayer.scorecard[indexPath.section].grossScore)"
