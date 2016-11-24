@@ -19,6 +19,8 @@ class OptionsTabViewController: UIViewController {
     
     func leaveGame() {
         print("leaving game...")
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.tabBarController?.tabBar.isHidden = true
         performSegue(withIdentifier: "leaveGameSegue", sender: nil)
     }
     
