@@ -21,7 +21,9 @@ class ScorecardViewController: UICollectionViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        //self.scorecardCollectionView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
+        //self.navigationController?.setNavigationBarHidden(false, animated: false)
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -74,7 +76,7 @@ class ScorecardViewController: UICollectionViewController
         if indexPath.section == 0
         {
             let labelCell : ScorecardCell = collectionView.dequeueReusableCell(withReuseIdentifier: scorecardCellIdentifier, for: indexPath) as! ScorecardCell
-            labelCell.backgroundColor = UIColor.white
+            labelCell.backgroundColor = UIColor.yellow
             
             switch indexPath.row
             {
@@ -146,7 +148,7 @@ class ScorecardViewController: UICollectionViewController
                     // check for a submitted score for this hole
                     if globals.globalPlayer.scorecard.grossScoreArray.indices.contains(indexPath.section-1)
                     {
-                        contentCell.cellLabel.text = "\(globals.globalPlayer.scorecard[indexPath.section].grossScore)"
+                        contentCell.cellLabel.text = "\(globals.globalPlayer.scorecard[indexPath.section].netScore)"
                     }
                         
                     else
