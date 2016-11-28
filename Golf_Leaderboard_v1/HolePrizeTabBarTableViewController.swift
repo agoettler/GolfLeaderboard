@@ -17,36 +17,85 @@ class HolePrizeTabBarTableViewController: UITableViewController {
     // MARK: - Table view data source
     var skinsDictionary: Dictionary<Int,String>!
 
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    
+    @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
+        holePrizesArray = globals.globalEvent.holePrizes
+        self.skinsDictionary = SkinsCalculator.updateSkins()
+        
+
+        self.tableView.reloadData()
+    }
+    
+    
+    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        
+        return 1
+        /*
         if(globals.globalEvent.skins == false){
             return 1
         }
         return 2
+        */
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        
+        if (segmentedControl.selectedSegmentIndex == 0) {
+            return holePrizesArray.count
+        }
+        else{
+            return skinsDictionary.count
+        }
+        
+        /*
         if (section == 0) {
             return holePrizesArray.count
         }
         else{
             return skinsDictionary.count
         }
+        */
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellNum:Int = indexPath.row
+        var cellName:String = "holePrizeReuseID"
 
+        if (segmentedControl.selectedSegmentIndex == 1) {
+            cellName = "skinsReuseID"
+        }
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath)
+
+        if(cellName == "holePrizeReuseID"){
+            // Configure the cell...
+            print("prize table: \(holePrizesArray[cellNum].prize)")
+            cell.textLabel!.text = holePrizesArray[cellNum].prize
+            cell.detailTextLabel!.text = holePrizesArray[cellNum].currentWinner
+        }
+        else{
+            let skinsHoles = skinsDictionary.keys.sorted()
+            cell.textLabel!.text = "Hole \(skinsHoles[cellNum])"
+            cell.detailTextLabel!.text = skinsDictionary[skinsHoles[cellNum]]
+        }
+        
+        
+        
+        
+        /*
         let section:Int = indexPath.section
         let cellNum:Int = indexPath.row
         var cellName:String = "holePrizeReuseID"
         if section == 1{
             cellName = "skinsReuseID"
         }
-        
-        
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath)
         
@@ -62,22 +111,29 @@ class HolePrizeTabBarTableViewController: UITableViewController {
             cell.textLabel!.text = "Hole \(skinsHoles[cellNum])"
             cell.detailTextLabel!.text = skinsDictionary[skinsHoles[cellNum]]
         }
-        
+        */
         return cell
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        if (segmentedControl.selectedSegmentIndex == 0) {
+            return "Hole Prizes"
+        }
+        else{
+            return "Skins"
+        }
+        
+        /*
         if section == 0 {
             return "Hole Prizes"
         }
         else {
             return "Skins"
         }
+        */
     }
-    /*
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-    }
-    */
+
     override func viewWillAppear(_ animated: Bool) {
         //self.navigationController?.setNavigationBarHidden(true, animated: false)
         holePrizesArray = globals.globalEvent.holePrizes
