@@ -118,17 +118,29 @@ class EventImporter{
                         holeOptions.sort()
                         var counter:Int = 0
                         for aOption in holeOptions{
-                            
+                            var alreadyExists:Bool = false
                             for aPrize in holePrizeArray{
                                 if(aPrize.prize.contains("Hole \(aOption):")){
-                                    sortedHolePrizeArray.append(aPrize)
+                                    if(sortedHolePrizeArray.count > 1){
+                                        for currentSortedPrize in sortedHolePrizeArray{
+                                            if(currentSortedPrize.prize == aPrize.prize){
+                                                alreadyExists = true
+                                            }
+                                        }
+                                    }
+                                    if(alreadyExists == false){
+                                        sortedHolePrizeArray.append(aPrize)
+                                        print("sortedHolePrizeArray: \(sortedHolePrizeArray[counter])")
+
+                                        counter += 1;
+
+                                    }
+                       
                                 }
                             }
                             
-                             print("aOption: \(aOption)")
-                             print("sortedHolePrizeArray: \(sortedHolePrizeArray[counter])")
+                            print("aOption: \(aOption)")
 
-                            counter += 1;
                             
                         }
                         

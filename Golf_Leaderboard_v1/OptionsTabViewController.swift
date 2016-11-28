@@ -10,7 +10,8 @@ import UIKit
 
 class OptionsTabViewController: UIViewController {
 
-    
+    let globals:CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData
+
     var alertVC: UIAlertController!
     
     @IBAction func leaveGameButtonPressed() {
@@ -21,6 +22,16 @@ class OptionsTabViewController: UIViewController {
         print("leaving game...")
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.tabBarController?.tabBar.isHidden = true
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeVC = storyboard.instantiateInitialViewController()
+        self.navigationController?.present(homeVC!, animated: false, completion: nil)
+        var viewcontrollers = self.navigationController?.viewControllers
+        viewcontrollers?.removeAll()
+        viewcontrollers?.append(homeVC!)
+        globals.globalEvent = nil
+        globals.globalPlayer = nil
+        
+        
         performSegue(withIdentifier: "leaveGameSegue", sender: nil)
     }
     
