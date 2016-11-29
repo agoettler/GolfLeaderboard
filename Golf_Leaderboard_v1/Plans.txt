@@ -71,3 +71,4 @@ x Make sure that the gross and net scores are always visible on the scoreboard
     x Removed gross score column, net score column relabeld as score
     x Net score is displayed with one or two dots when the player received a stroke or two strokes on that hole
 x Limit player names to alphanumeric characters
+- Allow the app to function correctly with arbitrary course lengths

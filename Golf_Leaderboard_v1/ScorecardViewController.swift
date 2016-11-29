@@ -17,6 +17,9 @@ class ScorecardViewController: UICollectionViewController
     let scorecardCellIdentifier = "ScorecardCell"
     
     let globals: CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData
+    
+    // override this property to change which player's scorecard is displayed
+    let player: Player = CurrentEventGlobalAccess.globalData.globalPlayer
 
     override func viewDidLoad()
     {
@@ -134,7 +137,7 @@ class ScorecardViewController: UICollectionViewController
                     // check for a submitted score for this hole
                     if globals.globalPlayer.scorecard.grossScoreArray.indices.contains(indexPath.section-1)
                     {
-                        var scoreValue: String = "\(globals.globalPlayer.scorecard[indexPath.section].netScore)"
+                        var scoreValue: String = "\(player.scorecard[indexPath.section].netScore)"
                         
                         // append dots to the score if the player was given stroke(s) due to handicap
                         switch (globals.globalPlayer.scorecard[indexPath.section].grossScore - globals.globalPlayer.scorecard[indexPath.section].netScore) {
