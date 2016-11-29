@@ -18,7 +18,11 @@ class TitleViewController: UIViewController {
     var ourCourses: [Course]!
     var ourEvents: NSDictionary!
     var globals:CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData
+    var gameTimer:Timer!
+    var currentTime:Int = 1
     
+    @IBOutlet weak var createEventButton: UIButton!
+    @IBOutlet weak var findEventButton: UIButton!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     
@@ -41,16 +45,28 @@ class TitleViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         //self.navigationController?.setNavigationBarHidden(false, animated: false)
         //self.navigationController?.navigationBar.backItem?.hidesBackButton = true
-
+        
+        gameTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(TitleViewController.countdown), userInfo: nil, repeats: true)
         var isStillLoading: Bool = globals.loading
         var i:Int = 0
-        
+        /*
         while(isStillLoading){
             print("\(isStillLoading)")
             isStillLoading = globals.loading
             i+=1
         }
         spinner.stopAnimating()
+        */
+    }
+    
+    func countdown() {
+        self.currentTime -= 1
+        if self.currentTime <= 0 {
+            gameTimer.invalidate()
+            spinner.stopAnimating()
+            findEventButton.isHidden = false
+            createEventButton.isHidden = false
+        }
 
     }
     
@@ -64,6 +80,9 @@ class TitleViewController: UIViewController {
         ref = FIRDatabase.database().reference()
         courseListImporterObject = CourseListImporter.init()
         ourCourses = CourseListImporter.coursesArray
+        
+        findEventButton.isHidden = true
+        createEventButton.isHidden = true
         spinner.startAnimating()
 
         /*
