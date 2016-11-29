@@ -17,7 +17,9 @@ class TitleViewController: UIViewController {
     var eventImporterObject: EventImporter!
     var ourCourses: [Course]!
     var ourEvents: NSDictionary!
+    var globals:CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -39,6 +41,16 @@ class TitleViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         //self.navigationController?.setNavigationBarHidden(false, animated: false)
         //self.navigationController?.navigationBar.backItem?.hidesBackButton = true
+        var isStillLoading: Bool = globals.loading
+        var i:Int = 0
+        
+        while(i<25){
+            spinner.startAnimating()
+            print("\(isStillLoading)")
+            isStillLoading = globals.loading
+            i+=1
+        }
+        spinner.stopAnimating()
 
     }
     
@@ -52,7 +64,15 @@ class TitleViewController: UIViewController {
         ref = FIRDatabase.database().reference()
         courseListImporterObject = CourseListImporter.init()
         ourCourses = CourseListImporter.coursesArray
-
+        /*
+        var isStillLoading: Bool = globals.loading
+        while(isStillLoading){
+            spinner.startAnimating()
+            print("\(isStillLoading)")
+            isStillLoading = globals.loading
+        }
+        spinner.stopAnimating()
+    */
         //self.navigationController?.setNavigationBarHidden(true, animated: false)
         // print("Courses count: \(ourCourses.count)")
         // Do any additional setup after loading the view.

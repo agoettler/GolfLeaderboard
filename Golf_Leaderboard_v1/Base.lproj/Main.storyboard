@@ -26,6 +26,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Course 2" translatesAutoresizingMaskIntoConstraints="NO" id="q5f-vj-cCX">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="m6e-UK-pwa">
+                                <rect key="frame" x="70" y="424" width="231" height="77"/>
+                                <color key="backgroundColor" white="0.5" alpha="0.5" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <state key="normal" title="Find Exisiting Event">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Vzb-PQ-SKM" kind="show" id="Jkp-Wt-CD6"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7ot-tH-bcu">
                                 <rect key="frame" x="70" y="253" width="231" height="77"/>
                                 <color key="backgroundColor" white="0.5" alpha="0.50430757705479445" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -46,17 +57,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="m6e-UK-pwa">
-                                <rect key="frame" x="70" y="424" width="231" height="77"/>
-                                <color key="backgroundColor" white="0.5" alpha="0.5" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                <state key="normal" title="Find Exisiting Event">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Vzb-PQ-SKM" kind="show" id="Jkp-Wt-CD6"/>
-                                </connections>
-                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="He9-8c-jT1">
+                                <rect key="frame" x="176" y="356" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -81,6 +85,7 @@
                     <navigationItem key="navigationItem" id="L5h-t6-VP2"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="q5f-vj-cCX" id="Vom-6k-i7H"/>
+                        <outlet property="spinner" destination="He9-8c-jT1" id="rQh-j2-duE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -285,83 +290,83 @@
                         <viewControllerLayoutGuide type="bottom" id="ZgT-NU-Rd6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NOF-54-wKf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hole:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPH-8m-SXb">
-                                <rect key="frame" x="95.5" y="142" width="86.5" height="23"/>
+                                <rect key="frame" x="95.5" y="78" width="86.5" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yardage:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgy-y5-2rK">
-                                <rect key="frame" x="95.5" y="173" width="86.5" height="23"/>
+                                <rect key="frame" x="95.5" y="109" width="86.5" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Par:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jR9-KW-GqQ">
-                                <rect key="frame" x="95.5" y="204" width="86.5" height="23"/>
+                                <rect key="frame" x="95.5" y="140" width="86.5" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handicap:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gy-S7-766">
-                                <rect key="frame" x="95.5" y="235" width="86.5" height="23"/>
+                                <rect key="frame" x="95.5" y="171" width="86.5" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yh-Lu-eft">
-                                <rect key="frame" x="190" y="142" width="89" height="23"/>
+                                <rect key="frame" x="190" y="78" width="89" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cb3-EY-boh">
-                                <rect key="frame" x="190" y="173" width="89" height="23"/>
+                                <rect key="frame" x="190" y="109" width="89" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcq-sl-GWV">
-                                <rect key="frame" x="190" y="204" width="89" height="23"/>
+                                <rect key="frame" x="190" y="140" width="89" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFo-Zc-ydt">
-                                <rect key="frame" x="190" y="235" width="89" height="23"/>
+                                <rect key="frame" x="190" y="171" width="89" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score Entry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUg-1h-jds">
-                                <rect key="frame" x="95.5" y="111" width="183.5" height="23"/>
+                                <rect key="frame" x="95.5" y="47" width="183.5" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99R-Vw-MDh">
-                                <rect key="frame" x="95.5" y="307" width="86.5" height="23"/>
+                                <rect key="frame" x="95.5" y="243" width="86.5" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="46j-Bc-cQi">
-                                <rect key="frame" x="190.5" y="350" width="94" height="29"/>
+                                <rect key="frame" x="190.5" y="286" width="94" height="29"/>
                                 <connections>
                                     <action selector="scoreStepperPressed:" destination="kWC-mz-8oB" eventType="valueChanged" id="F8D-7c-D1L"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlV-Rd-1HB">
-                                <rect key="frame" x="193" y="307" width="89" height="23"/>
+                                <rect key="frame" x="193" y="243" width="89" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sae-4E-sSB">
-                                <rect key="frame" x="73" y="482" width="234" height="76"/>
+                                <rect key="frame" x="73" y="418" width="234" height="76"/>
                                 <color key="backgroundColor" red="0.0" green="0.66740204020000005" blue="0.01527244053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Submit Score">
@@ -372,7 +377,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGa-79-Ieq">
-                                <rect key="frame" x="70" y="566" width="234" height="21"/>
+                                <rect key="frame" x="70" y="502" width="234" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="KOC-gn-Lrq"/>
                                 </constraints>
@@ -442,6 +447,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Score Entry" id="lSd-dw-cUY"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="handicapLabel" destination="PFo-Zc-ydt" id="tu3-Vg-Lgg"/>
                         <outlet property="holeLabel" destination="9yh-Lu-eft" id="TsC-vL-agt"/>
@@ -462,7 +468,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="LeaderboardVC" title="Leaderboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vv5-9E-ATg" customClass="LeaderboardTableViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="j7r-ki-nCY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.59567992820000004" green="0.58929070640000003" blue="0.59644187179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -536,7 +542,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Leaderboard" id="9ZY-vO-e2B"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLA-0b-fjV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -547,7 +553,7 @@
             <objects>
                 <tableViewController title="Hole Prizes" id="jZH-l5-hou" customClass="HolePrizeTabBarTableViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="q6l-5X-H1m">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -622,6 +628,7 @@
                             </connections>
                         </segmentedControl>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="segmentedControl" destination="gid-Nr-l8A" id="HRr-In-CIX"/>
                     </connections>
@@ -639,11 +646,11 @@
                         <viewControllerLayoutGuide type="bottom" id="E0Y-Cg-3gC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mbG-zR-ayN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7r-tZ-OSY">
-                                <rect key="frame" x="16" y="297.5" width="343" height="72"/>
+                                <rect key="frame" x="16" y="265.5" width="343" height="72"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.041046944600000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="HOc-dx-o5K"/>
@@ -665,7 +672,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Options" id="nwZ-in-cLd"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="leaveGameSegue" id="cnT-Zb-ebE"/>
                     </connections>
@@ -683,7 +690,7 @@
                         <viewControllerLayoutGuide type="bottom" id="VkV-SA-Jer"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Cmm-MD-6RQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HM-12-P1G">
@@ -1123,7 +1130,8 @@
                 <navigationController title="Score Entry" automaticallyAdjustsScrollViewInsets="NO" id="QqX-52-nqa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Score Entry" image="Score Entry Tab Image" id="j1t-l5-fOq"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n1g-0y-dLm">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="n1g-0y-dLm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1142,7 +1150,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Iv-z7-b2x" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Hole Prizes" image="Hole Prize Tab Image" id="CeJ-OB-3Ym"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FC9-gj-fUf">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="FC9-gj-fUf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1161,7 +1170,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c7O-5h-4nL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Leaderboard" image="Leaderboard Tab Image" id="mTd-tG-Hxs"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mda-Gy-cyl">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Mda-Gy-cyl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1180,7 +1190,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bla-aC-JDZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Options" image="Options Tab Image" id="M5n-es-aFO"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="baS-ry-exk">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="baS-ry-exk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1199,7 +1210,8 @@
                 <navigationController title="Scorecard" automaticallyAdjustsScrollViewInsets="NO" id="DyI-Nc-wdR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Scorecard" image="Scorecard Tab Image" id="en9-s8-bbo"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2yB-jL-OJG">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="2yB-jL-OJG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1216,8 +1228,8 @@
         <scene sceneID="mbT-cu-1lz">
             <objects>
                 <collectionViewController title="Scorecard" id="Hbp-st-Rji" customClass="ScorecardViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="jST-DI-lMz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="jST-DI-lMz">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewLayout key="collectionViewLayout" id="50X-j1-ppx" customClass="CustomCollectionViewLayout" customModule="Golf_Leaderboard_v1" customModuleProvider="target"/>
@@ -1252,7 +1264,9 @@
                             <outlet property="delegate" destination="Hbp-st-Rji" id="490-Rr-IpB"/>
                         </connections>
                     </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Scorecard" id="MSy-F0-jEb"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="scorecardCollectionView" destination="jST-DI-lMz" id="T2i-iy-05a"/>
                     </connections>
@@ -1272,9 +1286,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Czb-Wb-Ong"/>
-        <segue reference="3ro-Ra-gEt"/>
-        <segue reference="k71-0a-9bv"/>
-        <segue reference="3p0-Pc-HJI"/>
+        <segue reference="Jkp-Wt-CD6"/>
+        <segue reference="cnT-Zb-ebE"/>
         <segue reference="w6H-wh-K7Z"/>
+        <segue reference="3p0-Pc-HJI"/>
     </inferredMetricsTieBreakers>
 </document>

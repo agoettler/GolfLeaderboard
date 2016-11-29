@@ -18,4 +18,5 @@ class CurrentEventGlobalAccess
     var globalPlayer: Player!
     var role: String!
     var owner: Bool = false
+    var loading: Bool = true
 }
