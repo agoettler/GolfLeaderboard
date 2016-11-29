@@ -12,7 +12,7 @@ import Firebase
 class CourseListImporter {
     
     var ref: FIRDatabaseReference = FIRDatabase.database().reference()
-    
+    var globals:CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData
     public static var coursesArray: [Course] = [Course]()
     var aCourse: Course!
     var courseNames: [String]! = [String]()
@@ -69,12 +69,13 @@ class CourseListImporter {
                 
                 i=i+1
             }
-            
         }){ (error) in
             print("Local Error")
             print(error.localizedDescription)
         }
         // print("\(CourseListImporter.coursesArray)")
+        self.globals.loading = false
+
     }
     
     

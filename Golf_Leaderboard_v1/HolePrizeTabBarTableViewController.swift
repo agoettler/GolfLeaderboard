@@ -114,7 +114,7 @@ class HolePrizeTabBarTableViewController: UITableViewController {
         */
         return cell
     }
-    
+    /*
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         if (segmentedControl.selectedSegmentIndex == 0) {
@@ -133,7 +133,7 @@ class HolePrizeTabBarTableViewController: UITableViewController {
         }
         */
     }
-
+     */
     override func viewWillAppear(_ animated: Bool) {
         //self.navigationController?.setNavigationBarHidden(true, animated: false)
         holePrizesArray = globals.globalEvent.holePrizes
