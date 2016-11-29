@@ -64,5 +64,10 @@ x   Make sure most references to local player and event data use the singleton, 
 - Allow a player to edit their score on any hole in the scoreboard
 ? Enable the database to purge game data after one week
 o Disable main menu buttons until course data is completely loaded
-- Make sure that the gross and net scores are always visible on the scoreboard
+    x Activity indicator displays
+    - Allow proper multithreading with the activity indicator
+x Make sure that the gross and net scores are always visible on the scoreboard
+    x Reduced scorecard column widths
+    x Removed gross score column, net score column relabeld as score
+    x Net score is displayed with one or two dots when the player received a stroke or two strokes on that hole
 x Limit player names to alphanumeric characters
