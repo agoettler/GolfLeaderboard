@@ -32,7 +32,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     
     var courseOptions: [String]!
-    var gameTypes = ["Stroke Play","Best Ball","Scramble","Alternate Shot"]
+    var gameTypes = ["Alternate Shot","Best Ball","Scramble","Stroke Play"]
     
     @IBOutlet weak var errorLabel: UILabel!
     
@@ -55,7 +55,14 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
             eventName = eventNameTextField.text
 
             eventType = gameTypes[gameTypePicker.selectedRow(inComponent: 0)]
-            courseSelection = availableCourses?[selectCoursePicker.selectedRow(inComponent: 0)]
+            let courseSelectionName:String = courseOptions[selectCoursePicker.selectedRow(inComponent: 0)]
+            courseSelection = availableCourses?[0]
+
+            for possibleCourse in availableCourses!{
+                if(possibleCourse.name == courseSelectionName){
+                    courseSelection = possibleCourse
+                }
+            }
             var skinsBool:Bool = false
             
             if(skinsSwitch.isOn){
@@ -111,15 +118,9 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
         self.eventNameTextField.delegate = self
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.skinsSwitch.setOn(false, animated: true)
-        /*
-        if let courses = CourseImporter.getCourses(){
-            availableCourses = courses
-            
-        }
-        else{
-            print("No available courses")
-        }
- */
+        self.courseOptions.sort()
+
+        
     }
 
     override func didReceiveMemoryWarning() {
