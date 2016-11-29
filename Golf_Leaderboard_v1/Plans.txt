@@ -65,3 +65,4 @@ x   Make sure most references to local player and event data use the singleton, 
 - Enable the database to purge game data after one week
 - Disable main menu buttons until course data is completely loaded
 ? Allow a player to reenter a game after exiting the app
+- Make sure that the gross and net scores are always visible on the scoreboard
