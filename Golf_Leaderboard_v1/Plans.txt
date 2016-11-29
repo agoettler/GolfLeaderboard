@@ -51,34 +51,17 @@ Player Setup Process
 
 11/3/16
 x  Merge GameCreation branch back into Master
--   Create ScoreCardEntry branch from master; implement scorecard and score entry, display scorecard
+x   Create ScoreCardEntry branch from master; implement scorecard and score entry, display scorecard
 -   "Solidify" current codebase
--   Make sure most references to local player and event data use the singleton, rather than passing through prepare methods
-    - Not needed for the hole prize creation process, but other references to local data should be through the singleton
+x   Make sure most references to local player and event data use the singleton, rather than passing through prepare methods
 -   Refactor EventImporter and EventExporter into a single class?
 
 
 
-public func toAnyObject() -> Any{
-
-let holePrizesDictionary: NSDictionary = NSDictionary()
-
-for aPrize in holePrizes {
-holePrizesDictionary.setValue(aPrize.currentWinner, forKey: aPrize.prize)
-}
-
-let playerDictionary: NSDictionary = NSDictionary()
-
-for aPlayer in players {
-playerDictionary.setValue(["Current Hole": aPlayer.currentHole, "Handicap": aPlayer.handicap, "Start Hole": aPlayer.startHole], forKey: aPlayer.name)
-}
-
-return [
-"Course": course.name,
-"Owner": owner,
-"GameType": type,
-"Hole Prizes": "Null",
-//"Players": "Null"
-"Players": ["Adam1":["Current Hole": 5,"Gross Score":42, "Net Score": 42, "Handicap": 12, "Start Hole": 4]]
-]
-}
+11/29/16: Post-alpha features
+- Allow players to manually enter course data for courses not in the database
+- Display player scorecards from other players when a playername is selected from the leaderboard
+- Allow a player to edit their score on any hole in the scoreboard
+- Enable the database to purge game data after one week
+- Disable main menu buttons until course data is completely loaded
+? Allow a player to reenter a game after exiting the app
