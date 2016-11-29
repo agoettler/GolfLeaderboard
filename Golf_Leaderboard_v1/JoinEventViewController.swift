@@ -31,18 +31,26 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     var currentEvent: Event!
     
     @IBAction func joinButtonPressed(_ sender: UIButton) {
-        let name = playerNameTextField.text
+        let name:String = playerNameTextField.text!
         let handicap = handicapPicker.selectedRow(inComponent: 0)
         let startHole = startHolePicker.selectedRow(inComponent: 0) + 1
-        
+        let alphaNumericSet = NSCharacterSet.alphanumerics
         let whiteSpaceSet = NSCharacterSet.whitespaces
-        let trimmedString = name?.trimmingCharacters(in: whiteSpaceSet)
+        let trimmedString:String = name.trimmingCharacters(in: whiteSpaceSet)
 
-        if(currentEvent.containsPlayer(name: name!)){
+        var removedAllWhitespace:String = (trimmedString.replacingOccurrences(of: " ", with: ""))
+        removedAllWhitespace = removedAllWhitespace.replacingOccurrences(of: "'", with: "")
+        
+        print("alphanumberic removeWhite: \(removedAllWhitespace)")
+        print("alphanumberic range empty?: \(removedAllWhitespace.rangeOfCharacter(from: alphaNumericSet.inverted)?.isEmpty)")
+        
+        
+        if(currentEvent.containsPlayer(name: trimmedString
+        )){
             playerNameTextField.text = ""
             playerNameErrorLabel.text = "Error: Name Taken"
         }
-        else if ((trimmedString?.isEmpty)!){
+        else if ((trimmedString.isEmpty) || (removedAllWhitespace.rangeOfCharacter(from: alphaNumericSet.inverted)?.lowerBound != removedAllWhitespace.rangeOfCharacter(from: alphaNumericSet.inverted)?.upperBound)){
             playerNameTextField.text = ""
             playerNameErrorLabel.text = "Error: Invalid Name"
         }
@@ -50,7 +58,7 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         {
             playerNameTextField.text = ""
             let emptyCard: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-            player = Player(name: name!, handicap: handicap, startHole: startHole, card: emptyCard)
+            player = Player(name: trimmedString, handicap: handicap, startHole: startHole, card: emptyCard)
             currentEvent.addPlayer(newPlayer: player)
             EventExporter.addPlayer(player: player, event: currentEvent)
             
