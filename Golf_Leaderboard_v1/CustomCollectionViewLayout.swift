@@ -200,7 +200,7 @@ class CustomCollectionViewLayout: UICollectionViewLayout
         
         let size : CGSize = (text as NSString).size(attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 20.0)])
         
-        let width : CGFloat = size.width + 25
+        let width : CGFloat = size.width + 15
         
         return CGSize(width: width, height: 40)
     }

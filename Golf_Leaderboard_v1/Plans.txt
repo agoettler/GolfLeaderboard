@@ -60,10 +60,9 @@ x   Make sure most references to local player and event data use the singleton, 
 
 11/29/16: Post-alpha features
 - Allow players to manually enter course data for courses not in the database
-- Display player scorecards from other players when a playername is selected from the leaderboard
+- Display scorecards from other players when a playername is selected from the leaderboard
 - Allow a player to edit their score on any hole in the scoreboard
-- Enable the database to purge game data after one week
-- Disable main menu buttons until course data is completely loaded
-? Allow a player to reenter a game after exiting the app
+? Enable the database to purge game data after one week
+o Disable main menu buttons until course data is completely loaded
 - Make sure that the gross and net scores are always visible on the scoreboard
-- Limit player names to alphanumeric characters
+x Limit player names to alphanumeric characters

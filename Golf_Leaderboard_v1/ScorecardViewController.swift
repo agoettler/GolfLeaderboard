@@ -76,7 +76,7 @@ class ScorecardViewController: UICollectionViewController
         if indexPath.section == 0
         {
             let labelCell : ScorecardCell = collectionView.dequeueReusableCell(withReuseIdentifier: scorecardCellIdentifier, for: indexPath) as! ScorecardCell
-            labelCell.backgroundColor = UIColor.yellow
+            labelCell.backgroundColor = UIColor.white
             
             switch indexPath.row
             {
