@@ -41,11 +41,11 @@ class TitleViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         //self.navigationController?.setNavigationBarHidden(false, animated: false)
         //self.navigationController?.navigationBar.backItem?.hidesBackButton = true
+
         var isStillLoading: Bool = globals.loading
         var i:Int = 0
         
-        while(i<25){
-            spinner.startAnimating()
+        while(isStillLoading){
             print("\(isStillLoading)")
             isStillLoading = globals.loading
             i+=1
@@ -64,6 +64,8 @@ class TitleViewController: UIViewController {
         ref = FIRDatabase.database().reference()
         courseListImporterObject = CourseListImporter.init()
         ourCourses = CourseListImporter.coursesArray
+        spinner.startAnimating()
+
         /*
         var isStillLoading: Bool = globals.loading
         while(isStillLoading){

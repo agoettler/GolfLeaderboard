@@ -40,19 +40,25 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
         exisitingNames = EventImporter.getExisitingEventNames()
         eventName = eventNameTextField.text
         let whiteSpaceSet = NSCharacterSet.whitespaces
-        let trimmedString = eventName?.trimmingCharacters(in: whiteSpaceSet)
+        let trimmedString:String = eventName.trimmingCharacters(in: whiteSpaceSet)
+        let alphaNumericSet = NSCharacterSet.alphanumerics
+        var removedAllWhitespace:String = (trimmedString.replacingOccurrences(of: " ", with: ""))
+        removedAllWhitespace = removedAllWhitespace.replacingOccurrences(of: "'", with: "")
 
-        if(exisitingNames.contains(eventName)){
+        print("alphanumberic removeWhite: \(removedAllWhitespace)")
+        print("alphanumberic range empty?: \(removedAllWhitespace.rangeOfCharacter(from: alphaNumericSet.inverted)?.isEmpty)")
+        
+        if(exisitingNames.contains(trimmedString)){
             eventNameTextField.text = ""
             errorLabel.text = "Error, Name Taken"
         }
-        else if ((trimmedString?.isEmpty)!){
+        else if ((trimmedString.isEmpty) || (removedAllWhitespace.rangeOfCharacter(from: alphaNumericSet.inverted)?.lowerBound != removedAllWhitespace.rangeOfCharacter(from: alphaNumericSet.inverted)?.upperBound)){
             eventNameTextField.text = ""
             errorLabel.text = "Error: Invalid Name"
         }
         else{
             errorLabel.text = ""
-            eventName = eventNameTextField.text
+            //eventName = eventNameTextField.text
 
             eventType = gameTypes[gameTypePicker.selectedRow(inComponent: 0)]
             let courseSelectionName:String = courseOptions[selectCoursePicker.selectedRow(inComponent: 0)]
@@ -69,7 +75,7 @@ class CreateEventViewController: UIViewController, UIPickerViewDataSource, UIPic
                 skinsBool = true
             }
             
-            createdEvent = Event(name: eventName, owner: "Null", type: eventType, course: courseSelection, players: [], holePrizes: holePrizesArray, skins: skinsBool)
+            createdEvent = Event(name: trimmedString, owner: "Null", type: eventType, course: courseSelection, players: [], holePrizes: holePrizesArray, skins: skinsBool)
             let _ = EventExporter(currentEvent: createdEvent)
             
             globals.globalEvent = createdEvent // make the created event the global event for this app
