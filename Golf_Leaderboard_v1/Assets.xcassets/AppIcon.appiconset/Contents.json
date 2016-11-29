@@ -37,13 +37,13 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "Golf180-50px.png",
+      "filename" : "Golf120-72px.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "Golf60pt.png",
+      "filename" : "Golf180-72px.png",
       "scale" : "3x"
     }
   ],
