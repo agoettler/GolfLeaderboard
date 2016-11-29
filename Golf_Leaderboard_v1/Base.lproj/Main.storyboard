@@ -26,22 +26,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Course 2" translatesAutoresizingMaskIntoConstraints="NO" id="q5f-vj-cCX">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="m6e-UK-pwa">
-                                <rect key="frame" x="70" y="458" width="235" height="90"/>
-                                <color key="backgroundColor" white="0.5" alpha="0.5" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                <state key="normal" title="Find Exisiting Event">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Vzb-PQ-SKM" kind="show" id="Jkp-Wt-CD6"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7ot-tH-bcu">
-                                <rect key="frame" x="70" y="269" width="235" height="90"/>
+                                <rect key="frame" x="70" y="253" width="231" height="77"/>
                                 <color key="backgroundColor" white="0.5" alpha="0.50430757705479445" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="Faf-Cu-KqI"/>
+                                    <constraint firstAttribute="height" constant="77" id="Ojp-Yk-TZa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                 <state key="normal" title="Create Event">
@@ -52,27 +41,40 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Golf Leaderboard" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5s-12-Ixz">
-                                <rect key="frame" x="70" y="160" width="235" height="36"/>
+                                <rect key="frame" x="70" y="118" width="231" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="m6e-UK-pwa">
+                                <rect key="frame" x="70" y="424" width="231" height="77"/>
+                                <color key="backgroundColor" white="0.5" alpha="0.5" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <state key="normal" title="Find Exisiting Event">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Vzb-PQ-SKM" kind="show" id="Jkp-Wt-CD6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="t5s-12-Ixz" firstAttribute="leading" secondItem="7ot-tH-bcu" secondAttribute="leading" id="5QO-gb-tJi"/>
-                            <constraint firstItem="7ot-tH-bcu" firstAttribute="top" secondItem="t5s-12-Ixz" secondAttribute="bottom" constant="73" id="CzB-fm-ZQw"/>
+                            <constraint firstItem="m6e-UK-pwa" firstAttribute="leading" secondItem="7ot-tH-bcu" secondAttribute="leading" id="0Fo-vh-Nw2"/>
+                            <constraint firstItem="m6e-UK-pwa" firstAttribute="top" secondItem="7ot-tH-bcu" secondAttribute="bottom" constant="94" id="D6D-ZS-KcD"/>
                             <constraint firstItem="q5f-vj-cCX" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="FXl-zD-xXg"/>
-                            <constraint firstItem="7ot-tH-bcu" firstAttribute="leading" secondItem="m6e-UK-pwa" secondAttribute="leading" id="GMk-ke-uOc"/>
-                            <constraint firstItem="t5s-12-Ixz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="LBz-vg-qGO"/>
-                            <constraint firstItem="m6e-UK-pwa" firstAttribute="top" secondItem="7ot-tH-bcu" secondAttribute="bottom" constant="99" id="MV4-s5-HJS"/>
-                            <constraint firstItem="t5s-12-Ixz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="96" id="RXt-LB-Vnp"/>
-                            <constraint firstItem="7ot-tH-bcu" firstAttribute="trailing" secondItem="m6e-UK-pwa" secondAttribute="trailing" id="TPp-9P-yJ9"/>
+                            <constraint firstItem="m6e-UK-pwa" firstAttribute="trailing" secondItem="7ot-tH-bcu" secondAttribute="trailing" id="Fqv-Qf-26G"/>
+                            <constraint firstItem="t5s-12-Ixz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="54" id="ICr-YH-WyS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="t5s-12-Ixz" secondAttribute="trailing" constant="58" id="IEp-v6-emA"/>
+                            <constraint firstItem="7ot-tH-bcu" firstAttribute="centerX" secondItem="t5s-12-Ixz" secondAttribute="centerX" id="KDf-ot-z62"/>
+                            <constraint firstItem="t5s-12-Ixz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="Q5p-0h-yut"/>
                             <constraint firstItem="q5f-vj-cCX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Uz7-Uc-yy1"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="m6e-UK-pwa" secondAttribute="bottom" constant="119" id="eF7-t8-Qcy"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="m6e-UK-pwa" secondAttribute="bottom" constant="166" id="d08-KM-zQV"/>
                             <constraint firstItem="q5f-vj-cCX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jHy-rB-c5A"/>
-                            <constraint firstItem="q5f-vj-cCX" firstAttribute="centerX" secondItem="m6e-UK-pwa" secondAttribute="centerX" id="qkE-ns-5cY"/>
-                            <constraint firstItem="t5s-12-Ixz" firstAttribute="trailing" secondItem="7ot-tH-bcu" secondAttribute="trailing" id="vjy-8t-euC"/>
+                            <constraint firstItem="7ot-tH-bcu" firstAttribute="top" secondItem="t5s-12-Ixz" secondAttribute="bottom" constant="99" id="rx2-ad-go2"/>
+                            <constraint firstItem="m6e-UK-pwa" firstAttribute="height" secondItem="7ot-tH-bcu" secondAttribute="height" id="sVN-2W-zWc"/>
+                            <constraint firstItem="7ot-tH-bcu" firstAttribute="width" secondItem="t5s-12-Ixz" secondAttribute="width" id="taD-jF-nBR"/>
+                            <constraint firstItem="t5s-12-Ixz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="54" id="ydy-M8-vlZ"/>
                             <constraint firstAttribute="trailing" secondItem="q5f-vj-cCX" secondAttribute="trailing" id="yoy-f5-k2J"/>
                         </constraints>
                     </view>
@@ -122,12 +124,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDy-nQ-VEV">
-                                <rect key="frame" x="109" y="443" width="157" height="72"/>
+                                <rect key="frame" x="83" y="443" width="209" height="111"/>
                                 <color key="backgroundColor" red="0.0" green="0.66740204020000005" blue="0.01527244053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="72" id="h6f-CE-tQP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Find">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -135,7 +134,7 @@
                                     <action selector="FindButtonPressed:" destination="Vzb-PQ-SKM" eventType="touchUpInside" id="Q7D-od-xkw"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wW4-n6-619">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wW4-n6-619">
                                 <rect key="frame" x="83" y="356" width="209" height="29"/>
                                 <segments>
                                     <segment title="Player"/>
@@ -151,23 +150,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qDy-nQ-VEV" firstAttribute="leading" secondItem="nv2-Fb-x9v" secondAttribute="leadingMargin" constant="93" id="9D7-gu-b2H"/>
                             <constraint firstItem="imV-kE-72D" firstAttribute="leading" secondItem="nv2-Fb-x9v" secondAttribute="leadingMargin" constant="67" id="AZe-ne-DiU"/>
                             <constraint firstItem="kdy-EL-AQ9" firstAttribute="centerX" secondItem="5Al-io-U07" secondAttribute="centerX" id="BSs-XE-kOu"/>
                             <constraint firstItem="kdy-EL-AQ9" firstAttribute="height" secondItem="imV-kE-72D" secondAttribute="height" id="KmR-t0-Rcd"/>
                             <constraint firstAttribute="leadingMargin" secondItem="qbY-Fi-fCx" secondAttribute="leading" id="LAf-dk-CTC"/>
                             <constraint firstItem="qbY-Fi-fCx" firstAttribute="top" secondItem="Ujj-K6-wY6" secondAttribute="bottom" constant="99" id="OO5-v8-Dqi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5Al-io-U07" secondAttribute="trailing" id="OYF-m1-9f6"/>
-                            <constraint firstItem="k1X-pl-LED" firstAttribute="top" secondItem="qDy-nQ-VEV" secondAttribute="bottom" constant="152" id="PbU-7v-5hb"/>
-                            <constraint firstItem="imV-kE-72D" firstAttribute="trailing" secondItem="wW4-n6-619" secondAttribute="trailing" id="RDd-kX-U1G"/>
                             <constraint firstItem="5Al-io-U07" firstAttribute="leading" secondItem="qbY-Fi-fCx" secondAttribute="trailing" constant="8" id="TC8-8B-agi"/>
                             <constraint firstItem="5Al-io-U07" firstAttribute="centerY" secondItem="qbY-Fi-fCx" secondAttribute="centerY" id="WCG-gq-OZ2"/>
                             <constraint firstItem="wW4-n6-619" firstAttribute="top" secondItem="imV-kE-72D" secondAttribute="bottom" constant="38" id="arD-hG-BCC"/>
                             <constraint firstItem="kdy-EL-AQ9" firstAttribute="width" secondItem="5Al-io-U07" secondAttribute="width" id="b0l-VH-MYQ"/>
+                            <constraint firstItem="k1X-pl-LED" firstAttribute="top" secondItem="qDy-nQ-VEV" secondAttribute="bottom" constant="113" id="dMf-dc-ZCa"/>
                             <constraint firstItem="imV-kE-72D" firstAttribute="top" secondItem="kdy-EL-AQ9" secondAttribute="bottom" constant="75" id="ebf-ue-Wc0"/>
                             <constraint firstItem="qbY-Fi-fCx" firstAttribute="height" secondItem="5Al-io-U07" secondAttribute="height" id="hY2-xs-mWt"/>
+                            <constraint firstItem="qDy-nQ-VEV" firstAttribute="width" secondItem="wW4-n6-619" secondAttribute="width" id="iDs-Xm-Kwl"/>
+                            <constraint firstItem="qDy-nQ-VEV" firstAttribute="top" secondItem="wW4-n6-619" secondAttribute="bottom" constant="59" id="iKq-jk-2Se"/>
                             <constraint firstItem="kdy-EL-AQ9" firstAttribute="top" secondItem="5Al-io-U07" secondAttribute="bottom" constant="8" id="lKE-Nv-OSp"/>
-                            <constraint firstItem="imV-kE-72D" firstAttribute="leading" secondItem="wW4-n6-619" secondAttribute="leading" id="tmd-lA-TTd"/>
+                            <constraint firstItem="wW4-n6-619" firstAttribute="centerX" secondItem="imV-kE-72D" secondAttribute="centerX" id="qTd-lc-x6s"/>
+                            <constraint firstItem="wW4-n6-619" firstAttribute="width" secondItem="imV-kE-72D" secondAttribute="width" id="rF3-eH-KPW"/>
                             <constraint firstItem="imV-kE-72D" firstAttribute="centerX" secondItem="nv2-Fb-x9v" secondAttribute="centerX" id="vRF-bg-rOT"/>
                             <constraint firstItem="qDy-nQ-VEV" firstAttribute="centerX" secondItem="wW4-n6-619" secondAttribute="centerX" id="yQL-zv-4YN"/>
                         </constraints>
@@ -183,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1q-xH-ICD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2478" y="-1894"/>
+            <point key="canvasLocation" x="2477.5999999999999" y="-1894.0029985007498"/>
         </scene>
         <!--Join Event-->
         <scene sceneID="fkg-dc-ASj">
@@ -1216,7 +1216,7 @@
         <scene sceneID="mbT-cu-1lz">
             <objects>
                 <collectionViewController title="Scorecard" id="Hbp-st-Rji" customClass="ScorecardViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="jST-DI-lMz">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="jST-DI-lMz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1271,10 +1271,10 @@
         <image name="Scorecard Tab Image" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="k71-0a-9bv"/>
-        <segue reference="3ro-Ra-gEt"/>
         <segue reference="Czb-Wb-Ong"/>
-        <segue reference="w6H-wh-K7Z"/>
+        <segue reference="Jkp-Wt-CD6"/>
+        <segue reference="k71-0a-9bv"/>
         <segue reference="3p0-Pc-HJI"/>
+        <segue reference="w6H-wh-K7Z"/>
     </inferredMetricsTieBreakers>
 </document>
