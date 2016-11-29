@@ -89,9 +89,7 @@ class ScorecardViewController: UICollectionViewController
                 case 3:
                     labelCell.cellLabel.text = "Handicap"
                 case 4:
-                    labelCell.cellLabel.text = "Gross"
-                case 5:
-                    labelCell.cellLabel.text = "Net"
+                    labelCell.cellLabel.text = "Score"
                 default:
                     labelCell.cellLabel.text = ""
             }
@@ -132,23 +130,23 @@ class ScorecardViewController: UICollectionViewController
                     // handicap
                     contentCell.cellLabel.text = "\(globals.globalEvent.course.holes[indexPath.section - 1].handicap)"
                 case 4:
-                    // gross score
-                    // check for a submitted score for this hole
-                    if globals.globalPlayer.scorecard.grossScoreArray.indices.contains(indexPath.section-1)
-                    {
-                        contentCell.cellLabel.text = "\(globals.globalPlayer.scorecard[indexPath.section].grossScore)"
-                    }
-                        
-                    else
-                    {
-                        contentCell.cellLabel.text = "-"
-                    }
-                case 5:
                     // net score
                     // check for a submitted score for this hole
                     if globals.globalPlayer.scorecard.grossScoreArray.indices.contains(indexPath.section-1)
                     {
-                        contentCell.cellLabel.text = "\(globals.globalPlayer.scorecard[indexPath.section].netScore)"
+                        var scoreValue: String = "\(globals.globalPlayer.scorecard[indexPath.section].netScore)"
+                        
+                        // append dots to the score if the player was given stroke(s) due to handicap
+                        switch (globals.globalPlayer.scorecard[indexPath.section].grossScore - globals.globalPlayer.scorecard[indexPath.section].netScore) {
+                        case 1:
+                            scoreValue += " •"
+                        case 2:
+                            scoreValue += " ••"
+                        default:
+                            scoreValue += ""
+                        }
+                        
+                        contentCell.cellLabel.text = scoreValue
                     }
                         
                     else

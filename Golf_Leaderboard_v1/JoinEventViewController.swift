@@ -56,6 +56,7 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         }
         else
         {
+            // MARK - Scorecard creation
             playerNameTextField.text = ""
             let emptyCard: [Int] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
             player = Player(name: trimmedString, handicap: handicap, startHole: startHole, card: emptyCard)
@@ -81,6 +82,7 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
+        // TODO: reference course data in globals instead
         if(pickerView===startHolePicker){
             return holeData.count
         }
@@ -89,6 +91,7 @@ class JoinEventViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         }
     }
     
+    // TODO: reference course data instead
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if(pickerView===startHolePicker){
             return holeData[row]

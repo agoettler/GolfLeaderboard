@@ -13,7 +13,7 @@ import UIKit
 class CustomCollectionViewLayout: UICollectionViewLayout
 {
 
-    let numberOfColumns = 6
+    let numberOfColumns = 5
     
     var itemAttributes: [[UICollectionViewLayoutAttributes]]?
     
@@ -189,18 +189,14 @@ class CustomCollectionViewLayout: UICollectionViewLayout
         case 3:
             text = "Handicap"
         case 4:
-            text = "Gross"
-        case 5:
-            text = "Net"
-        case 6:
-            text = "Col 6"
+            text = "Score"
         default:
-            text = "Col 7"
+            text = "Col n"
         }
         
         let size : CGSize = (text as NSString).size(attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 20.0)])
         
-        let width : CGFloat = size.width + 15
+        let width : CGFloat = size.width + 12
         
         return CGSize(width: width, height: 40)
     }
