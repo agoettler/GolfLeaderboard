@@ -16,11 +16,17 @@ class ScorecardViewController: UICollectionViewController
     
     let scorecardCellIdentifier = "ScorecardCell"
     
-    let globals: CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData
+    public let globals: CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData
     
     // override this property to change which player's scorecard is displayed
-    let player: Player = CurrentEventGlobalAccess.globalData.globalPlayer
+    public var player: Player = CurrentEventGlobalAccess.globalData.globalPlayer
 
+    public func setPlayer(newPlayer:Player){
+        self.player = newPlayer
+    }
+    
+    
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()

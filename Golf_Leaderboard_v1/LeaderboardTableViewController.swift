@@ -175,14 +175,26 @@ class LeaderboardTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let selectedRow = self.tableView.indexPathForSelectedRow
+        let selectedCell:LeaderboardCustomCellTableViewCell = self.tableView.cellForRow(at: selectedRow!) as! LeaderboardCustomCellTableViewCell
+        let selectedName:String = selectedCell.nameLabel.text!
+        var selectedPlayer:Player = globals.globalEvent.players[0]
+        for aPlayer in globals.globalEvent.players{
+            if(aPlayer.name == selectedName){
+                 selectedPlayer = aPlayer
+            }
+        }
+        
+        let destVC:LeaderScorecardCollectionVC = segue.destination as! LeaderScorecardCollectionVC
+        destVC.player = selectedPlayer
     }
-    */
+    
 
 }
