@@ -479,7 +479,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="LeaderboardVC" title="Leaderboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vv5-9E-ATg" customClass="LeaderboardTableViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="j7r-ki-nCY">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.59567992820000004" green="0.58929070640000003" blue="0.59644187179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -554,7 +554,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Leaderboard" id="9ZY-vO-e2B"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLA-0b-fjV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -565,7 +565,7 @@
             <objects>
                 <tableViewController title="Hole Prizes" id="jZH-l5-hou" customClass="HolePrizeTabBarTableViewController" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="q6l-5X-H1m">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -620,6 +620,58 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="skinsCustomCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="skinsCustomCell" id="Xqn-ze-B9Y" customClass="SkinsCustomCell" customModule="Golf_Leaderboard_v1" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xqn-ze-B9Y" id="E6D-RH-WTD">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="69" translatesAutoresizingMaskIntoConstraints="NO" id="KBL-gC-ne9">
+                                            <rect key="frame" x="20" y="11.5" width="332" height="20.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IC5-jK-aIe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="36" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="36" id="fI5-rx-SVS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABCDEFGHIJK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj5-LY-m2t">
+                                                    <rect key="frame" x="109" y="0.0" width="114" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="114" id="tzJ-1T-5n0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8V-po-aUm">
+                                                    <rect key="frame" x="296" y="0.0" width="36" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="36" id="hLA-CU-6ob"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="KBL-gC-ne9" firstAttribute="centerY" secondItem="E6D-RH-WTD" secondAttribute="centerY" id="Tf8-JS-cAN"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="KBL-gC-ne9" secondAttribute="trailing" constant="15" id="pG5-IT-gJd"/>
+                                        <constraint firstItem="KBL-gC-ne9" firstAttribute="leading" secondItem="E6D-RH-WTD" secondAttribute="leadingMargin" constant="12" id="zzh-fk-DFp"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="holeLabel" destination="IC5-jK-aIe" id="Ec8-XD-PJk"/>
+                                    <outlet property="nameLabel" destination="cj5-LY-m2t" id="Tno-3r-qnE"/>
+                                    <outlet property="scoreLabel" destination="l8V-po-aUm" id="IHY-mJ-KeL"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="jZH-l5-hou" id="7Tk-Ix-6gv"/>
@@ -640,7 +692,7 @@
                             </connections>
                         </segmentedControl>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="segmentedControl" destination="gid-Nr-l8A" id="HRr-In-CIX"/>
                     </connections>
@@ -702,7 +754,7 @@
                         <viewControllerLayoutGuide type="bottom" id="VkV-SA-Jer"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Cmm-MD-6RQ">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HM-12-P1G">
@@ -1541,7 +1593,7 @@
         <scene sceneID="7qP-Go-glQ">
             <objects>
                 <collectionViewController title="Scorecard" id="q8t-np-qSD" customClass="LeaderScorecardCollectionVC" customModule="Golf_Leaderboard_v1" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xNU-YS-Og7">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="xNU-YS-Og7">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

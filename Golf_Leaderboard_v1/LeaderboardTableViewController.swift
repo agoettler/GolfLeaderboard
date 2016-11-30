@@ -26,6 +26,7 @@ class LeaderboardTableViewController: UITableViewController {
         super.viewDidLoad()
         //self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 64, 0);
+        self.navigationController?.navigationBar.backgroundColor = UIColor.groupTableViewBackground
         //self.navigationController?.setNavigationBarHidden(true, animated: false)
         leaderboard = LeaderboardCalculator.updateLeaderboard()
 

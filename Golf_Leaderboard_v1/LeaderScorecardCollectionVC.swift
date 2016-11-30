@@ -36,6 +36,7 @@ class LeaderScorecardCollectionVC: UICollectionViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.backgroundColor = UIColor.groupTableViewBackground
         //self.scorecardCollectionView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
         //self.navigationController?.setNavigationBarHidden(false, animated: false)
         

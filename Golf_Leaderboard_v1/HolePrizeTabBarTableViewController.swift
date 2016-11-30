@@ -69,22 +69,31 @@ class HolePrizeTabBarTableViewController: UITableViewController {
         var cellName:String = "holePrizeReuseID"
 
         if (segmentedControl.selectedSegmentIndex == 1) {
-            cellName = "skinsReuseID"
+            //cellName = "skinsReuseID"
+            cellName = "skinsCustomCell"
         }
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath)
+
 
         if(cellName == "holePrizeReuseID"){
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath)
             // Configure the cell...
             print("prize table: \(holePrizesArray[cellNum].prize)")
             cell.textLabel!.text = holePrizesArray[cellNum].prize
             cell.detailTextLabel!.text = holePrizesArray[cellNum].currentWinner
+            return cell
         }
-        else{
+        //else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! SkinsCustomCell
             let skinsHoles = skinsDictionary.keys.sorted()
-            cell.textLabel!.text = "Hole \(skinsHoles[cellNum])"
+            /*
+            cell.textLabel!.text = "\(skinsHoles[cellNum])"
             cell.detailTextLabel!.text = skinsDictionary[skinsHoles[cellNum]]
-        }
+            */
+            cell.holeLabel!.text = "\(skinsHoles[cellNum])"
+            cell.nameLabel!.text = skinsDictionary[skinsHoles[cellNum]]
+            cell.scoreLabel!.text = "\(1)"
+        //}
         
         
         
@@ -134,6 +143,71 @@ class HolePrizeTabBarTableViewController: UITableViewController {
         */
     }
      */
+    
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+
+        
+        if (segmentedControl.selectedSegmentIndex == 1) {
+            
+            
+            let headerView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: tableView.frame.width, height: 20))
+            
+            let hole: UILabel = UILabel()
+            let name: UILabel = UILabel()
+            let score: UILabel = UILabel()
+            hole.text = "Hole"
+            name.text = "Name"
+            score.text = "Score"
+            
+            
+            
+            let horizontalStack: UIStackView = UIStackView(arrangedSubviews: [hole, name, score])
+            
+            horizontalStack.translatesAutoresizingMaskIntoConstraints = false
+            horizontalStack.axis = UILayoutConstraintAxis.horizontal
+            horizontalStack.distribution = UIStackViewDistribution.equalCentering
+            horizontalStack.alignment = UIStackViewAlignment.center
+            //horizontalStack.spacing = 58
+            
+            headerView.addSubview(horizontalStack)
+            
+            horizontalStack.center = headerView.center
+            horizontalStack.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20).isActive = true
+            horizontalStack.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -20).isActive = true
+            //horizontalStack.topAnchor.constraint(equalTo: headerView.topAnchor)
+            horizontalStack.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -5).isActive = true
+            
+            hole.textColor = UIColor.black
+            name.textColor = UIColor.black
+            score.textColor = UIColor.black
+            
+            /*
+             rank.backgroundColor = UIColor.magenta
+             name.backgroundColor = UIColor.cyan
+             score.backgroundColor = UIColor.orange
+             thru.backgroundColor = UIColor.yellow
+             */
+            
+            headerView.backgroundColor = UIColor.groupTableViewBackground
+            
+            return headerView
+        }
+        
+        let headerView2 = UIView(frame: CGRect(x: 0.0, y: 0.0, width: tableView.frame.width, height: 0))
+        return headerView2
+    }
+
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if(segmentedControl.selectedSegmentIndex == 1){
+            return CGFloat(30)
+        }
+        return CGFloat(0)
+    }
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         //self.navigationController?.setNavigationBarHidden(true, animated: false)
         holePrizesArray = globals.globalEvent.holePrizes
@@ -150,6 +224,9 @@ class HolePrizeTabBarTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("HolePrizeTabViewController Did Load")
+        
+        self.navigationController?.navigationBar.backgroundColor = UIColor.groupTableViewBackground
+        
         holePrizesArray = globals.globalEvent.holePrizes
         for aPrize in holePrizesArray{
             print("Aprize: \(aPrize.prize)")

@@ -41,6 +41,7 @@
 		8235343C1DC16C11007AFE70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8235343B1DC16C11007AFE70 /* GoogleService-Info.plist */; };
 		8250A7E31DCBA59100528C63 /* Scorecard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250A7E21DCBA59100528C63 /* Scorecard.swift */; };
 		826BB0A41DEF291A0032C1DB /* LeaderScorecardCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826BB0A31DEF291A0032C1DB /* LeaderScorecardCollectionVC.swift */; };
+		826BB0A61DEF44680032C1DB /* SkinsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826BB0A51DEF44680032C1DB /* SkinsCustomCell.swift */; };
 		82A28FE31DDBC07800ED7571 /* OptionsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A28FE21DDBC07800ED7571 /* OptionsTabViewController.swift */; };
 		82A28FE51DDCB3C800ED7571 /* SkinsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A28FE41DDCB3C800ED7571 /* SkinsCalculator.swift */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		8235343B1DC16C11007AFE70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8250A7E21DCBA59100528C63 /* Scorecard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scorecard.swift; sourceTree = "<group>"; };
 		826BB0A31DEF291A0032C1DB /* LeaderScorecardCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderScorecardCollectionVC.swift; sourceTree = "<group>"; };
+		826BB0A51DEF44680032C1DB /* SkinsCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinsCustomCell.swift; sourceTree = "<group>"; };
 		82A28FE21DDBC07800ED7571 /* OptionsTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTabViewController.swift; sourceTree = "<group>"; };
 		82A28FE41DDCB3C800ED7571 /* SkinsCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinsCalculator.swift; sourceTree = "<group>"; };
 		DDF1800807DCCD9CD5771F92 /* Pods-Golf_Leaderboard_v1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Golf_Leaderboard_v1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Golf_Leaderboard_v1/Pods-Golf_Leaderboard_v1.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				8221EE5F1DBFF89600239662 /* HolePrizesTableTableViewController.swift */,
 				823534391DC1569C007AFE70 /* UpdateHolePrizeViewController.swift */,
 				820F0DF61DCCDC6F0008EC42 /* HolePrizeTabBarTableViewController.swift */,
+				826BB0A51DEF44680032C1DB /* SkinsCustomCell.swift */,
 				820F0DF81DCD10350008EC42 /* LeaderboardTableViewController.swift */,
 				820F0DFA1DCD104B0008EC42 /* ScorecardTableViewController.swift */,
 				82339E771DD23EC20066DE77 /* LeaderboardCustomCellTableViewCell.swift */,
@@ -330,6 +333,7 @@
 				82A28FE31DDBC07800ED7571 /* OptionsTabViewController.swift in Sources */,
 				822B7DDA1DC270E50075E3A8 /* EventExporter.swift in Sources */,
 				8221EE541DBFEBA300239662 /* TitleViewController.swift in Sources */,
+				826BB0A61DEF44680032C1DB /* SkinsCustomCell.swift in Sources */,
 				75F313EF1DE40F0D00306A6E /* ScorecardViewController.swift in Sources */,
 				1933E8901DC28FCA00F03C2C /* HolePrize.swift in Sources */,
 				8221EE561DBFEBD900239662 /* CreateEventViewController.swift in Sources */,
