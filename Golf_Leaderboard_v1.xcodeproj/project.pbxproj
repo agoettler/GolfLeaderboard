@@ -210,7 +210,7 @@
 				TargetAttributes = {
 					8221EDDC1DB6CCBF00239662 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = CN56G5C2AB;
+						DevelopmentTeam = 692JBUL5VH;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -458,7 +458,9 @@
 			baseConfigurationReference = DDF1800807DCCD9CD5771F92 /* Pods-Golf_Leaderboard_v1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CN56G5C2AB;
+				DEBUG_ACTIVITY_MODE = "";
+				"DEBUG_ACTIVITY_MODE[sdk=iphonesimulator*]" = disable;
+				DEVELOPMENT_TEAM = 692JBUL5VH;
 				INFOPLIST_FILE = Golf_Leaderboard_v1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Golf-Leaderboard-v1";
@@ -472,7 +474,8 @@
 			baseConfigurationReference = 0D367B910C9FF4D44BD5A769 /* Pods-Golf_Leaderboard_v1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CN56G5C2AB;
+				DEBUG_ACTIVITY_MODE = "";
+				DEVELOPMENT_TEAM = 692JBUL5VH;
 				INFOPLIST_FILE = Golf_Leaderboard_v1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Golf-Leaderboard-v1";
