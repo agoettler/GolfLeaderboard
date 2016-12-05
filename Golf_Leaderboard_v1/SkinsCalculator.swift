@@ -11,6 +11,7 @@ import Foundation
 class SkinsCalculator{
     
     static let globals:CurrentEventGlobalAccess = CurrentEventGlobalAccess.globalData
+    static var currentMinScores1:Dictionary<Int,Int>!
     
     public static func updateSkins()->Dictionary<Int,String>{
         
@@ -45,13 +46,15 @@ class SkinsCalculator{
         print("skinsDicKeys: \(skinsDictionary.keys.sorted())")
         print("skinsDicVals: \(skinsDictionary.values)")
 
-    
+        currentMinScores1 = currentMinScores
     
         return skinsDictionary
     }
     
     
-    
+    public static func getMinScores() -> Dictionary<Int,Int>{
+        return currentMinScores1
+    }
     
     
     
