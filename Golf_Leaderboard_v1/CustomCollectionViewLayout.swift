@@ -15,6 +15,8 @@ class CustomCollectionViewLayout: UICollectionViewLayout
 
     let numberOfColumns = 5
     
+    let columnHeaders: [String] = ["Hole", "Yards", "Par", "Handicap", "Score", "Col n"]
+    
     var itemAttributes: [[UICollectionViewLayoutAttributes]]?
     
     var itemsSize : [CGSize]?
@@ -178,25 +180,42 @@ class CustomCollectionViewLayout: UICollectionViewLayout
     
     func sizeForItemWithColumnIndex(_ columnIndex: Int) -> CGSize
     {
-        var text : String = ""
-        switch (columnIndex) {
-        case 0:
-            text = "Hole"
-        case 1:
-            text = "Yards"
-        case 2:
-            text = "Par"
-        case 3:
-            text = "Handicap"
-        case 4:
-            text = "Score"
-        default:
-            text = "Col n"
+        let fontSize: CGFloat = 20.0
+        
+        let separationWidth: CGFloat = 10.0
+        
+        var headerWidths: [CGFloat] = []
+        
+        var minWidth: CGFloat = 0.0
+        
+        // compute width of all column headers, ignoring the last one
+        for header in columnHeaders.dropLast()
+        {
+            let headerWidth: CGFloat = (header as NSString).size(attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: fontSize)]).width
+            
+            minWidth += (headerWidth + separationWidth)
+            
+            headerWidths.append(headerWidth)
         }
         
-        let size : CGSize = (text as NSString).size(attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 20.0)])
+        // compute excess width beyond the minimum needed by the column headers, divide by number of columns
+        let paddingWidth = (self.collectionView!.bounds.width - minWidth)/CGFloat(numberOfColumns)
         
-        let width : CGFloat = size.width + 12
+        let itemWidth: CGFloat
+        
+        if columnIndex < headerWidths.count
+        {
+            itemWidth = headerWidths[columnIndex]
+        }
+        
+        else
+        {
+            // sloppy - assumes the last string in the array is the default/excess column header
+            itemWidth = (columnHeaders.last! as NSString).size(attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: fontSize)]).width
+        }
+        
+        // add padding width to the column width to distribute excess space evenly across all columns
+        let width : CGFloat = itemWidth + separationWidth + paddingWidth
         
         return CGSize(width: width, height: 40)
     }
