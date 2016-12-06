@@ -60,8 +60,8 @@ x   Make sure most references to local player and event data use the singleton, 
 
 11/29/16: Post-alpha features
 - Allow players to manually enter course data for courses not in the database
-- Display scorecards from other players when a playername is selected from the leaderboard
-- Allow a player to edit their score on any hole in the scoreboard
+x Display scorecards from other players when a playername is selected from the leaderboard
+x Allow a player to edit their score on any hole in the scoreboard
 ? Enable the database to purge game data after one week
 o Disable main menu buttons until course data is completely loaded
     x Activity indicator displays
@@ -72,3 +72,6 @@ x Make sure that the gross and net scores are always visible on the scoreboard
     x Net score is displayed with one or two dots when the player received a stroke or two strokes on that hole
 x Limit player names to alphanumeric characters
 - Allow the app to function correctly with arbitrary course lengths
+
+12/6/16: Alpha Feedback Integration
+- App crashes when player attempts to submit a score after hole 18
