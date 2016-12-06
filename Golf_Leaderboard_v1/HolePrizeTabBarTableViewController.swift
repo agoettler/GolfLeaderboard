@@ -16,6 +16,7 @@ class HolePrizeTabBarTableViewController: UITableViewController {
     var holePrizesArray: [HolePrize]!
     // MARK: - Table view data source
     var skinsDictionary: Dictionary<Int,String>!
+    var skinsScores: Dictionary<Int,Int>!
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
@@ -23,7 +24,7 @@ class HolePrizeTabBarTableViewController: UITableViewController {
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
         holePrizesArray = globals.globalEvent.holePrizes
         self.skinsDictionary = SkinsCalculator.updateSkins()
-        
+        self.skinsScores = SkinsCalculator.getMinScores()
 
         self.tableView.reloadData()
     }
@@ -92,7 +93,8 @@ class HolePrizeTabBarTableViewController: UITableViewController {
             */
             cell.holeLabel!.text = "\(skinsHoles[cellNum])"
             cell.nameLabel!.text = skinsDictionary[skinsHoles[cellNum]]
-            cell.scoreLabel!.text = "\(1)"
+        let score:String = String.init(stringInterpolationSegment: skinsScores[skinsHoles[cellNum]]!)
+            cell.scoreLabel!.text = score
         //}
         
         
@@ -212,7 +214,7 @@ class HolePrizeTabBarTableViewController: UITableViewController {
         //self.navigationController?.setNavigationBarHidden(true, animated: false)
         holePrizesArray = globals.globalEvent.holePrizes
         self.skinsDictionary = SkinsCalculator.updateSkins()
-
+        self.skinsScores = SkinsCalculator.getMinScores()
         print("hp count \(holePrizesArray.count)")
         holePrizesArray = globals.globalEvent.holePrizes
         
@@ -233,6 +235,8 @@ class HolePrizeTabBarTableViewController: UITableViewController {
         }
         self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 64, 0)
         self.skinsDictionary = SkinsCalculator.updateSkins()
+        self.skinsScores = SkinsCalculator.getMinScores()
+
         //self.navigationController?.setNavigationBarHidden(true, animated: false)
         //self.navigationItem.hidesBackButton = true
 
