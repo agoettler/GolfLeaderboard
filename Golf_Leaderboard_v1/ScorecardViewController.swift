@@ -21,7 +21,8 @@ class ScorecardViewController: UICollectionViewController
     // override this property to change which player's scorecard is displayed
     public var player: Player = CurrentEventGlobalAccess.globalData.globalPlayer
 
-    public func setPlayer(newPlayer:Player){
+    public func setPlayer(newPlayer:Player)
+    {
         self.player = newPlayer
     }
     
@@ -196,13 +197,25 @@ class ScorecardViewController: UICollectionViewController
     }
     */
 
-    /*
+    
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool 
     {
-        return true
+        print("Selected cell at:  \(indexPath)")
+        
+        // TODO: Currently possible to select and edit holes that have not been played
+        // prevent the label row from being selected
+        if (indexPath.section > 0) && (indexPath.section <= globals.globalEvent.course.holes.count)
+        {
+            return true
+        }
+        
+        else
+        {
+            return false
+        }
     }
-    */
+    
 
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
@@ -221,4 +234,20 @@ class ScorecardViewController: UICollectionViewController
     
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        switch segue.identifier!
+        {
+        case "ToEditScore":
+            let destinationViewController: EditScoreViewController = segue.destination as! EditScoreViewController
+            
+            if let selectedCell = self.collectionView?.indexPathsForSelectedItems?.first
+            {
+                    destinationViewController.selectedHole = globals.globalEvent.course.holes[selectedCell.section - 1]
+            }
+        default:
+            print("ScorecardViewController - unexpected segue:\(segue.identifier!)")
+        }
+    }
 }
