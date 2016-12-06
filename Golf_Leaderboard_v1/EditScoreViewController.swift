@@ -74,7 +74,8 @@ class EditScoreViewController: UIViewController
         
         EventExporter.updatePlayerScorecardInDatabase()
         
-        dismiss(animated: false, completion: nil)
+        // not sure why assigning it to a variable is necessary
+        let _ = self.navigationController!.popViewController(animated: true)
     }
     
     /*
