@@ -142,7 +142,7 @@ class ScorecardViewController: UICollectionViewController
                 case 4:
                     // net score
                     // check for a submitted score for this hole
-                    if globals.globalPlayer.scorecard.grossScoreArray.indices.contains(indexPath.section-1)
+                    if globals.globalPlayer.scorecard.grossScoreArray.indices.contains(indexPath.section-1) && player.scorecard[indexPath.section].grossScore != 0
                     {
                         var scoreValue: String = "\(player.scorecard[indexPath.section].netScore)"
                         
@@ -205,7 +205,7 @@ class ScorecardViewController: UICollectionViewController
         
         // TODO: Currently possible to select and edit holes that have not been played
         // prevent the label row from being selected
-        if (indexPath.section > 0) && (indexPath.section <= globals.globalEvent.course.holes.count)
+        if (indexPath.section > 0) && (indexPath.section <= globals.globalEvent.course.holes.count) && player.scorecard[indexPath.section].grossScore != 0
         {
             return true
         }
