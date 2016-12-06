@@ -35,9 +35,9 @@ class HolePrizeTabBarTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         
-        if(globals.globalEvent.skins == false){
-            return 0
-        }
+        //if(globals.globalEvent.skins == false && segmentedControl.selectedSegmentIndex == 1){
+          //  return 0
+        //}
         return 1
         
     }
@@ -215,7 +215,9 @@ class HolePrizeTabBarTableViewController: UITableViewController {
         self.skinsScores = SkinsCalculator.getMinScores()
         print("hp count \(holePrizesArray.count)")
         holePrizesArray = globals.globalEvent.holePrizes
-        
+        if(globals.globalEvent.skins == false){
+            segmentedControl.setEnabled(false, forSegmentAt: 1)
+        }
         
         self.tableView.reloadData()
     }
@@ -224,7 +226,9 @@ class HolePrizeTabBarTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("HolePrizeTabViewController Did Load")
-        
+        if(globals.globalEvent.skins == false){
+            segmentedControl.setEnabled(false, forSegmentAt: 1)
+        }
         self.navigationController?.navigationBar.backgroundColor = UIColor.groupTableViewBackground
         
         holePrizesArray = globals.globalEvent.holePrizes
