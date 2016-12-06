@@ -148,7 +148,7 @@ class LeaderScorecardCollectionVC: UICollectionViewController {
                 case 4:
                     // net score
                     // check for a submitted score for this hole
-                    if /*globals.globalPlayer*/player.scorecard.grossScoreArray.indices.contains(indexPath.section-1)
+                    if /*globals.globalPlayer*/player.scorecard.grossScoreArray.indices.contains(indexPath.section-1) && player.scorecard[indexPath.section].grossScore != 0
                     {
                         var scoreValue: String = "\(player.scorecard[indexPath.section].netScore)"
                         
